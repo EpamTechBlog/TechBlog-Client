@@ -1,5 +1,8 @@
+@import 'main.style.css'; /*import fonts*/
+
 .backcontent {
   background: url('/app/res/background.jpg') center / cover;
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
   width:350px;
@@ -30,7 +33,7 @@
   border-radius: 4px;
 }
 .content .info{
-  height:300px;
+  height:100px;
   width:290px;
   margin:0 auto;
   font-family: 'Source Sans Pro Regular',Tahoma,sant-serif,Tahoma,Verdana,Arial,sans-serif;

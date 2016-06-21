@@ -1,0 +1,25 @@
+/*all the Epam fonts*/
+@font-face{
+  font-family:"Oswald-Light-Italic";
+  src:url("/app/res/fonts/Oswald-Light-Italic/Oswald-LightItalic.ttf");
+}
+@font-face{
+  font-family:"Oswald-Regular-Italic";
+  src:url("/app/res/fonts/Oswald-Regular-Italic/Oswald-RegularItalic.ttf");
+}
+@font-face{
+  font-family:"Oswald-Bold-Italic";
+  src:url("/app/res/fonts/Oswald-Demi-Bold-Italic/Oswald-Demi-BoldItalic.ttf");
+}
+@font-face{
+  font-family:"Oswald-Light-Roman";
+  src:url("/app/res/fonts/Oswald-Light-Roman/Oswald-Light.ttf");
+}
+@font-face{
+  font-family:"Oswald-Regular-Roman";
+  src:url("/app/res/fonts/Oswald-Regular-Roman/Oswald-Regular.ttf");
+}
+@font-face{
+  font-family:"Oswald-Bold-Roman";
+  src:url("/app/res/fonts/Oswald-Demi-Bold-Roman/Oswald-DemiBold.ttf");
+}

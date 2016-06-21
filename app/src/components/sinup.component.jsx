@@ -1,6 +1,6 @@
 import React from 'react';
 require('../../styles/home.style.css');
-class HomeComponent extends React.Component{
+class SingupComponent extends React.Component{
 
 
   constructor() {
@@ -26,12 +26,16 @@ class HomeComponent extends React.Component{
                         <input className="mdl-textfield__input" type="password" id="addr2"/>
                         <label className="mdl-textfield__label" for="addr2">Password</label>
                       </div>
+                      <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input className="mdl-textfield__input" type="password" id="addr3"/>
+                        <label className="mdl-textfield__label" for="addr3">Confirm Password</label>
+                      </div>
                     </div>
                     <div className='control'>
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Sign in
+                        Sign Up
                       </button>
-                      <a href='#'> No account? Sign Up</a>
+                      <a href='#'> Have Account? Sign In</a>
                     </div>
                     <div className='info'>
                       <br></br>
@@ -55,4 +59,4 @@ class HomeComponent extends React.Component{
   }
 }
 
-export default HomeComponent;
+export default SingupComponent;

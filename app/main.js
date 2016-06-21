@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomeComponent from './src/components/home.component.jsx';
+import SigninComponent from './src/components/signin.component.jsx';
 
 
 ReactDOM.render(
-  <HomeComponent />,
+  <SigninComponent />,
   document.getElementById('content')
 );
