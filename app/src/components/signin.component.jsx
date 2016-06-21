@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 require('../../styles/home.style.css');
 class SigninComponent extends React.Component{
 
@@ -31,7 +32,7 @@ class SigninComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Sign in
                       </button>
-                      <a href='#'> No account? Sign Up</a>
+                      <Link to={`/signup`}>No account? Sign Up</Link>
                     </div>
                     <div className='info'>
                       <br></br>

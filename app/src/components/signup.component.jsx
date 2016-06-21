@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 require('../../styles/home.style.css');
 class SingupComponent extends React.Component{
 
@@ -35,7 +36,7 @@ class SingupComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Sign Up
                       </button>
-                      <a href='#'> Have Account? Sign In</a>
+                      <Link to={`/`}>Have Account? Sign In</Link>
                     </div>
                     <div className='info'>
                       <br></br>
