@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/app/build/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -20359,7 +20359,7 @@
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -20392,12 +20392,21 @@
 	  }
 
 	  _createClass(HomeComponent, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'p',
+	        "div",
 	        null,
-	        'Hello TechBolg'
+	        _react2.default.createElement(
+	          "button",
+	          { className: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" },
+	          "Button"
+	        ),
+	        _react2.default.createElement(
+	          "button",
+	          { className: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" },
+	          "Button1"
+	        )
 	      );
 	    }
 	  }]);

@@ -9,8 +9,19 @@ class HomeComponent extends React.Component{
   }
 
   render() {
-    return(
-            <p>Hello TechBolg</p>
+    return (
+          <div>
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Button
+            </button>
+
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+              Button1
+            </button>
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Button2
+            </button>
+          </div>
           )
   }
 }

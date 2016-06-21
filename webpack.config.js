@@ -1,9 +1,11 @@
 'use strict';
+var path = require("path");
 
 module.exports = {
-  entry: './app/main.js',
+  entry: "./app/main.js",
   output: {
-    path: "./app/build",
+    path: path.resolve(__dirname, "app/build"),
+    publicPath: "/app/build/",
     filename: "app.bundle.js"
   },
   module: {
