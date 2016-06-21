@@ -5,16 +5,16 @@
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
-  width:350px;
+  width:500px;
   margin:0 auto;
   color:white;
   margin-top:100px;
-  height:360px;
+  height:450px;
   border-radius: 8px;
   background-color: rgba(100,100,100,0.4);
 }
 .content div{
-  width:350px;
+  width:500px;
 }
 .content .logo{
   margin:0 auto;
@@ -27,24 +27,25 @@
 }
 .content .form{
   height:120px;
-  width:290px;
+  width:440px;
   margin:0 auto;
+  margin-top: 10px;
   background-color: white;
   border-radius: 4px;
 }
 .content .info{
   height:100px;
-  width:290px;
+  width:440px;
   margin:0 auto;
   font-family: 'Source Sans Pro Regular',Tahoma,sant-serif,Tahoma,Verdana,Arial,sans-serif;
-  line-height: 0.8em;
-  font-size:0.8em;
+  line-height: 1em;
+  font-size:1em;
 }
 .content .control{
   height:50px;
-  width:290px;
+  width:440px;
   margin:0 auto;
-  margin-top:10px;
+  margin-top:20px;
 }
 .content .control a{
   margin-top:10px;
