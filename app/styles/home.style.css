@@ -1,0 +1,55 @@
+.backcontent {
+  background: url('/app/res/background.jpg') center / cover;
+}
+.content{
+  width:350px;
+  margin:0 auto;
+  color:white;
+  margin-top:100px;
+  height:360px;
+  border-radius: 8px;
+  background-color: rgba(100,100,100,0.4);
+}
+.content div{
+  width:350px;
+}
+.content .logo{
+  margin:0 auto;
+  height:50px;
+  width:120px;
+}
+.content .logo img{
+  height :50px;
+  width:120px;
+}
+.content .form{
+  height:120px;
+  width:290px;
+  margin:0 auto;
+  background-color: white;
+  border-radius: 4px;
+}
+.content .info{
+  height:300px;
+  width:290px;
+  margin:0 auto;
+  font-family: 'Source Sans Pro Regular',Tahoma,sant-serif,Tahoma,Verdana,Arial,sans-serif;
+  line-height: 0.8em;
+  font-size:0.8em;
+}
+.content .control{
+  height:50px;
+  width:290px;
+  margin:0 auto;
+  margin-top:10px;
+}
+.content .control a{
+  margin-top:10px;
+  float:right;
+  color:white;
+  text-decoration: none;
+}
+.mdl-textfield__input{
+  color: #999;
+}
+

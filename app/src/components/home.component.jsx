@@ -1,5 +1,5 @@
 import React from 'react';
-
+require('../../styles/home.style.css');
 class HomeComponent extends React.Component{
 
 
@@ -10,18 +10,47 @@ class HomeComponent extends React.Component{
 
   render() {
     return (
-          <div>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-              Button
-            </button>
+              <div className="backcontent mdl-layout mdl-js-layout">
 
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-              Button1
-            </button>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Button2
-            </button>
-          </div>
+                  <div className='content'>
+                    <br></br>
+                    <div className='logo'>
+                      <img src='/app/res/logo.png'/>
+                    </div>
+                    <div className='form'>
+                      <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input className="mdl-textfield__input" type="text" id="addr1"/>
+                        <label className="mdl-textfield__label" for="addr1">Username</label>
+                      </div>
+                      <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input className="mdl-textfield__input" type="password" id="addr2"/>
+                        <label className="mdl-textfield__label" for="addr2">Password</label>
+                      </div>
+                    </div>
+                    <div className='control'>
+                      <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Sign in
+                      </button>
+                      <a href='#'> No account? Sign Up</a>
+                    </div>
+                    <div className='info'>
+                      <br></br>
+                      <b>Information for Employees</b>
+                      <br></br>
+                      <br></br>
+                      <small>
+                        This system is owned by EPAM Systems.
+                        If you are not authorized to access this system,
+                        exit immediately. Unauthorized access to this system is forbidden by company policies,
+                        ational, and international laws.
+                        Unauthorized users are subject to criminal and civil penalties as well as company initiated disciplinary proceedings.
+                        By entering this system you acknowledge that you have authorized access and appropriate level of privilege within the system.
+                      </small>
+                    </div>
+
+                  </div>
+
+              </div>
           )
   }
 }

@@ -20396,17 +20396,79 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        null,
+	        { className: "demo-layout-transparent mdl-layout mdl-js-layout" },
 	        _react2.default.createElement(
-	          "button",
-	          { className: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" },
-	          "Button"
+	          "header",
+	          { className: "mdl-layout__header mdl-layout__header--transparent" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "mdl-layout__header-row" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "mdl-layout-title" },
+	              "Title"
+	            ),
+	            _react2.default.createElement("div", { className: "mdl-layout-spacer" }),
+	            _react2.default.createElement(
+	              "nav",
+	              { className: "mdl-navigation" },
+	              _react2.default.createElement(
+	                "a",
+	                { className: "mdl-navigation__link", href: "" },
+	                "Link"
+	              ),
+	              _react2.default.createElement(
+	                "a",
+	                { className: "mdl-navigation__link", href: "" },
+	                "Link"
+	              ),
+	              _react2.default.createElement(
+	                "a",
+	                { className: "mdl-navigation__link", href: "" },
+	                "Link"
+	              ),
+	              _react2.default.createElement(
+	                "a",
+	                { className: "mdl-navigation__link", href: "" },
+	                "Link"
+	              )
+	            )
+	          )
 	        ),
 	        _react2.default.createElement(
-	          "button",
-	          { className: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" },
-	          "Button1"
-	        )
+	          "div",
+	          { className: "mdl-layout__drawer" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "mdl-layout-title" },
+	            "Title"
+	          ),
+	          _react2.default.createElement(
+	            "nav",
+	            { className: "mdl-navigation" },
+	            _react2.default.createElement(
+	              "a",
+	              { className: "mdl-navigation__link", href: "" },
+	              "Link"
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { className: "mdl-navigation__link", href: "" },
+	              "Link"
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { className: "mdl-navigation__link", href: "" },
+	              "Link"
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { className: "mdl-navigation__link", href: "" },
+	              "Link"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("main", { className: "mdl-layout__content" })
 	      );
 	    }
 	  }]);
