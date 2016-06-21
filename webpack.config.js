@@ -1,12 +1,10 @@
 'use strict';
 
-let path = require("path");
 module.exports = {
-  entry: './components/main.jsx',
+  entry: './app/main.js',
   output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "bundle.js"
+    path: "./app/build",
+    filename: "app.bundle.js"
   },
   module: {
     loaders: [
@@ -17,7 +15,11 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      },
     ]
   },
   resolve: {
