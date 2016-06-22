@@ -31,6 +31,7 @@
   margin-top: 10px;
   background-color: white;
   border-radius: 4px;
+  padding:10px;
 }
 .content .info{
   height:100px;
@@ -55,5 +56,9 @@
 }
 .mdl-textfield__input{
   color: #999;
+}
+.errMsg{
+  color:red;
+  font-family: Oswald-Light-Roman, Tahoma, sans-serif !important;
 }
 
