@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import SigninComponent from './src/components/signin.component.jsx';
 import SignupComponent from './src/components/signup.component.jsx';
 import NoMatchComponent from './src/components/signup.component.jsx';
 
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={SigninComponent}>
-      <Route path="/signup" component={SignupComponent}/>		
-      <Route path="/*" component={NoMatchComponent}/>
+  <Router history={hashHistory}>
+    <Route path='/'>
+      <IndexRoute path="" component={SignupComponent}/>
+      <Route path="/signin" component={SigninComponent}/>
     </Route>
   </Router>
 ), document.getElementById('content'))

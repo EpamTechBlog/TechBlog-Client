@@ -9,7 +9,6 @@
   margin:0 auto;
   color:white;
   margin-top:100px;
-  height:450px;
   border-radius: 8px;
   background-color: rgba(100,100,100,0.4);
 }
@@ -26,7 +25,7 @@
   width:120px;
 }
 .content .form{
-  height:120px;
+
   width:440px;
   margin:0 auto;
   margin-top: 10px;
@@ -37,9 +36,10 @@
   height:100px;
   width:440px;
   margin:0 auto;
-  font-family: 'Source Sans Pro Regular',Tahoma,sant-serif,Tahoma,Verdana,Arial,sans-serif;
   line-height: 1em;
   font-size:1em;
+  font-family: Oswald-Light-Roman, Tahoma, sans-serif !important;
+  margin-bottom:20px;
 }
 .content .control{
   height:50px;

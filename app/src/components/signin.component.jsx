@@ -32,7 +32,8 @@ class SigninComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Sign in
                       </button>
-                      <Link to={`/signup`}>No account? Sign Up</Link>
+                      <Link to={`/`}>No account? Sign Up</Link>
+
                     </div>
                     <div className='info'>
                       <br></br>
