@@ -1,16 +1,13 @@
 'use strict';
 
-const userReducer = (state={ loginOrRegister : 'login' }, action) => {
+const userReducer = (state='signup', action) => {
+
   switch (action.type) {
     case 'USER_SIGNUP' :
-      return Object.assign({}, state, {
-          loginOrRegister: 'signup'
-        });
+      return 'signup';
       
     case 'USER_SIGNIN' :
-      return Object.assign({}, state, {
-          loginOrRegister: 'signin'
-        });
+      return 'signin';
 
     default:
       return state

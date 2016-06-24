@@ -1,9 +1,12 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
+import { connect } from 'react-redux';
 import SigninComponent from '../components/signin.component.jsx';
 import SignupComponent from '../components/signup.component.jsx';
+import * as userActions from '../actions/user.action';
 
 require('../../styles/home.style.css');
 class LandingComponent extends React.Component{
@@ -16,24 +19,14 @@ class LandingComponent extends React.Component{
   }
 
   render() {
-
-      return (
-              <div>
-              {(() => {
-                    if(this.props.store.loginOrRegister == 'login'){
-                      return (
-                               <SigninComponent/>
-                              );
-                    }else{
-                      return (
-                               <SignupComponent/>
-                             );
-                    }
-              })()}
-
-              </div>
-             )
-
+   
+    if (this.props.loginOrRegister === 'signin') {
+      
+      return <SigninComponent {...this.props} />
+    } else {
+      
+      return <SignupComponent {...this.props} />
+    }
   }
 
   logout() {
@@ -45,4 +38,13 @@ class LandingComponent extends React.Component{
   }
 }
 
-export default LandingComponent;
+function mapStateToProps(state) {
+  return {
+    loginOrRegister: state.loginOrRegister
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(userActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingComponent);
