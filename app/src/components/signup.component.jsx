@@ -49,7 +49,7 @@ class SingupComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={this.handleSubmit.bind(this)}>
                         Sign Up
                       </button>
-                      <Link to={`/signin`}>Have Account? Sign In</Link>
+                      <Link onClick={this.dispatch(userSignin())}>Have Account? Sign In</Link>
                     </div>
                     <div className='info'>
                       <br></br>

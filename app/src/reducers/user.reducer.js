@@ -1,21 +1,16 @@
 'use strict';
 
-const userReducer = (state, action) => {
+const userReducer = (state={ loginOrRegister : 'login' }, action) => {
   switch (action.type) {
-    case 'USER_LOGIN':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
-    case 'USER_LOGOUT':
-      if (state.id !== action.id) {
-        return state
-      }
-
+    case 'USER_SIGNUP' :
       return Object.assign({}, state, {
-        completed: !state.completed
-      })
+          loginOrRegister: 'signup'
+        });
+      
+    case 'USER_SIGNIN' :
+      return Object.assign({}, state, {
+          loginOrRegister: 'signin'
+        });
 
     default:
       return state

@@ -1,16 +1,14 @@
 'use strict';
 
-export function userSignin(text){
+export function userSignin(){
   return {
-    type: 'USER_SIGNIN',
-    text
+    type: 'USER_SIGNIN'
   }
 }
 
-export function userSignup(text){
+export function userSignup(){
   return {
-    type: 'USER_SIGNUP',
-    text
+    type: 'USER_SIGNUP'
   }
 }
 export function userLogout(text){
