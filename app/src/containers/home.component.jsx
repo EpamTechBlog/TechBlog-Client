@@ -2,46 +2,20 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
+import NavigationComponent from '../components/navigation.component.jsx';
 require('../../styles/home.style.css');
 class HomeComponent extends React.Component{
 
 
   constructor() {
     super();
-
-    this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
   }
 
   render() {
 
       return (
-              <div>
-              {(() => {
-                    if(!this.state.username || !this.state.userId){
-                      return (
-                               <div>
-                                <Link to={`/`}>Sign In</Link>
-                               </div>
-                              );
-                    }else{
-                      return (
-                               <div>
-                                <p>Hello, {this.state.username}</p>
-                                <button onClick={this.logout.bind(this)}>Logout</button>
-                               </div>
-                             );
-                    }
-              })()}
-              </div>
+              <NavigationComponent />
              )
-
-  }
-
-  logout() {
-
-    cookie.remove('username', { path: '/' });
-    cookie.remove('userId', { path: '/' });
-    this.setState({username : undefined, userId : undefined});
 
   }
 }
