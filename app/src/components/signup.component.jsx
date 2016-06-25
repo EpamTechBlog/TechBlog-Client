@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
+import { userSignin } from '../actions/user.action';
 require('../../styles/home.style.css');
 class SingupComponent extends React.Component{
 
@@ -12,6 +13,7 @@ class SingupComponent extends React.Component{
   }
 
   render() {
+    
     return (
               <div className="backcontent mdl-layout mdl-js-layout">
 
@@ -49,7 +51,7 @@ class SingupComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={this.handleSubmit.bind(this)}>
                         Sign Up
                       </button>
-                      <Link to={`/signin`}>Have Account? Sign In</Link>
+                      <Link to='/' onClick={this.props.userSignin}>Have Account? Sign In</Link>
                     </div>
                     <div className='info'>
                       <br></br>
