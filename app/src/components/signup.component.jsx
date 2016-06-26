@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignin } from '../actions/user.action';
-require('../../styles/home.style.css');
+require('../../styles/index.style.css');
 class SingupComponent extends React.Component{
 
 

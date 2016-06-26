@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
-require('../../styles/home.style.css');
+
 class HomeComponent extends React.Component{
 
 
