@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
-import NavigationComponent from '../components/navigation.component.jsx';
-require('../../styles/profile.style.css');
+import NavigationComponent from '../../core/components/navigation.component.jsx';
+require('../../../styles/profile.style.css');
 class ProfileComponent extends React.Component{
 
 

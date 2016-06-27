@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
-require('../../styles/navi.style.css');
+require('../../../styles/navi.style.css');
 class NavigationComponent extends React.Component{
 
 	constructor(){
