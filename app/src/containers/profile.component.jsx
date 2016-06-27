@@ -4,7 +4,7 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
 
-class HomeComponent extends React.Component{
+class ProfileComponent extends React.Component{
 
 
   constructor() {
@@ -14,11 +14,13 @@ class HomeComponent extends React.Component{
   render() {
 
       return (
+            <div>
               <NavigationComponent />
-
+              <p>Hello</p>
+            </div>
              )
 
   }
 }
 
-export default HomeComponent;
+export default ProfileComponent;
