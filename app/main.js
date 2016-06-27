@@ -20,6 +20,7 @@ ReactDOM.render((
 	    <Route path='/home' component={HomeComponent} />
 	  </Router>
 	</Provider>
+
 ), document.getElementById('content'))
 
 function checkAuth(nextState, replaceState) {
