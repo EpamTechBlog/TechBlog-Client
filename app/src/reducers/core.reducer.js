@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import userReducer from './user.reducer';
 
 const coreReducer = combineReducers({
-  userReducer
+  loginOrRegister: userReducer,
 })
 
 export default coreReducer;

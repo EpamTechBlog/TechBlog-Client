@@ -20,9 +20,7 @@ class HomeComponent extends React.Component{
                     if(!this.state.username || !this.state.userId){
                       return (
                                <div>
-                                <Link to={`/signin`}>Sign In</Link>
-                                <span>  </span>
-                                <Link to={`/`}>Sign Up</Link>
+                                <Link to={`/`}>Sign In</Link>
                                </div>
                               );
                     }else{

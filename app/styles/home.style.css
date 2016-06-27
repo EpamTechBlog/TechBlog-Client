@@ -14,6 +14,7 @@
 }
 .content div{
   width:500px;
+  height:auto !important;
 }
 .content .logo{
   margin:0 auto;
