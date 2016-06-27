@@ -1,5 +1,5 @@
 import React from 'react';
-require('../../styles/home.style.css');
+require('../../styles/index.style.css');
 class NoMatchComponent extends React.Component{
 
 

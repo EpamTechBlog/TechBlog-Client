@@ -5,6 +5,7 @@ import SigninComponent from './src/components/signin.component.jsx';
 import SignupComponent from './src/components/signup.component.jsx';
 import NoMatchComponent from './src/components/signup.component.jsx';
 import HomeComponent from './src/containers/home.component.jsx';
+import ProfileComponent from './src/containers/profile.component.jsx';
 import LandingComponent from './src/containers/landing.component.jsx';
 import App from './src/containers/app.component.jsx';
 import store from './store';
@@ -18,6 +19,7 @@ ReactDOM.render((
 	      <Route path='/' onEnter={checkAuth} component={LandingComponent} />
 	    </Route>
 	    <Route path='/home' component={HomeComponent} />
+      <Route path='/profile' component={ProfileComponent} />
 	  </Router>
 	</Provider>
 ), document.getElementById('content'))
