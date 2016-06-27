@@ -1,4 +1,4 @@
-@import 'main.style.css'; /*import fonts*/
+@import 'base.style.css'; /*import fonts*/
 
 .backcontent {
   background: url('/app/res/background.jpg') center / cover;
