@@ -3,6 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
+import CategoryComponent from '../article/components/category.component.jsx';
 
 class HomeComponent extends React.Component{
 
@@ -14,7 +15,10 @@ class HomeComponent extends React.Component{
   render() {
 
       return (
-              <NavigationComponent />
+		  		<div>
+		  		  <NavigationComponent />
+		          <CategoryComponent />
+		  		</div>
              )
 
   }
