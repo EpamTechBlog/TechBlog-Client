@@ -1,0 +1,23 @@
+@import 'main.style.css'; /*import fonts*/
+
+
+.articleContainer {
+  margin: 20px;
+  width: 80%;
+}
+
+.searchContainer{
+  width : 100%;
+}
+
+.searchLabel{
+  padding-left: 40px;
+}
+
+.searchLine{
+  width: 100%;
+}
+.searchIcon{
+  float: left;
+  z-index: 100;
+}
