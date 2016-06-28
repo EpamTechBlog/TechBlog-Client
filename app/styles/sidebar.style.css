@@ -4,6 +4,8 @@
   left: 250px;
   /*top: 64px;*/
   background-color: #1a9cb0;
+
+  height:100vh;  
 }
 /* END iOS Safari specific workaround */
 .demo-drawer .mdl-menu .mdl-menu__item {
@@ -46,7 +48,7 @@
   -ms-grid-row-align: stretch;
   align-items: stretch;
 
-  padding-top: 1px;
+  padding-top: 0px;
 }
 
 .demo-navigation .mdl-navigation__link:hover{
