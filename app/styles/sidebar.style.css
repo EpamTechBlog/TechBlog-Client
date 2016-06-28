@@ -35,6 +35,7 @@
   font-weight: 500;
   font-size: 18px;
   color: white !important;
+  height: 100%;
 }
 
 .mdl-layout__drawer .mdl-navigation {
@@ -46,7 +47,7 @@
   -ms-grid-row-align: stretch;
   align-items: stretch;
 
-  padding-top: 1px;
+  padding-top: 0px;
 }
 
 .demo-navigation .mdl-navigation__link:hover{
