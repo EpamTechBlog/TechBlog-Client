@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
-require('../../styles/styles.css');
+require('../../../styles/sidebar.style.css');
 class SidebarComponent extends React.Component{
 
 	constructor(){
