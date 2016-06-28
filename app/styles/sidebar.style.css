@@ -17,8 +17,9 @@
 
  .demo-drawer {
   border: none;
+  position: relative;
   left: 250px;
-  top: 64px;
+  /*top: 64px;*/
   background-color: #1a9cb0;
 }
 /* END iOS Safari specific workaround */
@@ -50,6 +51,18 @@
   font-weight: 500;
   color: white !important;
 
+}
+
+.mdl-layout__drawer .mdl-navigation {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-items: stretch;
+
+  padding-top: 1px;
 }
 
 .demo-navigation .mdl-navigation__link:hover{
