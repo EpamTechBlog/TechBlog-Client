@@ -16,6 +16,46 @@
   margin:0 auto;
 }
 .profile-container{
-  height: 100%;
   width: 100%;
+  margin-bottom: 5px;
+}
+.profile-baseInfo{
+  height: 240px;
+}
+
+.profile-layer{
+  padding: 5px 5px 0px 5px;
+}
+.profile-Img{
+  width:150px;
+  height:150px;
+  border-radius: 85px;
+  border:6px solid lightgray;
+}
+
+.profile-Name{
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
+  background-color: white;
+  color: #39c2d7;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.profile-JobTitle{
+  font-family: "Source Sans Pro";
+  background-color: white;
+  color: #a3c644;
+  font-size: 20px;
+}
+.icons-style{
+  font-size:20px;
+  color:#c7c7c7;
+  margin-top: 3px;
+}
+.icons-span{
+  font-family: 'Source Sans Pro';
+  color:#c7c7c7;
+  font-size: 14px;
+  vertical-align: top;
+  margin-left: 6px;
+  line-height: 25px;
 }

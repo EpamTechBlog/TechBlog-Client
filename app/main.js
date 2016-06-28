@@ -35,8 +35,8 @@ function hasLogin(){
 	return (cookie.load('username') && cookie.load('userId'));
 }
 
-function notLogin(){
+function notLogin(nextState, replaceState){
 	if(!hasLogin()) {
 		replaceState({ nextPathname: nextState.location.pathname }, '/');
-	} 
+	}
 }
