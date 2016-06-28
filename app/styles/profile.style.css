@@ -1,0 +1,21 @@
+@import 'base.style.css'; /*import fonts*/
+.title-panel{
+  background-color: white;
+  height:60px;
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
+  font-size:2rem;
+}
+.title-panel div{
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.profile-content{
+  height: 800px;
+  background-color: #ebeef0;
+  padding-left:55px;
+  margin:0 auto;
+}
+.profile-container{
+  height: 100%;
+  width: 100%;
+}

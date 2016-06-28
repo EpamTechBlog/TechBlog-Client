@@ -19,8 +19,14 @@ class HomeComponent extends React.Component{
 			<NavigationComponent />
 			<SidebarComponent />
 			</div>
+<<<<<<< HEAD:app/src/containers/home.component.jsx
 			)
 
+=======
+
+			)
+
+>>>>>>> landingAndHome:app/src/core/containers/home.component.jsx
 	}
 }
 

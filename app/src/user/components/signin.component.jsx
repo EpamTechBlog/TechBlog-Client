@@ -3,7 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignup } from '../actions/user.action';
-require('../../styles/index.style.css');
+require('../../../styles/index.style.css');
 class SigninComponent extends React.Component{
 
   constructor() {
