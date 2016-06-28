@@ -26,7 +26,10 @@ class SidebarComponent extends React.Component{
 			<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">flag</i>Updates</a>
 			<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">local_offer</i>Promos</a>
 			<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">shopping_cart</i>Purchases</a>
+			<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">shopping_cart</i>Purchases</a>
 			<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">help_outline</i>Help</a>
+			<div class="mdl-layout-spacer"></div>
+
 			</nav>
 			</div>
 			)
