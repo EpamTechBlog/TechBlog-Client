@@ -140,9 +140,18 @@
   background-color: white;
   font-size: 14px;  
 }
-
-.frame{
+.topbar{
   position: fixed;
   z-index: 1;
+}
+
+.sidebar{
+  position: fixed;
+  z-index: 1;
+  margin-top: 64px;
+}
+
+.comment{
+  z-index: 0;
 }
 

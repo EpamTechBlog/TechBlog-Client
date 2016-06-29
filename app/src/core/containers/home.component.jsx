@@ -18,15 +18,18 @@ class HomeComponent extends React.Component{
 		return (
 			<div>
 
-			<div className="frame">
+			<div className="topbar">
 			<NavigationComponent />
+			</div>
+
+			<div className="sidebar">
 			<SidebarComponent />
 			</div>
 
-			<div>
+			<div className="comment">
 			<CommentComponent/>
 			</div>
-			
+
 			</div>
 
 			)
