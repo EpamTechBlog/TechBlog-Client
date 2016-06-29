@@ -19,6 +19,7 @@ class HomeComponent extends React.Component{
 			<NavigationComponent />
 			<SidebarComponent />
 			</div>
+
 			)
 
 	}

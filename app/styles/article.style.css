@@ -1,0 +1,19 @@
+.articleContent {
+  width: 100%;
+  background-color: white;
+  top: 60px;
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+}
+
+.articleTitleDiv {
+  width: 60%;
+  margin-left: 350px;
+  margin-top: 100px;
+
+}
+
+.articleTitle {
+  width: 80%;
+}
