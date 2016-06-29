@@ -12,8 +12,6 @@ class CommentComponent extends React.Component{
 
 	}
 
-	
-
 	render(){
 
 		return (

@@ -16,10 +16,17 @@ class HomeComponent extends React.Component{
 	render() {
 
 		return (
+			<div>
+
 			<div className="frame">
 			<NavigationComponent />
 			<SidebarComponent />
+			</div>
+
+			<div>
 			<CommentComponent/>
+			</div>
+			
 			</div>
 
 			)

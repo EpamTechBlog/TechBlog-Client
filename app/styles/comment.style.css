@@ -1,6 +1,7 @@
 
 .commentEditor{
 	position: absolute;
-	left: 500px;
-	top: 400px;
+	left: 300px;
+	top: 100px;
+	z-index: -1;
 }
