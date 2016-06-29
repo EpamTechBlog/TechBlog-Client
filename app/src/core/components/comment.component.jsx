@@ -8,8 +8,18 @@ class CommentComponent extends React.Component{
 	constructor(){
 
 		super();
-		this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
+		this.state = { 
+			comment:""
+		};
+		this.submit = this.submit.bind(this);
+	}
 
+	submit(e){
+		// Get the HTML contents of the currently active editor
+		// console.log(tinymce.activeEditor.getContent());
+
+		// Get the raw contents of the currently active editor
+		console.log(tinymce.activeEditor.getContent({format: 'raw'}));	
 	}
 
 	render(){
@@ -19,7 +29,7 @@ class CommentComponent extends React.Component{
 			<h4>Your Comment</h4>
 			<textarea></textarea>
 
-			<button className="commentPostButton">Post</button>
+			<button onClick={this.submit} className="commentPostButton">Post</button>
 
 			</div>
 			)
