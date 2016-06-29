@@ -1,11 +1,12 @@
 .demo-drawer {
   border: none;
-  position: relative;
   left: 250px;
-  /*top: 64px;*/
+  /*top: 60px;*/
   background-color: #1a9cb0;
 
   height:100vh;  
+  position: relative;
+
 }
 /* END iOS Safari specific workaround */
 .demo-drawer .mdl-menu .mdl-menu__item {
@@ -14,7 +15,7 @@
   display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: center
 }
 
 .demo-navigation {
