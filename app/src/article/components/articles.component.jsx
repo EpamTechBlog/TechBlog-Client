@@ -3,31 +3,38 @@
 import React from 'react';
 import PostList from './postList.component.jsx';
 import SearchPost from './searchPost.component.jsx';
-require('../../../styles/article.style.css');
+import $ from "jquery";
 
+require('../../../styles/article.style.css');
 
 class Articles extends React.Component{
   constructor() {
     super();
-    //state init
+
     this.state = {
       posts: [],
     };
-    //function bind
+
     this.loadAllPosts = this.loadAllPosts.bind(this);
   }
   componentDidMount(){
     let posts = this.loadAllPosts();
     this.setState({posts:posts});
   }
-  //TODO: get data from server
+  //TODO: change url to this.props.url
   loadAllPosts(){
-    let posts = [
-      {id:1,title:'AAAA', topic:'AAAAa',publishDate:'2015'},
-      {id:2,title:'BBBB', topic:'BBBBa',publishDate:'2016'},
-      {id:3,title:'CCCC', topic:'CCCCa',publishDate:'2017'},
-    ];
-    return posts;
+    $.ajax({
+      url: '//localhost:8000/articles/',
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log('get data from server',data.articles);
+        this.setState({posts: data.articles});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error('err',err.toString());
+      }.bind(this)
+    });
   }
 
   render() {

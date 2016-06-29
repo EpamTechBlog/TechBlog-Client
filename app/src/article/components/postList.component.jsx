@@ -14,12 +14,16 @@ class PostList extends React.Component{
     );
   }
   render() {
-    let posts = this.props.posts.map((post)=>{
-      return this.createPostItem(post);
-    });
+    console.log('postlist get posts',  this.props.posts);
+    let posts;
+    if(this.props.posts){
+      posts = this.props.posts.map((post)=>{
+        return this.createPostItem(post);
+      });
+    }
     return (
       <div>
-        <table className="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--3dp articleContainer">
+        <table className="mdl-data-table mdl-js-data-table mdl-shadow--3dp articleContainer">
           <thead>
             <tr>
               <th className="mdl-data-table__cell--non-numeric">Title</th>
