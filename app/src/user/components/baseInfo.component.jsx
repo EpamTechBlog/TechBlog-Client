@@ -1,5 +1,5 @@
 import React from 'react';
-import { baseInfoEdit } from '../actions/profile.action';
+import { baseInfoEditing } from '../actions/profile.action';
 import cookie from 'react-cookie';
 import $ from "jquery";
 require('../../../styles/index.style.css');
@@ -8,7 +8,9 @@ class BaseInfoComponent extends React.Component{
 
   constructor() {
     super();
-    this.state = { userInfo: {username : '', jobTitle : '', skills : [], articles :　[], profileImage : '', homeAddress : ''} };
+    this.state = { userInfo: {username : '', jobTitle : '', skills : [], articles :　[], profileImage : '', homeAddress : '', email : '', phone : ''},
+                   isLoadingProfile : true
+                 };
   }
   componentDidMount(){
 
@@ -18,7 +20,9 @@ class BaseInfoComponent extends React.Component{
             type: "GET",
             cache: false,
             success: function(data) {
-              this.setState({ userInfo : data });
+
+              setTimeout(() => this.setState({ userInfo : data, isLoadingProfile : false }), 2000);
+
             }.bind(this),
             error: function(xhr, status, err) {
               console.error(error, err.toString());
@@ -41,21 +45,35 @@ class BaseInfoComponent extends React.Component{
                     <p className="profile-JobTitle">{this.state.userInfo.jobTitle ? this.state.userInfo.jobTitle : 'Employee' }</p>
                     <div>
                       <i className="material-icons icons-style">room</i>
-                      <span className="icons-span">APAC, China, Shenzhen, Vision Hi-Tech Park, Blk 8{this.state.userInfo.homeAddress}</span>
+                      <span className="icons-span">{this.state.userInfo.homeAddress}</span>
                     </div>
                     <div>
                       <i className="material-icons icons-style">email</i>
-                      <span className="icons-span">ThisIsEmail@email.com</span>
+                      <span className="icons-span">{this.state.userInfo.email}</span>
                     </div>
                     <div>
                       <i className="material-icons icons-style">phone</i>
-                      <span className="icons-span">12345678912</span>
+                      <span className="icons-span">{this.state.userInfo.phone}</span>
                     </div>
                   </div>
                 </div>
                 <div className="mdl-card__menu">
-                  <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEdit}>
-                    <i className="material-icons">edit</i>
+                  <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEditing}>
+                     {(() => {
+                              if(this.state.isLoadingProfile){
+                                return (
+
+                                          <div className="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+
+                                        );
+                              }else{
+                                return (
+                                            <a className="material-icons">edit</a>
+
+                                        );
+                              }
+                     })()}
+
                   </button>
                 </div>
               </div>
