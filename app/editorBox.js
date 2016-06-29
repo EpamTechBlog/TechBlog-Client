@@ -1,6 +1,7 @@
 tinymce.init({
 	selector: 'textarea',
 	height: 200,
+	schema: 'html5',
 	plugins: [
 	'advlist autolink lists link image charmap print preview anchor',
 	'searchreplace visualblocks code fullscreen',
