@@ -8,19 +8,24 @@ class PostComponent extends React.Component{
 
   render() {
     return (
-        <div className = 'articleContent'>
-          <div className="articleTitleDiv">
-            <div className='articleTitle mdl-textfield mdl-js-textfield'>
-              <input className="mdl-textfield__input" type="text" id="articleTitle" />
-              <label className="mdl-textfield__label" for="articleTitle">Title...</label>
-            </div>
-          </div>
 
-          <div className='articleTitleDiv'>
-              <textarea></textarea>
+      <div className="articleTitleDiv">
+        <form>
+          <div className='articleTitle mdl-textfield mdl-js-textfield'>
+            <input className="mdl-textfield__input" type="text" id="articleTitle" />
+            <label className="mdl-textfield__label" for="articleTitle">Title...</label>
 
           </div>
-        </div>
+          <textarea></textarea>
+          <div className='articlePostButton'>
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+
+
       )
   }
 }
