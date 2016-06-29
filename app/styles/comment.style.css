@@ -2,9 +2,8 @@
 .commentEditor{
 	position: absolute;
 	left: 300px;
-<<<<<<< HEAD
-	top: 100px;
-	z-index: 1;
+	top: 500px;
+
 }
 
 .commentPostButton {
@@ -32,7 +31,5 @@
 	background-color: #CCC;
 	border-color: rgba(0,0,0,0.9);
 }
-=======
-	top: 500px;
-}
->>>>>>> c6bbf0b0ed3cf09bb6004c9957be25e11caf1b7e
+
+
