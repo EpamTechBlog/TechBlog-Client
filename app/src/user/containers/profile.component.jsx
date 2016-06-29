@@ -4,6 +4,7 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import NavigationComponent from '../../core/components/navigation.component.jsx';
 import BaseInfoComponent from '../components/baseInfo.component.jsx';
+import EditProfileComponent from '../components/editprofile.component.jsx';
 import * as profileActions from '../actions/profile.action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,15 +23,13 @@ class ProfileComponent extends React.Component{
               <NavigationComponent />
               <div className='title-panel'>
                 <div>
-                  <span>MY PROFILE</span>
+                  <span>{this.props.editBaseInfo ?  'EDIT PROFILE' : 'MY PROFILE'}</span>
                 </div>
               </div>
               {(() => {
                       if(this.props.editBaseInfo){
                         return (
-
-                                  <i>abcdefg</i>
-
+                                 <EditProfileComponent />
                                 );
                       }else{
                         return (

@@ -12,7 +12,7 @@ class SigninComponent extends React.Component{
   }
 
   render() {
-    
+
     return (
               <div className="backcontent mdl-layout mdl-js-layout">
 
@@ -24,11 +24,11 @@ class SigninComponent extends React.Component{
                     <div className='form'>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input className="mdl-textfield__input" type="text" id="addr1" value={this.state.username} required onChange={this.updateUsername.bind(this)}/>
-                        <label className="mdl-textfield__label" for="addr1">Username</label>
+                        <label className="mdl-textfield__label" htmlfor="addr1">Username</label>
                       </div>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input className="mdl-textfield__input" type="password" id="addr2" value={this.state.password} required onChange={this.updatePassword.bind(this)}/>
-                        <label className="mdl-textfield__label" for="addr2">Password</label>
+                        <label className="mdl-textfield__label" htmlfor="addr2">Password</label>
                       </div>
                       <div className='errMsg'>
                         {(() => {

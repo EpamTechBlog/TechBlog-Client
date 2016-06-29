@@ -59,3 +59,21 @@
   margin-left: 6px;
   line-height: 25px;
 }
+
+.profile-edit-box{
+  width:100%;
+}
+
+.profile-edit-field{
+
+  text-align: center;
+}
+.profile-edit-field i{
+   margin-right:40px;
+}
+.profile-edit-field input{
+   font-size:35px;
+}
+.profile-edit-field .icons-style{
+   font-size:45px;
+}
