@@ -2,11 +2,13 @@
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'codropsicons';
-	/*src:url('../fonts/codropsicons/codropsicons.eot');
-	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');*/
+	/*src:url('../res/fonts/codropsicons/codropsicons.woff');*/
+/*	 format('woff');
+*/	/*src:url('../res/fonts/codropsicons/codropsicons.eot');
+	src:url('../res/fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../res/fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../res/fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../res/fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');*/
 }
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -197,7 +199,6 @@ body #cdawrap a {
 body #cda-remove {
 	color: #fff;
 }
-
 @media screen and (max-width: 25em) {
 	.codrops-header {
 		font-size: 75%;
@@ -210,11 +211,14 @@ body #cda-remove {
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'feathericons';
-	/*src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
-	src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
-		url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
-		url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),*/
-		/*url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');*/
+	/*src:url('../res/fonts/feathericons/feathericons.woff?-8is7zf');*/
+	 /*format('woff');*/
+	/*
+	src:url('../res/fonts/feathericons/feathericons.eot?-8is7zf');
+	src:url('../res/fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+		url('../res/fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+		url('../res/fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+		url('../res/fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');*/
 }
 
 .grid {

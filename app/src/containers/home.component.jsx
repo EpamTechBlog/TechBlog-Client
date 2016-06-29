@@ -5,6 +5,7 @@ import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
 import CategoryComponent from '../article/components/category.component.jsx';
 
+
 class HomeComponent extends React.Component{
 
 
@@ -17,7 +18,7 @@ class HomeComponent extends React.Component{
       return (
 		  		<div>
 		  		  <NavigationComponent />
-		          <CategoryComponent />
+		        <CategoryComponent />
 		  		</div>
              )
 
