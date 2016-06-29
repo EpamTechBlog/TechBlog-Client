@@ -18,13 +18,12 @@ class Articles extends React.Component{
     this.loadAllPosts = this.loadAllPosts.bind(this);
   }
   componentDidMount(){
-    let posts = this.loadAllPosts();
+    let posts = this.loadAllPosts(this.props.type, this.props.key);
     this.setState({posts:posts});
   }
-  //TODO: change url to this.props.url
-  loadAllPosts(){
+  loadAllPosts(type,key){
     $.ajax({
-      url: '//localhost:8000/articles/',
+      url: '//localhost:8000/articles/'+type+key,
       dataType: 'json',
       cache: false,
       success: function(data) {
