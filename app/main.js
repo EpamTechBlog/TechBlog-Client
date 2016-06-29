@@ -8,26 +8,27 @@ import HomeComponent from './src/core/containers/home.component.jsx';
 import ProfileComponent from './src/user/containers/profile.component.jsx';
 import LandingComponent from './src/user/containers/landing.component.jsx';
 import App from './src/core/containers/app.component.jsx';
+
 import store from './store';
 import { Provider } from 'react-redux'
 import cookie from 'react-cookie';
 
 ReactDOM.render((
 	<Provider store={store}>
-	  <Router history={hashHistory}>
-	    <Route component={App}>
-	      <Route path='/' onEnter={checkAuth} component={LandingComponent} />
-	    </Route>
-	    <Route path='/home' component={HomeComponent} />
-      <Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
-	  </Router>
+	<Router history={hashHistory}>
+	<Route component={App}>
+	<Route path='/' onEnter={checkAuth} component={LandingComponent} />
+	</Route>
+	<Route path='/home' component={HomeComponent} />
+	<Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
+	</Router>
 	</Provider>
-), document.getElementById('content'))
+	), document.getElementById('content'))
 
 function checkAuth(nextState, replaceState) {
-  if (hasLogin()) {
-    replaceState({ nextPathname: nextState.location.pathname }, '/home');
-  }
+	if (hasLogin()) {
+		replaceState({ nextPathname: nextState.location.pathname }, '/home');
+	}
 }
 
 function hasLogin(){
@@ -38,5 +39,5 @@ function hasLogin(){
 function notLogin(nextState, replaceState){
 	if(!hasLogin()) {
 		replaceState({ nextPathname: nextState.location.pathname }, '/');
-	}
+  }
 }
