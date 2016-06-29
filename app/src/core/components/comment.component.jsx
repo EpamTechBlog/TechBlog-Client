@@ -16,8 +16,9 @@ class CommentComponent extends React.Component{
 
 		return (
 			<div className="commentEditor">	
-			<textarea> something here</textarea>
-			
+			<h4>Your Comment</h4>
+			<textarea></textarea>
+
 			<button className="commentPostButton">Post</button>
 
 			</div>
