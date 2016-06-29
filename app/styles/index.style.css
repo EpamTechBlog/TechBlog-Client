@@ -5,17 +5,19 @@
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
-  width:500px;
+  width:100vw;
   margin:0 auto;
   color:white;
   margin-top:100px;
   border-radius: 8px;
   background-color: rgba(100,100,100,0.4);
 }
+
 .content div{
-  width:500px;
+  width:100vw;
   height:auto !important;
 }
+
 .content .logo{
   margin:0 auto;
   height:50px;
@@ -27,7 +29,7 @@
 }
 .content .form{
 
-  width:440px;
+  width:100vw;
   margin:0 auto;
   margin-top: 10px;
   background-color: white;
@@ -36,7 +38,7 @@
 }
 .content .info{
   height:100px;
-  width:440px;
+  width:100vw;
   margin:0 auto;
   line-height: 1em;
   font-size:1em;
@@ -45,7 +47,7 @@
 }
 .content .control{
   height:50px;
-  width:440px;
+  width:100vw;
   margin:0 auto;
   margin-top:20px;
 }
@@ -61,5 +63,9 @@
 .errMsg{
   color:red;
   font-family: Oswald-Light-Roman, Tahoma, sans-serif !important;
+}
+
+.frame{
+  position: fixed;;
 }
 
