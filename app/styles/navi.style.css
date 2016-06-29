@@ -5,8 +5,9 @@
   color: white;
   font-size: 1rem;
   height:60px;
-  display:block !important;
+/*  display:block !important;*/
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
+  /*position: fixed !important;*/
 
 }
 .mdl-layout__header-row{
