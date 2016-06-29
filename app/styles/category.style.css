@@ -656,10 +656,29 @@ figure.effect-romeo:hover p {
 /***** Layla *****/
 /*---------------*/
 
-figure.effect-layla {
+figure.effect-layla1 {
 	background: #18a367;
 }
 
+figure.effect-layla2 {
+	background: #9e5406;
+}
+
+figure.effect-layla3 {
+	background: #17819c;
+}
+
+figure.effect-layla4 {
+	background: #4a3753;
+}
+
+figure.effect-layla5 {
+	background: #2e5d5a;
+}
+
+figure.effect-layla6 {
+	background: #3c4a50;
+}
 figure.effect-layla img {
 	height: 390px;
 }

@@ -18,8 +18,8 @@ class SingleTopicComponent extends React.Component{
 			    <div>
 			    	<div className="mdl-cell mdl-cell--4-col">	
 						<div className="grid">
-							<figure className="effect-layla">
-								<img src={this.props.imgsrc} alt="img06"/>
+							<figure className={this.props.effect}>
+								<img src={this.props.imgsrc}/>
 								<figcaption>
 									<h2>Crazy <span>{this.props.topic}</span></h2>
 									<p>{this.props.description}.</p>
