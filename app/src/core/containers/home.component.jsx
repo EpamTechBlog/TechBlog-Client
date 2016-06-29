@@ -19,7 +19,6 @@ class HomeComponent extends React.Component{
 			<div className="frame">
 			<NavigationComponent />
 			<SidebarComponent />
-			<CommentComponent/>
 			</div>
 
 			)

@@ -17,9 +17,8 @@ class PostComponent extends React.Component{
           </div>
 
           <div className='articleTitleDiv'>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <textarea></textarea>
-            </div>
+
           </div>
         </div>
       )
