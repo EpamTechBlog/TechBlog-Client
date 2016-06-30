@@ -40,9 +40,9 @@ class ProfileComponent extends React.Component{
                                       <div className="mdl-card__title">
                                         <h2 className="mdl-card__title-text">My Post</h2>
                                       </div>
-                                      <div className="mdl-card__supporting-text">
+                                      <div className="mdl-card__supporting-text clean-top-padding">
                                         <hr />
-                                        <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                                        <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
                                           <thead>
                                             <tr>
                                               <th className="mdl-data-table__cell--non-numeric">Posts</th>
