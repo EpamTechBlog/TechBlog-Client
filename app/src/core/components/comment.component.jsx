@@ -12,13 +12,13 @@ class CommentComponent extends React.Component{
 
 	}
 
-	
-
 	render(){
 
 		return (
 			<div className="commentEditor">	
-			<textarea></textarea>
+			<textarea> something here</textarea>
+			
+			<button className="commentPostButton">Post</button>
 
 			</div>
 			)
