@@ -13,3 +13,10 @@ export function baseInfoEdited(){
     type: 'BASE_INFO_EDITED'
   }
 }
+
+export function cancelInfoEditing(){
+
+  return {
+    type: 'BASE_INFO_EDITED'
+  }
+}

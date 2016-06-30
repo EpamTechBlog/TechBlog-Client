@@ -29,7 +29,7 @@ class ProfileComponent extends React.Component{
               {(() => {
                       if(this.props.editBaseInfo){
                         return (
-                                 <EditProfileComponent />
+                                 <EditProfileComponent {...this.props}/>
                                 );
                       }else{
                         return (
