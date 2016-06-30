@@ -1,13 +1,16 @@
 tinymce.init({
-	selector: 'textarea',
+	selector: '#textarea-comment',
 	height: 200,
-	schema: 'html5',
 	plugins: [
-	'advlist autolink lists link image charmap print preview anchor',
-	'searchreplace visualblocks code fullscreen',
-	'insertdatetime media table contextmenu paste code'
+	"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+	"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+	"table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
 	],
-	toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+	toolbar1: " bullist numlist | outdent indent blockquote | undo redo | forecolor | charmap emoticons | spellchecker ",
+
+	menubar: false,
+	toolbar_items_size: 'small',
+
 	content_css: [
 	'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
 	'//www.tinymce.com/css/codepen.min.css'

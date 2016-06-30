@@ -16,20 +16,37 @@ class CommentComponent extends React.Component{
 
 	submit(e){
 		// Get the HTML contents of the currently active editor
-		// console.log(tinymce.activeEditor.getContent());
-
+		console.log(tinymce.activeEditor.getContent());
+		axios.post('http://localhost:8000/comments', 
+		{
+			articleId: "id_1",
+			creator: "adam",
+			content: tinymce.activeEditor.getContent()
+		})
+		.then(function (response) {
+			console.log(response);
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
 		// Get the raw contents of the currently active editor
-		console.log(tinymce.activeEditor.getContent({format: 'raw'}));	
+		// console.log(tinymce.activeEditor.getContent({format: 'raw'}));	
 	}
 
 	render(){
 
 		return (
+			<div>
+
+			<div className="comments_show">
+
+			</div>
+
 			<div className="commentEditor">	
 			<h4>Your Comment</h4>
-			<textarea></textarea>
-
+			<div id="textarea-comment"></div>
 			<button onClick={this.submit} className="commentPostButton">Post</button>
+			</div>
 
 			</div>
 			)
