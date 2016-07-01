@@ -9,43 +9,48 @@ require('../../../styles/category.style.css');
 class CategoryComponent extends React.Component{
 
 	constructor(){
-
 		super();
+		this.state = {topics : []};
 
 	}
 
+	componentDidMount() {
+
+	 	$.ajax({
+            url: 'http://localhost:8000/topics',
+            dataType: 'json',
+            type: "GET",
+            cache: false,
+            success: function(data) {
+              console.log(data);
+              this.setState({ topics :  data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+              
+              console.error(error, err.toString());
+            }.bind(this)
+          });  
+	}
+
 	render(){
+
+	  let topics = this.state.topics.map((topic) => {
+	  	return (
+	  			<div className="mdl-grid">
+			      	<SingleTopicComponent key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} link={topic.link} effect={topic.effect}/>
+				</div>
+	  		   )
+	  });	
 	  return (
 			    <div>
 					<ul className="demo-list-item mdl-list">
-					      <h3>JS</h3>
+					      <h3>Category</h3>
 
 					 <li className="mdl-list__item">
 					    <span className="mdl-list__item-primary-content">
-					      <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://download.4-designer.com/files/20130906/Creative-business-meetings-HD-pictures-48709.jpg' topic='JS' description='When Layla appears, she brings an eternal summer along' link='#' effect='effect-layla effect-layla1'/>
-						  </div>
-						  <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://tympanus.net/Development/HoverEffectIdeas/img/17.jpg' topic='PHP' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit' link='#' effect='effect-layla effect-layla2'/>
-						  </div>
-						  <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://tympanus.net/Development/HoverEffectIdeas/img/25.jpg' topic='JAVA' description='Sed vehicula, augue sit amet tincidunt molestie, metus augue risus' link='#' effect='effect-layla effect-layla3'/>
-						  </div>
+					      {topics}
 					    </span>
-					  </li>
-					  	
-					  <li className="mdl-list__item">
-					    <span className="mdl-list__item-primary-content">
-					      <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://tympanus.net/Development/HoverEffectIdeas/img/3.jpg' topic='C#' description='Proin mauris ante, scelerisque ut sollicitudin consectetur' link='#' effect='effect-layla effect-layla4'/>
-						  </div>
-						  <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://tympanus.net/Development/HoverEffectIdeas/img/9.jpg' topic='IOS' description='Maecenas vulputate sem ut purus rutrum mattis retra finibus' link='#' effect='effect-layla effect-layla5'/>
-						  </div>
-						  <div className="mdl-grid">
-					      	<SingleTopicComponent imgsrc='http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg' topic='C++' description='Pellentesque egestas magna fringillagna varius' link='#' effect='effect-layla effect-layla6'/>
-						  </div>
-					    </span>
+					    
 					  </li>
 					</ul>
 				</div>
