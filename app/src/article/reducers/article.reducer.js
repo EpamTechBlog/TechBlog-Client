@@ -1,16 +1,14 @@
 'use strict';
 
-const articleReducer = (state='allArticles', action) => {
+
+const articleReducer = (state = [], action) => {
 
   switch (action.type) {
-    case 'ALL_ARTICLES' :
-      return 'allArticles';
-    case 'ARTICLE' :
-      return 'article';
-    case 'POST' :
-      return 'post';
-    case 'EDIT' :
-      return 'edit';
+    case 'ADD_ARTICLE' :
+      return  [
+          ...state,
+          action.article
+        ]
     default:
       return state
   }

@@ -39,24 +39,11 @@ class PostComponent extends React.Component{
     e.preventDefault();
     console.log(this.refs.articleTitle.value);
     console.log(this.refs.articleText.value);
-    console.log(cookie.load('userId'));
+    console.log(this.props);
 
     const title = this.refs.articleTitle.value;
     const text = this.refs.articleText.value;
-
-    $.ajax({
-      url: 'http://localhost:8000/articles',
-      dataType: 'json',
-      type: "POST",
-      data: {title : title, text : text, userId : cookie.load('userId')},
-      cache: false,
-      success: function(data) {
-
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(error, err.toString());
-      }.bind(this)
-    });
+    this.props.asynPostMiddleware(title, text, cookie.load('userId'));
   }
 
   // updateText(e) {

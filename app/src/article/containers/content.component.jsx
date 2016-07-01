@@ -32,9 +32,9 @@ class ContentComponent extends React.Component {
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
   return {
-    articleContent: state.articleContent
+    articleContent: store.articleContent
   }
 }
 
