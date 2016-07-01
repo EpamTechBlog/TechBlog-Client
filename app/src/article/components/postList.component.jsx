@@ -48,5 +48,3 @@ const mapStateToProps = (store) => {
   }
 }
 export default connect(mapStateToProps)(PostList)
-
-// export default PostList;
