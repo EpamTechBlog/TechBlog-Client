@@ -11,16 +11,33 @@ class Articles extends React.Component{
   constructor() {
     super();
 
-    this.state = {
-      posts: [],
-    };
+    // this.state = {
+    //   posts: [],
+    // };
 
     this.loadAllPosts = this.loadAllPosts.bind(this);
   }
-  componentDidMount(){
-    let posts = this.loadAllPosts(this.props.type, this.props.key);
-    this.setState({posts:posts});
-  }
+  //  componentDidMount(){
+  //   this.props.getAllArticlesAsyn('topic','DDDD').then(
+  //     ()=>{
+  //       let posts = this.props.articles;
+  //       console.log('Articles posts',posts);
+  //       this.setState({posts:posts});
+  //     },
+  //     (err)=>{
+  //       console.log('errrrrrr',err);
+  //     }
+  //   )
+  //   // console.log('Articles!!!!!!', this.props.getAllArticlesAsyn('topic','DDDD'));
+  //   // let posts = this.props.articles;
+  //   // console.log('Articles posts',posts);
+  //   // this.setState({posts:posts});
+  // }
+
+  // componentDidMount(){
+  //   let posts = this.loadAllPosts(this.props.type, this.props.key);
+  //   this.setState({posts:posts});
+  // }
   loadAllPosts(type,key){
     $.ajax({
       url: '//localhost:8000/articles/'+type+key,
@@ -40,10 +57,12 @@ class Articles extends React.Component{
     return (
       <div>
         <SearchPost />
-        <PostList posts={this.state.posts} />
+        <PostList/>
       </div>
     )
   }
 }
+
+
 
 export default Articles;

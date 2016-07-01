@@ -8,7 +8,6 @@ import SigninComponent from '../components/signin.component.jsx';
 import SignupComponent from '../components/signup.component.jsx';
 import * as userActions from '../actions/user.action';
 
-require('../../styles/home.style.css');
 class LandingComponent extends React.Component{
 
 
@@ -19,12 +18,12 @@ class LandingComponent extends React.Component{
   }
 
   render() {
-   
+
     if (this.props.loginOrRegister === 'signin') {
-      
+
       return <SigninComponent {...this.props} />
     } else {
-      
+
       return <SignupComponent {...this.props} />
     }
   }

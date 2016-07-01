@@ -1,19 +1,33 @@
 import React from 'react';
+require('../../../styles/article.style.css');
+class PostComponent extends React.Component{
 
-class Post extends React.Component{
-  constructor(){
+  constructor() {
     super();
   }
 
-  render(){
+  render() {
     return (
-        <tr>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.title}</td>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.topic}</td>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.publishDate}</td>
-        </tr>
-    )
+
+      <div className="articleTitleDiv">
+        <form>
+          <div className='articleTitle mdl-textfield mdl-js-textfield'>
+            <input className="mdl-textfield__input" type="text" id="articleTitle" />
+            <label className="mdl-textfield__label" for="articleTitle">Title...</label>
+
+          </div>
+          <textarea></textarea>
+          <div className='articlePostButton'>
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+      )
   }
 }
 
-export default Post;
+export default PostComponent;

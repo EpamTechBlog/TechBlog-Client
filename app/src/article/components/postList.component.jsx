@@ -1,5 +1,7 @@
 import React from 'react';
-import Post from './post.component.jsx';
+import ShowPost from './post.component.jsx';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class PostList extends React.Component{
 
@@ -10,7 +12,7 @@ class PostList extends React.Component{
 
   createPostItem(post){
     return (
-        <Post post = {post} key={post.id}/>
+        <ShowPost post = {post} key={post.id}/>
     );
   }
   render() {
@@ -40,4 +42,11 @@ class PostList extends React.Component{
   }
 }
 
-export default PostList;
+const mapStateToProps = (store) => {
+  return {
+    posts: store.articles
+  }
+}
+export default connect(mapStateToProps)(PostList)
+
+// export default PostList;

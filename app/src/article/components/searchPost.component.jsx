@@ -40,7 +40,7 @@ class SearchPost extends React.Component{
            value={this.state.searchContent}
            onChange = {this.handleSearchChange}
            />
-           <label className="mdl-textfield__label searchLabel" for="sample-expandable">Expandable Input</label>
+           <label className="mdl-textfield__label searchLabel" for="sample-expandable">Search By Title</label>
          </div>
        </div>
      </form>
