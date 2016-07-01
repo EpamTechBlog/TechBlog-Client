@@ -20,7 +20,7 @@ class SingupComponent extends React.Component{
                   <div className='content'>
                     <br></br>
                     <div className='logo'>
-                      <img src='/app/res/logo.png'/>
+                      <img src='/app/res/images/logo.png'/>
                     </div>
                     <div className='form'>
                       <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
