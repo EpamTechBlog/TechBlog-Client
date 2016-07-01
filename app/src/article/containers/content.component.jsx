@@ -10,13 +10,17 @@ import Articles from '../components/articles.component.jsx';
 
 // import the comments component
 import * as articleActions from '../actions/article.action.js';
-
 class ContentComponent extends React.Component {
     constructor() {
         super();
     }
     render() {
-      return <Articles />
+      return (
+        <div>
+          <Articles />
+          <PostComponent />
+        </div>
+        )
     }
     componentDidMount(){
       console.log('enter ContentComponent componentDidMount');
@@ -28,12 +32,11 @@ const mapStateToProps = (store) => {
   return {
     articleContent: store.articleContent,
     articles: store.articles
+
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(articleActions, dispatch)
 }
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(ContentComponent)

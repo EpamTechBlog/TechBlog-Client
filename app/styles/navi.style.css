@@ -1,12 +1,12 @@
 @import 'base.style.css'; /*import fonts*/
 
 .mdl-layout__header{
-<<<<<<< HEAD
   background-color: #464547;
   color: white;
   font-size: 1rem;
   height:60px;
   display:block !important;
+/*  display:block !important;*/
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 
 }
@@ -20,6 +20,7 @@
   color: #FFFFFF;
   font-size: 20px;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
+
 }
 .navi-signup{
 	text-decoration: none;
@@ -65,4 +66,5 @@
   padding : 0px;
   left: 0;
   right: 0;
+
 }

@@ -16,9 +16,21 @@ class HomeComponent extends React.Component{
 	render() {
 
 		return (
-			<div className="frame">
+			<div>
+
+			<div className="topbar">
 			<NavigationComponent />
+			</div>
+
+			<div className="sidebar">
 			<SidebarComponent />
+
+			</div>
+
+			<div className="comment">
+			<CommentComponent/>
+			</div>
+
 			</div>
 
 			)

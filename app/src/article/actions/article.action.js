@@ -1,31 +1,50 @@
 'use strict';
+/*
+ * action types
+ */
 import $ from "jquery";
 
-export function allArticles() {
-  return {
-    type : 'ALL_ARTICLES'
-  }
+export const ADD_ARTICLE = 'ADD_ARTICLE'
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+
+/*
+ * action creators
+ */
+
+export function addArticle(article) {
+  return { type: ADD_ARTICLE, article }
 }
 
-export function article() {
-  return {
-    type : 'ARTICLE'
-  }
-}
-export function post() {
-  return {
-    type : 'POST'
-  }
-}
-
-export function edit() {
-  return{
-    type : 'EDIT'
-  }
+export function setVisibilityFilter(filter) {
+  return { type: SET_VISIBILITY_FILTER, filter }
 }
 
 
+// function postRequestToServer(title, text, authorId, dispatch) {
+//   console.log('in post request');
+//   axios.post('http://localhost:8000/articles',
+//     {
+//       title : title,
+//       text : text,
+//       userId : authorId
+//     }).then((article) => {
+//       console.log(article, 'post success')
+//       dispatch(postAction(article));
+//     }, (error) => {
+//       dispatch(errorAction());
+//     }
+//     ).catch((e) => {
+//         console.log(e, 'error!');
+//     });
+// }
 
+// export function asynPostMiddleware(title, text, authorId) {
+//   return function (dispatch) {
+//     return postRequestToServer(title, text, authorId, dispatch)
+//     .then();
+//   }
+// }
 //Article List
 function getAllArticles(type,key){
   return new Promise((resolve,reject) =>{
@@ -59,12 +78,3 @@ export function getAllArticlesAsyn(type, key){
     );
   }
 }
-
-// export function getAllArticlesAsyn(type, key){
-//   return function(dispatch){
-//     return getAllArticles(type,key).then(
-//       articles => changeState(articles),
-//       err => console.log('err',err)
-//     );
-//   }
-// }

@@ -11,14 +11,13 @@ class CommentComponent extends React.Component{
 		this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
 
 	}
-
-	
-
 	render(){
 
 		return (
-			<div className="commentEditor">	
-			<textarea></textarea>
+			<div className="commentEditor">
+			<textarea> something here</textarea>
+
+			<button className="commentPostButton">Post</button>
 
 			</div>
 			)

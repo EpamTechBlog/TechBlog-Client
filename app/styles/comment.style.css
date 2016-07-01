@@ -4,3 +4,31 @@
 	left: 500px;
 	top: 400px;
 }
+
+.commentPostButton {
+	margin-top: 5px;
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+}
+
+.commentPostButton:hover {
+	background-color: #e3e3e3;
+	border-color: rgba(0,0,0,0.5);
+}
+
+.commentPostButton:active {
+	background-color: #CCC;
+	border-color: rgba(0,0,0,0.9);
+}
+
+

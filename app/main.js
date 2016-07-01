@@ -20,8 +20,7 @@ ReactDOM.render((
 	      <Route path='/' onEnter={checkAuth} component={LandingComponent} />
 	    </Route>
 	    <Route path='/home' component={HomeComponent} />
-	    <Route path='/articles' component={ArticlesComponent}>
-      </Route>
+	    <Route path='/articles' component={ArticlesComponent} />
       <Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
 	  </Router>
 	</Provider>
