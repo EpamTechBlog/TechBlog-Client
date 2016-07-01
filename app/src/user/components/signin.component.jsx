@@ -3,7 +3,11 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignup } from '../actions/user.action';
+<<<<<<< HEAD:app/src/user/components/signin.component.jsx
 require('../../../styles/index.style.css');
+=======
+require('../../styles/index.style.css');
+>>>>>>> e8e770d536024f5186c7d0c777d797f5650df4d6:app/src/components/signin.component.jsx
 class SigninComponent extends React.Component{
 
   constructor() {
