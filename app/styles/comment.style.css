@@ -1,5 +1,4 @@
-
-.commentEditor{
+.commentBox{
 	position: absolute;
 	left: 300px;
 	top: 100px;
@@ -31,5 +30,4 @@
 	background-color: #CCC;
 	border-color: rgba(0,0,0,0.9);
 }
-
 
