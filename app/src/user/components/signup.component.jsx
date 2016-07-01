@@ -3,11 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignin } from '../actions/user.action';
-<<<<<<< HEAD:app/src/user/components/signup.component.jsx
 require('../../../styles/index.style.css');
-=======
-require('../../styles/index.style.css');
->>>>>>> e8e770d536024f5186c7d0c777d797f5650df4d6:app/src/components/signup.component.jsx
 class SingupComponent extends React.Component{
 
 
@@ -17,7 +13,7 @@ class SingupComponent extends React.Component{
   }
 
   render() {
-    
+
     return (
               <div className="backcontent mdl-layout mdl-js-layout">
 

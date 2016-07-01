@@ -16,18 +16,26 @@
 }
 .mdl-layout__header .mdl-layout__drawer-button{
   color:white;
-=======
-    background-color: #666666;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
->>>>>>> e8e770d536024f5186c7d0c777d797f5650df4d6
+  background-color: #666666;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .navi-signup{
 	text-decoration: none;
 }
 .mdl-ripple.is-animating{
-<<<<<<< HEAD
+	width: 92.5097px;
+	height: 92.5097px;
+	transform: translate(-50%, -50%) translate(20px, 20px);
+}
+.mdl-menu__container.is-upgraded.is-visible{
+	right: 0px;
+	top: 63px;
+	width: 196.953px;
+	height: 160px;
+}
+.mdl-menu__outline.mdl-menu--bottom-right{
 	width: 92.5097px;
 	height: 92.5097px;
 	transform: translate(-50%, -50%) translate(20px, 20px);
@@ -40,27 +48,12 @@
 }
 .mdl-menu__outline.mdl-menu--bottom-right{
 	width: 196.953px;
-=======
-	width: 92.5097px; 
-	height: 92.5097px; 
-	transform: translate(-50%, -50%) translate(20px, 20px);
-}
-.mdl-menu__container.is-upgraded.is-visible{
-	right: 0px; 
-	top: 63px; 
-	width: 196.953px; 
-	height: 160px;
-}
-.mdl-menu__outline.mdl-menu--bottom-right{
-	width: 196.953px; 
->>>>>>> e8e770d536024f5186c7d0c777d797f5650df4d6
 	height: 160px;
 }
 .mdl-js-ripple-effect--ignore-events{
 	clip: rect(0px 196.953px 160px 0px);
 }
 .mdl-menu.mdl-menu--bottom-right {
-<<<<<<< HEAD
   left: 0;
   right: 0;
 }
@@ -70,8 +63,6 @@
   font-size: 1rem;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
   padding : 0px;
-=======
-    left: 0;
-    right: 0;
->>>>>>> e8e770d536024f5186c7d0c777d797f5650df4d6
+  left: 0;
+  right: 0;
 }
