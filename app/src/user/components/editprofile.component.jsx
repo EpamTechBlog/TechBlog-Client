@@ -50,25 +50,25 @@ class EditProfileComponent extends React.Component{
                   <label className="profile-edit-label">
                     Job Title:
                   </label>
-                  <input type='text'ref='jobTitle' value={this.state.userInfo.jobTitle}/>
+                  <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Address:
                   </label>
-                  <input type='text'ref='homeAddress' value={this.state.userInfo.homeAddress}/>
+                  <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Email:
                   </label>
-                  <input type='text'ref='email' value={this.state.userInfo.email}/>
+                  <input type='text' ref='email' value={this.state.userInfo.email}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Phone:
                   </label>
-                  <input type='text'ref='phone' value={this.state.userInfo.phone}/>
+                  <input type='text' ref='phone' value={this.state.userInfo.phone}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
