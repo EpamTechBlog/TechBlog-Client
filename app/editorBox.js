@@ -2,9 +2,7 @@ tinymce.init({
 	selector: '#textarea-comment',
 	height: 200,
 	plugins: [
-	"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-	"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-	"table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+	"searchreplace wordcount",
 	],
 	toolbar1: " bullist numlist | outdent indent blockquote | undo redo | forecolor | charmap emoticons | spellchecker ",
 
