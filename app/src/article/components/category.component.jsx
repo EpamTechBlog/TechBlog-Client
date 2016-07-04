@@ -11,11 +11,8 @@ class CategoryComponent extends React.Component{
 	constructor(){
 		super();
 		this.state = {topics : []};
-
 	}
-
 	componentDidMount() {
-
 	 	$.ajax({
             url: 'http://localhost:8000/topics',
             dataType: 'json',
@@ -26,10 +23,10 @@ class CategoryComponent extends React.Component{
               this.setState({ topics :  data});
             }.bind(this),
             error: function(xhr, status, err) {
-              
+
               console.error(error, err.toString());
             }.bind(this)
-          });  
+          });
 	}
 
 	render(){
@@ -40,7 +37,7 @@ class CategoryComponent extends React.Component{
 			      	<SingleTopicComponent key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} link={topic.link} effect={topic.effect}/>
 				</div>
 	  		   )
-	  });	
+	  });
 	  return (
 			    <div>
 					<ul className="demo-list-item mdl-list">
@@ -50,12 +47,12 @@ class CategoryComponent extends React.Component{
 					    <span className="mdl-list__item-primary-content">
 					      {topics}
 					    </span>
-					    
+
 					  </li>
 					</ul>
 				</div>
 			)
 	}
 }
-					
+
 export default CategoryComponent;
