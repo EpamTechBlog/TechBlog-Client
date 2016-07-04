@@ -1,8 +1,7 @@
-
-.commentEditor{
+.commentBox{
 	position: absolute;
-	left: 500px;
-	top: 400px;
+	left: 300px;
+	top: 100px;
 }
 
 .commentPostButton {
@@ -31,4 +30,7 @@
 	border-color: rgba(0,0,0,0.9);
 }
 
+.demo-list-icon {
+	width: 300px;
+}
 

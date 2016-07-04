@@ -3,32 +3,130 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 require('../../../styles/comment.style.css');
-class CommentComponent extends React.Component{
 
-	constructor(){
+var Comment = React.createClass({
+	rawMarkup: function() {
+		var md = new Remarkable();
+		var rawMarkup = md.render(this.props.children.toString());
+		return { __html: rawMarkup };
+	},
 
-		super();
-		this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
-
-	}
-	render(){
-
+	render: function() {
 		return (
-			<div className="commentEditor">
-			<textarea> something here</textarea>
+			<div className="comment">
+			<h2 className="commentAuthor">
+			{this.props.creator}
+			</h2>
+			<span dangerouslySetInnerHTML={this.rawMarkup()} />
+			</div>
+			);
+	}
+});
 
-			<button className="commentPostButton">Post</button>
+var CommentList = React.createClass({
+
+	getInitialState: function() {
+		return {data: []};
+	},
+
+
+	componentDidMount: function() {
+		//for test id_1
+		this.loadCommentsFromServer('id_1');
+
+		setInterval(this.loadCommentsFromServer, 2000);
+	},
+	loadCommentsFromServer: function(articleId) {
+
+		$.ajax({
+			url: 'http://localhost:8000/comments/id_1',
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
+	
+	render: function() {
+		console.log('render',this.state.data);
+		var commentNodes = this.state.data.map(function(comment) {
+			var el = document.createElement( 'html' );
+			el.innerHTML = comment.content;
+			; 
+			console.log(comment.creator);
+			return (
+				<li class="mdl-list__item">
+				<span class="mdl-list__item-primary-content">
+				<i class="material-icons mdl-list__item-icon">person</i>
+				{comment.creator} - <span>{comment.time}</span>
+				</span>
+				<p>{el.getElementsByTagName( 'p' )[0].textContent}</p>
+
+				</li>
+				);
+		});
+		return (
+			<div className="commentList">
+			<ul class="demo-list-icon mdl-list">
+			{commentNodes}
+			</ul>
 
 			</div>
-			)
+			);
+	}
+});
+
+var CommentForm = React.createClass({
+	getInitialState: function() {
+		return {author: '', text: ''};
+	},
+
+	handleSubmit: function(e) {
+
+		e.preventDefault();
+		var tinymce_editor_id = 'textarea-comment'; 
+		axios.post('http://localhost:8000/comments', 
+		{
+			articleId: "id_1",
+			creator: "adam",
+			content: tinymce.activeEditor.getContent()
+		})
+		.then(function (response) {
+			console.log(response);
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+
+		tinymce.get(tinymce_editor_id).setContent('');
+	},
+	render: function() {
+		return (
+			<form className="commentForm" onSubmit={this.handleSubmit}>
+			<div id="textarea-comment"></div>
+			<input type="submit" value="Post" />
+			</form>
+			);
+	}
+});
+
+class CommentComponent extends React.Component{
+	
+
+	render() {
+		return (
+			<div className="commentBox">
+			<h1>Comments</h1>
+			<CommentList/>
+			<CommentForm/>
+			</div>
+			);
 	}
 
-	logout() {
-
-		cookie.remove('username', { path: '/' });
-		cookie.remove('userId', { path: '/' });
-		this.setState({username : undefined, userId : undefined});
-
-	}
 }
+
 export default CommentComponent;
