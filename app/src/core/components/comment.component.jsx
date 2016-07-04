@@ -59,15 +59,22 @@ var CommentList = React.createClass({
 			; 
 			console.log(comment.creator);
 			return (
-				<div>
-				<b>{comment.creator} - <span>{comment.time}</span></b>
+				<li class="mdl-list__item">
+				<span class="mdl-list__item-primary-content">
+				<i class="material-icons mdl-list__item-icon">person</i>
+				{comment.creator} - <span>{comment.time}</span>
+				</span>
 				<p>{el.getElementsByTagName( 'p' )[0].textContent}</p>
-				</div>
+
+				</li>
 				);
 		});
 		return (
 			<div className="commentList">
+			<ul class="demo-list-icon mdl-list">
 			{commentNodes}
+			</ul>
+
 			</div>
 			);
 	}
@@ -81,8 +88,7 @@ var CommentForm = React.createClass({
 	handleSubmit: function(e) {
 
 		e.preventDefault();
-		console.log(tinymce.activeEditor.getContent());
-
+		var tinymce_editor_id = 'textarea-comment'; 
 		axios.post('http://localhost:8000/comments', 
 		{
 			articleId: "id_1",
@@ -95,6 +101,8 @@ var CommentForm = React.createClass({
 		.catch(function (error) {
 			console.log(error);
 		});
+
+		tinymce.get(tinymce_editor_id).setContent('');
 	},
 	render: function() {
 		return (
