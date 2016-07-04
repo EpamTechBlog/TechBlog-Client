@@ -1,0 +1,68 @@
+.demo-drawer {
+  border: none;
+  left: 250px;
+  /*top: 60px;*/
+  background-color: #1a9cb0;
+
+  height:100vh;
+  position: relative;
+
+}
+/* END iOS Safari specific workaround */
+.demo-drawer .mdl-menu .mdl-menu__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+
+.demo-navigation {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
+}
+
+.demo-navigation .mdl-navigation__link {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: white !important;
+  height: 100%;
+}
+
+.mdl-layout__drawer .mdl-navigation {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-items: stretch;
+
+  padding-top: 0px;
+}
+
+.demo-navigation .mdl-navigation__link:hover{
+  background-color: #1891A3 !important;
+}
+.demo-navigation .mdl-navigation__link .material-icons {
+  font-size: 24px;
+  color: white !important;
+  margin-right: 32px;
+}
+.addnew{
+  background-color: #e87a31;
+}
+
+
