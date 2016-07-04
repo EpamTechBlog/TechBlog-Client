@@ -44,11 +44,11 @@ class Articles extends React.Component{
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log('get data from server',data.articles);
+        // console.log('get data from server',data.articles);
         this.setState({posts: data.articles});
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error('err',err.toString());
+        // console.error('err',err.toString());
       }.bind(this)
     });
   }
