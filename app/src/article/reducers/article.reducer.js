@@ -1,6 +1,4 @@
 'use strict';
-
-
 const articleReducer = (state = [], action) => {
 
   switch (action.type) {
@@ -9,6 +7,7 @@ const articleReducer = (state = [], action) => {
           ...state,
           action.article
         ]
+
     default:
       return state
   }

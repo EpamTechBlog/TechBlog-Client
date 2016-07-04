@@ -3,11 +3,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PostComponent from '../components/post.component.jsx';
-//import AllArticlesComponent from '../components/articles.component.jsx';
-//import ArticleComponent from '../components/article.component.jsx';
-//import EditComponent from '../components/edit.component.jsx';
-
-// import the comments component
+import store from '../../../store.js';
 import * as articleActions from '../actions/article.action.js';
 
 
@@ -34,7 +30,8 @@ class ContentComponent extends React.Component {
 
 const mapStateToProps = (store) => {
   return {
-    articleContent: store.articleContent
+    visibilityFilter: store.visibilityFilter,
+    articles: store.articles
   }
 }
 

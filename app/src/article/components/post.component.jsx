@@ -3,13 +3,21 @@ require('../../../styles/article.style.css');
 import $ from "jquery";
 import cookie from 'react-cookie';
 
+import store from '../../../store.js'
 
+// const PostComponent = ({ title }) => (
+//   <div>{title}</div>
+// );
 
 class PostComponent extends React.Component{
 
   constructor() {
     super();
   }
+  // componentDidMount(){
+  //   console.log('in did mount');
+  //   this.props.asynGetListMiddleware(this.props.topic);
+  // }
 
   render() {
     return (
@@ -37,18 +45,12 @@ class PostComponent extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.refs.articleTitle.value);
-    console.log(this.refs.articleText.value);
-    console.log(this.props);
-
     const title = this.refs.articleTitle.value;
     const text = this.refs.articleText.value;
-    this.props.asynPostMiddleware(title, text, cookie.load('userId'));
+    console.log(store.getState(), 'before');
+    console.log(this.props, 'this.props.');
+    this.props.asynPostMiddleware(title, text, cookie.load('username'));
   }
-
-  // updateText(e) {
-  //   console.log(e.target.value);
-  // }
 }
 
 export default PostComponent;

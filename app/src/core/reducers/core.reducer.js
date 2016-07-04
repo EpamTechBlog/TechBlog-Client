@@ -5,7 +5,7 @@ import visibilityFilter from '../../article/reducers/visibilityFilter.reducer';
 
 const coreReducer = combineReducers({
   loginOrRegister : userReducer,
-  articleReducer,
+  articles : articleReducer,
   visibilityFilter
 })
 
