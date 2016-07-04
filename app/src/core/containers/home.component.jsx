@@ -4,7 +4,7 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
 import SidebarComponent from '../components/sidebar.component.jsx';
-import CommentComponent from '../components/comment.component.jsx';
+import CategoryComponent from '../../article/components/category.component.jsx';
 
 class HomeComponent extends React.Component{
 
@@ -22,13 +22,8 @@ class HomeComponent extends React.Component{
 			<NavigationComponent />
 			</div>
 
-			<div className="sidebar">
-			<SidebarComponent />
-
-			</div>
-
-			<div className="comment">
-			<CommentComponent/>
+			<div>
+			<CategoryComponent />
 			</div>
 
 			</div>
