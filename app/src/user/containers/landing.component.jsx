@@ -18,12 +18,12 @@ class LandingComponent extends React.Component{
   }
 
   render() {
-   
+
     if (this.props.loginOrRegister === 'signin') {
-      
+
       return <SigninComponent {...this.props} />
     } else {
-      
+
       return <SignupComponent {...this.props} />
     }
   }

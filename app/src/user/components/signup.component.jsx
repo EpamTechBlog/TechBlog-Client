@@ -2,17 +2,18 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
-import { userSignup } from '../actions/user.action';
-require('../../styles/index.style.css');
-class SigninComponent extends React.Component{
+import { userSignin } from '../actions/user.action';
+require('../../../styles/index.style.css');
+class SingupComponent extends React.Component{
+
 
   constructor() {
     super();
-    this.state = { username : '', password: '' };
+    this.state = { username : '', password: '', confirmPassword : ''};
   }
 
   render() {
-    
+
     return (
               <div className="backcontent mdl-layout mdl-js-layout">
 
@@ -30,6 +31,10 @@ class SigninComponent extends React.Component{
                         <input className="mdl-textfield__input" type="password" id="addr2" value={this.state.password} required onChange={this.updatePassword.bind(this)}/>
                         <label className="mdl-textfield__label" for="addr2">Password</label>
                       </div>
+                      <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input className="mdl-textfield__input" type="password" id="addr3" value={this.state.confirmPassword} required onChange={this.updateConfirmPassword.bind(this)}/>
+                        <label className="mdl-textfield__label" for="addr3">Confirm Password</label>
+                      </div>
                       <div className='errMsg'>
                         {(() => {
                               if(this.state.errMsg){
@@ -44,9 +49,9 @@ class SigninComponent extends React.Component{
                     </div>
                     <div className='control'>
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={this.handleSubmit.bind(this)}>
-                        Sign in
+                        Sign Up
                       </button>
-                      <Link to='/' onClick={this.props.userSignup}>No account? Sign Up</Link>
+                      <Link to='/' onClick={this.props.userSignin}>Have Account? Sign In</Link>
                     </div>
                     <div className='info'>
                       <br></br>
@@ -76,8 +81,16 @@ class SigninComponent extends React.Component{
     this.setState({password : e.target.value});
     //console.log(this.state);
   }
+  updateConfirmPassword(e){
+    this.setState({confirmPassword : e.target.value});
+    //console.log(this.state);
+  }
   handleSubmit(e){
     e.preventDefault();
+    if(this.state.password != this.state.confirmPassword){
+      this.setState({errMsg : "passwords do not match!"});
+      return;
+    }
     if(this.state.username.length > 6 && this.state.password.length > 6){
       this.submitForm(this.state.username, this.state.password);
     }else{
@@ -87,21 +100,26 @@ class SigninComponent extends React.Component{
   submitForm(username, password) {
 
         $.ajax({
-            url: 'http://localhost:8000/users/login',
+            url: 'http://localhost:8000/users/register',
             dataType: 'json',
             type: "POST",
             data: {username : username, password : password},
             cache: false,
             success: function(data) {
-              cookie.save('username', data.username, { path: '/' });
-              cookie.save('userId', data._id, { path: '/' });
-              hashHistory.push('/home');
+              if(data.code && data.code == 11000){
+                this.setState({errMsg : 'username already exists!'});
+              }else{
+                cookie.save('username', data.username, { path: '/' });
+                cookie.save('userId', data._id, { path: '/' });
+                hashHistory.push('/home');
+              }
             }.bind(this),
             error: function(xhr, status, err) {
-              this.setState({errMsg : 'username and password do not match'});
+              this.setState({errMsg : 'register failed, please try again later!'});
               console.error(error, err.toString());
             }.bind(this)
           });
    }
 }
-export default SigninComponent;
+
+export default SingupComponent;
