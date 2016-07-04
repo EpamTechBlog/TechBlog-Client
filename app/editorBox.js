@@ -1,4 +1,5 @@
 tinymce.init({
+
 	selector: '#textarea-comment',
 	height: 200,
 	plugins: [
@@ -13,11 +14,10 @@ tinymce.init({
 	'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
 	'//www.tinymce.com/css/codepen.min.css'
 	]
-
 });
 
 tinymce.init({
-	selector: 'textarea',
+	selector: '#textarea-post',
 	theme: 'modern',
 	width: 800,
 	height: 300,

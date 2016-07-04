@@ -42,7 +42,7 @@ class NavigationComponent extends React.Component{
 
 						<ul className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
 						htmlFor="demo-menu-lower-right">
-						<li className="mdl-menu__item">My Profile</li>
+						<li className="mdl-menu__item" onClick={this.profile.bind(this)}>My Profile</li>
 						<li className="mdl-menu__item" onClick={this.logout.bind(this)}>Logout</li>
 						</ul>
 						</div>
@@ -60,7 +60,13 @@ class NavigationComponent extends React.Component{
 		cookie.remove('username', { path: '/' });
 		cookie.remove('userId', { path: '/' });
 		this.setState({username : undefined, userId : undefined});
+		hashHistory.push('/home');
 
+	}
+
+	profile(){
+
+		hashHistory.push('/profile');
 	}
 }
 export default NavigationComponent

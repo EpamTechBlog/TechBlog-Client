@@ -1,7 +1,7 @@
 @import 'base.style.css'; /*import fonts*/
 
 .backcontent {
-  background: url('/app/res/background.jpg') center / cover;
+  background: url('/app/res/images/background.jpg') center / cover;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
@@ -153,6 +153,5 @@
 
 .comment{
   z-index: 0;
-
 }
 
