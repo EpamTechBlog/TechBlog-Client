@@ -15,19 +15,15 @@ class SingleTopicComponent extends React.Component{
 
 	render(){
 	  return (
-			    <div>
-			    	<div className="mdl-cell mdl-cell--4-col">	
-						<div className="grid">
-							<figure className={this.props.effect}>
-								<img src={this.props.imgsrc}/>
-								<figcaption>
-									<h2>Crazy <span>{this.props.topic}</span></h2>
-									<p>{this.props.description}.</p>
-									<a href={this.props.link}>View more</a>
-								</figcaption>			
-							</figure>
-						</div>
-					</div>
+	    		<div className="tt">	
+					<figure className={this.props.effect}>
+						<img src={this.props.imgsrc}/>
+						<figcaption>
+							<h2>Crazy <span>{this.props.topic}</span></h2>
+							<p>{this.props.description}.</p>
+							<a href={this.props.link}>View more</a>
+						</figcaption>			
+					</figure>
 				</div>
 			)
 	}
