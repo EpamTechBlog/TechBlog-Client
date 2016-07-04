@@ -1,4 +1,5 @@
 'use strict';
+
 import $ from "jquery";
 import store from '../../../store.js';
 
@@ -9,6 +10,7 @@ function addArticle(article) {
 // function getArticles(articles) {
 //   return { type: 'GET_ARTICLES', articles }
 // }
+
 
 function postRequestToServer(title, content, author) {
   return axios.post('http://localhost:8000/articles',
@@ -64,6 +66,25 @@ export function asynPostMiddleware(title, content, author) {
 //     .catch(err => console.log(err));
 //   }
 // }
+//Article List
+function getAllArticles(type,key){
+  return new Promise((resolve,reject) =>{
+    $.ajax({
+      url: '//localhost:8000/articles/'+type+'/'+key,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log('getAllArticles get data from server',data.articles);
+        resolve(data.articles);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.log('getAllArticles err', err.toString());
+        reject(err);
+      }.bind(this)
+    });
+  })
+};
+
 
 // function createPromise(title, content, author) {
 //   const promise = new Promise((resolve, reject) => {
@@ -84,3 +105,4 @@ export function asynPostMiddleware(title, content, author) {
 //   });
 //   return promise;
 // }
+

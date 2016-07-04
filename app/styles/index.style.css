@@ -1,11 +1,11 @@
 @import 'base.style.css'; /*import fonts*/
 
 .backcontent {
-  background: url('/app/res/background.jpg') center / cover;
+  background: url('/app/res/images/background.jpg') center / cover;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
-  width:100vw;
+  width:50vw;
   margin:0 auto;
   color:white;
   margin-top:100px;
@@ -14,7 +14,7 @@
 }
 
 .content div{
-  width:100vw;
+  width:50vw;
   height:auto !important;
 }
 
@@ -29,7 +29,7 @@
 }
 .content .form{
 
-  width:100vw;
+  width:40vw;
   margin:0 auto;
   margin-top: 10px;
   background-color: white;
@@ -38,7 +38,7 @@
 }
 .content .info{
   height:100px;
-  width:100vw;
+  width:40vw;
   margin:0 auto;
   line-height: 1em;
   font-size:1em;
@@ -47,7 +47,7 @@
 }
 .content .control{
   height:50px;
-  width:100vw;
+  width:40vw;
   margin:0 auto;
   margin-top:20px;
 }
@@ -153,6 +153,5 @@
 
 .comment{
   z-index: 0;
-
 }
 

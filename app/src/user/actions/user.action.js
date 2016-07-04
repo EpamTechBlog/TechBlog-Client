@@ -17,9 +17,3 @@ export function userLogout(text){
     text
   }
 }
-
-export function topBar(){
-  return{
-    type:''
-  }
-}
