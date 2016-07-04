@@ -33,9 +33,7 @@ class BaseInfoComponent extends React.Component{
 
     return (
               <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container profile-baseInfo">
-                <div className="mdl-card__title">
-
-                </div>
+                <br/>
                 <div className="mdl-card__supporting-text mdl-grid">
                   <div className="mdl-cell--4-col">
                     <img className="profile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>

@@ -1,7 +1,7 @@
 @import 'base.style.css'; /*import fonts*/
 
 .backcontent {
-  background: url('/app/res/background.jpg') center / cover;
+  background: url('/app/res/images/background.jpg') center / cover;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
@@ -126,16 +126,16 @@
 .postdetails .title{
   font-family: 'Source Sans Pro';
   background-color: white;
-  font-size: 19px;  
+  font-size: 19px;
 }
 .postdetails .tag{
   font-family: 'Source Sans Pro';
   background-color: white;
-  font-size: 9px;  
+  font-size: 9px;
 }
 .postdetails .text .author .date{
   font-family: 'Source Sans Pro';
   background-color: white;
-  font-size: 14px;  
+  font-size: 14px;
 }
 
