@@ -23,6 +23,20 @@ body {
 	font-family: 'Raleway', Arial, sans-serif;
 }
 
+.hahaha{
+	width:800px;
+}
+
+/*.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}*/
+
 a {
 	outline: none;
 	color: #3498db;
@@ -221,7 +235,7 @@ body #cda-remove {
 		url('../res/fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');*/
 }
 
-.grid {
+.tt {
 	position: relative;
 	margin: 0 auto;
 	padding: 1em 0 4em;
@@ -231,7 +245,7 @@ body #cda-remove {
 }
 
 /* Common style */
-.grid figure {
+.tt figure {
 	position: relative;
 	float: left;
 	overflow: hidden;
@@ -245,15 +259,15 @@ body #cda-remove {
 	cursor: pointer;
 }
 
-.grid figure img {
+.tt figure img {
 	position: relative;
-	display: block;
+	display: inline-block;
 	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
 }
 
-.grid figure figcaption {
+.tt figure figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -262,13 +276,13 @@ body #cda-remove {
 	backface-visibility: hidden;
 }
 
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.tt figure figcaption::before,
+.tt figure figcaption::after {
 	pointer-events: none;
 }
 
-.grid figure figcaption,
-.grid figure figcaption > a {
+.tt figure figcaption,
+.tt figure figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -278,7 +292,7 @@ body #cda-remove {
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure figcaption > a {
+.tt figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -286,21 +300,21 @@ body #cda-remove {
 	opacity: 0;
 }
 
-.grid figure h2 {
+.tt figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.grid figure h2 span {
+.tt figure h2 span {
 	font-weight: 800;
 }
 
-.grid figure h2,
-.grid figure p {
+.tt figure h2,
+.tt figure p {
 	margin: 0;
 }
 
-.grid figure p {
+.tt figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
@@ -1379,7 +1393,7 @@ figure.effect-chico:hover p {
 		padding: 0 10px;
 		text-align: center;
 	}
-	.grid figure {
+	.tt figure {
 		display: inline-block;
 		float: none;
 		margin: 10px auto;
