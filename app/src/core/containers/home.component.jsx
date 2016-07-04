@@ -5,6 +5,9 @@ import $ from "jquery";
 import NavigationComponent from '../components/navigation.component.jsx';
 import SidebarComponent from '../components/sidebar.component.jsx';
 import CategoryComponent from '../../article/components/category.component.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as topicActions from '../actions/topic.action';
 
 class HomeComponent extends React.Component{
 
@@ -23,7 +26,7 @@ class HomeComponent extends React.Component{
 			</div>
 
 			<div>
-			<CategoryComponent />
+			<CategoryComponent {...this.props}/>
 			</div>
 
 			</div>
@@ -32,5 +35,8 @@ class HomeComponent extends React.Component{
 
 	}
 }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(topicActions, dispatch)
+}
 
-export default HomeComponent;
+export default connect(null, mapDispatchToProps)(HomeComponent);

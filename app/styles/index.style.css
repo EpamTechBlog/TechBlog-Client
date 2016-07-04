@@ -5,16 +5,16 @@
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 }
 .content{
-  width:50vw;
+  width:50%;
   margin:0 auto;
   color:white;
-  margin-top:100px;
+  margin-top:15%;
   border-radius: 8px;
   background-color: rgba(100,100,100,0.4);
 }
 
 .content div{
-  width:50vw;
+  width:50%;
   height:auto !important;
 }
 
@@ -29,7 +29,7 @@
 }
 .content .form{
 
-  width:40vw;
+  width:40%;
   margin:0 auto;
   margin-top: 10px;
   background-color: white;
@@ -38,7 +38,7 @@
 }
 .content .info{
   height:100px;
-  width:40vw;
+  width:40%;
   margin:0 auto;
   line-height: 1em;
   font-size:1em;
@@ -47,7 +47,7 @@
 }
 .content .control{
   height:50px;
-  width:40vw;
+  width:40%;
   margin:0 auto;
   margin-top:20px;
 }
