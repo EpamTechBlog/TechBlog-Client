@@ -25,6 +25,7 @@ ReactDOM.render((
 	</Provider>
 	), document.getElementById('content'))
 
+
 function checkAuth(nextState, replaceState) {
 	if (hasLogin()) {
 		replaceState({ nextPathname: nextState.location.pathname }, '/home');
