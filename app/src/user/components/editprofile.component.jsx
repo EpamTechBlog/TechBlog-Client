@@ -50,25 +50,25 @@ class EditProfileComponent extends React.Component{
                   <label className="profile-edit-label">
                     Job Title:
                   </label>
-                  <input type='text'ref='jobTitle' />
+                  <input type='text' ref='jobTitle' />
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Address:
                   </label>
-                  <input type='text'ref='homeAddress' />
+                  <input type='text' ref='homeAddress' />
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Email:
                   </label>
-                  <input type='text'ref='email' />
+                  <input type='text' ref='email' />
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Phone:
                   </label>
-                  <input type='text'ref='phone'/>
+                  <input type='text' ref='phone'/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
@@ -100,16 +100,23 @@ class EditProfileComponent extends React.Component{
   updateProfile(){
     var file = this.refs.imagefile.files[0];
     var reader = new FileReader();
-    reader.readAsDataURL(file);
-    var self = this;
+    if(file){
+      reader.readAsDataURL(file);
+      var self = this;
+    }
     reader.onload = function() {
-      console.log(this.result);
         var img = this.result;
          $.ajax({
             url: 'http://localhost:8000/users/' + cookie.load("userId"),
             dataType: 'json',
             type: "PUT",
-            data: {profileImage : img},
+            data: {
+              profileImage : img,
+              jobTitle : self.refs.jobTitle.value,
+              homeAddress : self.refs.homeAddress.value,
+              email : self.refs.email.value,
+              phone : self.refs.phone.value
+                  },
             cache: false,
             success: function(data) {
               console.log('profile updated successfully');
