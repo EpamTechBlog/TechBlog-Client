@@ -16,7 +16,6 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #2f3238;
 	color: #fff;
 	font-weight: 400;
 	font-size: 1em;
@@ -409,7 +408,7 @@ figure.effect-sadie h2 {
 	top: 50%;
 	left: 0;
 	width: 100%;
-	color: #484c61;
+	color: #fff;
 	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
 	transition: transform 0.35s, color 0.35s;
 	-webkit-transform: translate3d(0,-50%,0);
