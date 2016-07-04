@@ -5,31 +5,36 @@ import SigninComponent from './src/user/components/signin.component.jsx';
 import SignupComponent from './src/user/components/signup.component.jsx';
 import NoMatchComponent from './src/user/components/signup.component.jsx';
 import HomeComponent from './src/core/containers/home.component.jsx';
+import ArticlesComponent from './src/article/containers/article.component.jsx';
 import ProfileComponent from './src/user/containers/profile.component.jsx';
 import LandingComponent from './src/user/containers/landing.component.jsx';
 import App from './src/core/containers/app.component.jsx';
-
 import store from './store';
 import { Provider } from 'react-redux'
 import cookie from 'react-cookie';
 
 ReactDOM.render((
 	<Provider store={store}>
-	<Router history={hashHistory}>
-	<Route component={App}>
-	<Route path='/' onEnter={checkAuth} component={LandingComponent} />
-	</Route>
-	<Route path='/home' component={HomeComponent} />
-	<Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
-	</Router>
+	  <Router history={hashHistory}>
+	    <Route component={App}>
+	      <Route path='/' onEnter={checkAuth} component={LandingComponent} />
+	    </Route>
+	    <Route path='/home' component={HomeComponent} />
+	    <Route path='/articles' component={ArticlesComponent} />
+      <Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
+	  </Router>
 	</Provider>
+<<<<<<< HEAD
 	), document.getElementById('content'))
 
+=======
+), document.getElementById('content'))
+>>>>>>> e29a1dc28ab9e392f848d2ec381b67946a9d8925
 
 function checkAuth(nextState, replaceState) {
-	if (hasLogin()) {
-		replaceState({ nextPathname: nextState.location.pathname }, '/home');
-	}
+  if (hasLogin()) {
+    replaceState({ nextPathname: nextState.location.pathname }, '/home');
+  }
 }
 
 function hasLogin(){
@@ -37,14 +42,8 @@ function hasLogin(){
 	return (cookie.load('username') && cookie.load('userId'));
 }
 
-function notLogin(){
+function notLogin(nextState, replaceState){
 	if(!hasLogin()) {
 		replaceState({ nextPathname: nextState.location.pathname }, '/');
-	} 
-}
-
-function notLogin(){
-	if(!hasLogin()) {
-		replaceState({ nextPathname: nextState.location.pathname }, '/');
-	} 
+	}
 }

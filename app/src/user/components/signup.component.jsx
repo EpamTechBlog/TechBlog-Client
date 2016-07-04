@@ -13,7 +13,7 @@ class SingupComponent extends React.Component{
   }
 
   render() {
-    
+
     return (
               <div className="backcontent mdl-layout mdl-js-layout">
 

@@ -29,6 +29,7 @@ var CommentList = React.createClass({
 		return {data: []};
 	},
 
+
 	componentDidMount: function() {
 		//for test id_1
 		this.loadCommentsFromServer('id_1');

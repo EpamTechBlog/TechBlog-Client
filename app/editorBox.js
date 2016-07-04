@@ -1,4 +1,5 @@
 tinymce.init({
+<<<<<<< HEAD
 	selector: '#textarea-comment',
 	height: 200,
 	plugins: [
@@ -15,4 +16,17 @@ tinymce.init({
 	'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
 	'//www.tinymce.com/css/codepen.min.css'
 	]
+=======
+  selector: 'textarea',
+  theme: 'modern',
+  width: 800,
+  height: 300,
+  plugins: [
+  'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+  'save table contextmenu directionality emoticons template paste textcolor'
+  ],
+  content_css: 'css/content.css',
+  toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+>>>>>>> e29a1dc28ab9e392f848d2ec381b67946a9d8925
 });

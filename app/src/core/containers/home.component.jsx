@@ -24,6 +24,7 @@ class HomeComponent extends React.Component{
 
 			<div className="sidebar">
 			<SidebarComponent />
+
 			</div>
 
 			<div className="comment">
