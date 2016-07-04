@@ -6,6 +6,7 @@
   font-size: 1rem;
   height:60px;
   display:block !important;
+/*  display:block !important;*/
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
 
 }
@@ -15,11 +16,27 @@
 }
 .mdl-layout__header .mdl-layout__drawer-button{
   color:white;
+  background-color: #666666;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
+
 }
 .navi-signup{
 	text-decoration: none;
 }
 .mdl-ripple.is-animating{
+	width: 92.5097px;
+	height: 92.5097px;
+	transform: translate(-50%, -50%) translate(20px, 20px);
+}
+.mdl-menu__container.is-upgraded.is-visible{
+	right: 0px;
+	top: 63px;
+	width: 196.953px;
+	height: 160px;
+}
+.mdl-menu__outline.mdl-menu--bottom-right{
 	width: 92.5097px;
 	height: 92.5097px;
 	transform: translate(-50%, -50%) translate(20px, 20px);
@@ -47,4 +64,7 @@
   font-size: 1rem;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
   padding : 0px;
+  left: 0;
+  right: 0;
+
 }
