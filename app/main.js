@@ -15,30 +15,30 @@ import cookie from 'react-cookie';
 
 ReactDOM.render((
 	<Provider store={store}>
-	  <Router history={hashHistory}>
-	    <Route component={App}>
-	      <Route path='/' onEnter={checkAuth} component={LandingComponent} />
-	    </Route>
-	    <Route path='/home' component={HomeComponent} />
-	    <Route path='/articles' component={ArticlesComponent} />
-      <Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
-	  </Router>
+	<Router history={hashHistory}>
+	<Route component={App}>
+	<Route path='/' onEnter={checkAuth} component={LandingComponent} />
+	</Route>
+	<Route path='/home' component={HomeComponent} />
+	<Route path='/articles' component={ArticlesComponent} />
+	<Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
+	</Router>
 	</Provider>
 	), document.getElementById('content'))
 
-function checkAuth(nextState, replaceState) {
-  if (hasLogin()) {
-    replaceState({ nextPathname: nextState.location.pathname }, '/home');
-  }
-}
-
-function hasLogin(){
-
-	return (cookie.load('username') && cookie.load('userId'));
-}
-
-function notLogin(nextState, replaceState){
-	if(!hasLogin()) {
-		replaceState({ nextPathname: nextState.location.pathname }, '/');
+	function checkAuth(nextState, replaceState) {
+		if (hasLogin()) {
+			replaceState({ nextPathname: nextState.location.pathname }, '/home');
+		}
 	}
-}
+
+	function hasLogin(){
+
+		return (cookie.load('username') && cookie.load('userId'));
+	}
+
+	function notLogin(nextState, replaceState){
+		if(!hasLogin()) {
+			replaceState({ nextPathname: nextState.location.pathname }, '/');
+		}
+	}
