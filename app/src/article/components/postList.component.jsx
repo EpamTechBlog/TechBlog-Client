@@ -16,7 +16,7 @@ class PostList extends React.Component{
     );
   }
   render() {
-    console.log('postlist get posts',  this.props.posts);
+    // console.log('postlist get posts',  this.props.posts);
     let posts;
     if(this.props.posts){
       posts = this.props.posts.map((post)=>{
@@ -28,9 +28,9 @@ class PostList extends React.Component{
         <table className="mdl-data-table mdl-js-data-table mdl-shadow--3dp articleContainer">
           <thead>
             <tr>
-              <th className="mdl-data-table__cell--non-numeric">Title</th>
-              <th className="mdl-data-table__cell--non-numeric">Topic</th>
-              <th className="mdl-data-table__header--sorted-descending mdl-data-table__cell--non-numeric">Publish Date</th>
+              <th className="mdl-data-table__cell--non-numeric postItem">Title</th>
+              <th className="mdl-data-table__cell--non-numeric postItem">Topic</th>
+              <th className="mdl-data-table__header--sorted-descending mdl-data-table__cell--non-numeric postItem">Publish Date</th>
             </tr>
           </thead>
           <tbody>
@@ -48,5 +48,3 @@ const mapStateToProps = (store) => {
   }
 }
 export default connect(mapStateToProps)(PostList)
-
-// export default PostList;

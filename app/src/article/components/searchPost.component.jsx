@@ -19,7 +19,7 @@ class SearchPost extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const content = this.state.searchContent.trim();
-    //TODO： send data to server
+    //TODO： get data from server or from store
 
     this.setState({
       searchContent : '',
