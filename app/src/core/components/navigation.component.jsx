@@ -13,7 +13,6 @@ class NavigationComponent extends React.Component{
 
 	componentDidMount(){
 
-		setInterval(() => {
 			$.ajax({
 		        url: 'http://localhost:8000/users/' + cookie.load('userId'),
 		        dataType: 'json',
@@ -26,7 +25,6 @@ class NavigationComponent extends React.Component{
 		        	console.error(error, err.toString());
 		        }.bind(this)
 		    });
-	  	}, 2000);
 	}
 
 	render(){
@@ -50,7 +48,7 @@ class NavigationComponent extends React.Component{
 					return (
 						<div className="mdl-list__item">
 						<span className="mdl-list__item-primary-content">
-						<img className="navi-profile-Img" src={this.state.userImage ? this.state.userImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"} />						
+						<img className="navi-profile-Img" src={this.state.userImage ? this.state.userImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"} />
 						<span>{this.state.username}</span>
 						</span>
 						<div className="mdl-layout-spacer"></div>

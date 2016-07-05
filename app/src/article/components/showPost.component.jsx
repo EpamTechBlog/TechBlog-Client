@@ -10,9 +10,9 @@ class ShowPost extends React.Component{
   render(){
     return (
         <tr>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.title}</td>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.topic}</td>
-          <td className="mdl-data-table__cell--non-numeric">{this.props.post.publishDate}</td>
+          <td className="mdl-data-table__cell--non-numeric postItem">{this.props.post.title}</td>
+          <td className="mdl-data-table__cell--non-numeric postItem">{this.props.post.topic}</td>
+          <td className="mdl-data-table__cell--non-numeric postItem">{this.props.post.publishDate}</td>
         </tr>
     )
   }

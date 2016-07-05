@@ -18,6 +18,8 @@ class PostList extends React.Component{
   }
   render() {
     let posts;
+    console.log('this.props',this.props);
+
     if(this.props.posts.length !== 0){
       posts = this.props.posts
       .filter((post)=>{
