@@ -2,6 +2,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Articles from '../components/articles.component.jsx';
 import PostComponent from '../components/post.component.jsx';
 import store from '../../../store.js';
 
@@ -11,29 +12,23 @@ class ContentComponent extends React.Component {
         super();
     }
     render() {
-      return (
-        <div>
-          <Articles />
-          <PostComponent />
-        </div>
-        )
+      console.log(this.props.topic)
+      if(this.props.topic === 'POST_PAGE'){
+          return (
+              <div>
+                <p>post</p>
+                <PostComponent />
+              </div>
+            )
+      } else {
+          return (
+                  <div>
+                    <p>not post</p>
+                    <Articles />
+                  </div>
+                 )
+      }
     }
-    componentDidMount(){
-      console.log('enter ContentComponent componentDidMount');
-      this.props.getAllArticlesAsyn('topic','DDDD');
-    }
 }
 
-const mapStateToProps = (store) => {
-  return {
-
-    visibilityFilter: store.visibilityFilter,
-    articles: store.articles
-
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(articleActions, dispatch)
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ContentComponent)
+export default ContentComponent

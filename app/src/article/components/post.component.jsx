@@ -28,7 +28,11 @@ class PostComponent extends React.Component{
             <label className="mdl-textfield__label" for="articleTitle">Title...</label>
           </div>
 
-          <textarea id="textarea-post" ref='articleText'></textarea>
+          <label><input name='topic' type='radio' value='JAVA'/>JAVA</label>
+          <label><input name='topic' type='radio' value='PHP'/>PHP</label>
+          <label><input name='topic' type='radio' value='C#'/>C#</label>
+
+          <textarea className='textarea' ref='articleText'></textarea>
           <div className='articlePostButton'>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
              type='submit'>

@@ -6,6 +6,11 @@ function addArticle(article) {
   return { type: 'ADD_ARTICLE', article }
 }
 
+function getTopicArticles(articles) {
+  console.log('in get action', articles);
+  return { type : 'GET_TOPIC_ARTICLES', articles}
+}
+
 
 function postRequestToServer(title, content, author) {
   return axios.post('http://localhost:8000/articles',
@@ -30,15 +35,16 @@ function setArticleTopic(topic) {
 }
 
 function getRequestToServer(topic) {
-  return axios.get('http://localhost:8000/articles' + topic)
+  return axios.get('http://localhost:8000/articles' + '/topic/' + topic)
 }
 
 export function asynGetArticlesByTopicMiddle (topic) {
   return function (dispatch) {
-    return getRequestToServer(topic).then((articles) => {
-      dispatch(addArticle(articles));
+    return getRequestToServer(topic).then((res) => {
+      if(res.data.articles.length != 0)
+        dispatch(getTopicArticles(res.data.articles));
       dispatch(setArticleTopic(topic));
-    }).then(() => console.log(store.getState(), 'after choose topic'))
+    }).then(() => console.log('after choose topic', store.getState()))
     .catch(err => console.log(err));
   }
 }

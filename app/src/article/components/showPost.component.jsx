@@ -4,7 +4,9 @@ class ShowPost extends React.Component{
   constructor(){
     super();
   }
-
+  // componentDidMount() {
+  //   console.log('');
+  // }
   render(){
     return (
         <tr>
@@ -16,4 +18,4 @@ class ShowPost extends React.Component{
   }
 }
 
-export default Post;
+export default ShowPost;
