@@ -1,6 +1,6 @@
 'use strict';
 
-import $ from "jquery";
+//import $ from "jquery";
 import store from '../../../store.js';
 
 function addArticle(article) {
@@ -26,9 +26,27 @@ export function asynPostMiddleware(title, content, author) {
     return postRequestToServer(title, content, author).then(
       article => dispatch(addArticle(article))
       //error => dispatch(setVisibilityFilter('POST_ERROR'))
-    ).then(() => console.log(store.getState(), 'after'))
+    ).then(() => console.log(store.getState(), 'after post'))
     .catch(err => console.log(err));
   };
+}
+
+function setArticleTopic(topic) {
+  return { type: 'SET_ARTICLE_TOPIC', topic }
+}
+
+function getRequestToServer(topic) {
+  return axios.get('http://localhost:8000/articles' + topic)
+}
+
+export function asynGetArticlesByTopicMiddle (topic) {
+  return function (dispatch) {
+    return getRequestToServer(topic).then((articles) => {
+      dispatch(addArticle(articles));
+      dispatch(setArticleTopic(topic));
+    }).then(() => console.log(store.getState(), 'after choose topic'))
+    .catch(err => console.log(err));
+  }
 }
 
 
@@ -67,23 +85,23 @@ export function asynPostMiddleware(title, content, author) {
 //   }
 // }
 //Article List
-function getAllArticles(type,key){
-  return new Promise((resolve,reject) =>{
-    $.ajax({
-      url: '//localhost:8000/articles/'+type+'/'+key,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        console.log('getAllArticles get data from server',data.articles);
-        resolve(data.articles);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log('getAllArticles err', err.toString());
-        reject(err);
-      }.bind(this)
-    });
-  })
-};
+// function getAllArticles(type,key){
+//   return new Promise((resolve,reject) =>{
+//     $.ajax({
+//       url: '//localhost:8000/articles/'+type+'/'+key,
+//       dataType: 'json',
+//       cache: false,
+//       success: function(data) {
+//         console.log('getAllArticles get data from server',data.articles);
+//         resolve(data.articles);
+//       }.bind(this),
+//       error: function(xhr, status, err) {
+//         console.log('getAllArticles err', err.toString());
+//         reject(err);
+//       }.bind(this)
+//     });
+//   })
+// };
 
 
 // function createPromise(title, content, author) {

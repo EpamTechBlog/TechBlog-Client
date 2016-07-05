@@ -16,7 +16,7 @@ class SidebarComponent extends React.Component{
 			<div className="demo-drawer mdl-layout__drawer ">
 
 				<nav className="demo-navigation mdl-navigation ">
-					<span className="mdl-navigation__link addnew" onClick={this.test}><i className="material-icons" role="presentation">add</i>P</span>
+					<span className="mdl-navigation__link addnew" onClick={this.props.addNew}><i className="material-icons" role="presentation">add</i>P</span>
 					<a className="mdl-navigation__link addnew" href=""><i className="material-icons" role="presentation">add</i>New Posts</a>
 					<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">home</i>Home</a>
 					<a className="mdl-navigation__link" href=""><i className="material-icons" role="presentation">inbox</i>Inbox</a>
