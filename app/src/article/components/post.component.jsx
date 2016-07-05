@@ -3,11 +3,19 @@ require('../../../styles/article.style.css');
 import $ from "jquery";
 import cookie from 'react-cookie';
 
+
+import store from '../../../store.js'
+
+
 class PostComponent extends React.Component{
 
   constructor() {
     super();
   }
+  // componentDidMount(){
+  //   console.log('in did mount');
+  //   this.props.asynGetListMiddleware(this.props.topic);
+  // }
 
   render() {
     return (
@@ -20,7 +28,11 @@ class PostComponent extends React.Component{
             <label className="mdl-textfield__label" for="articleTitle">Title...</label>
           </div>
 
-          <textarea id="textarea-post" ref='articleText'></textarea>
+          <label><input name='topic' type='radio' value='JAVA'/>JAVA</label>
+          <label><input name='topic' type='radio' value='PHP'/>PHP</label>
+          <label><input name='topic' type='radio' value='C#'/>C#</label>
+
+          <textarea className='textarea' ref='articleText'></textarea>
           <div className='articlePostButton'>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
              type='submit'>
@@ -36,18 +48,12 @@ class PostComponent extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.refs.articleTitle.value);
-    console.log(this.refs.articleText.value);
-    console.log(this.props);
-
     const title = this.refs.articleTitle.value;
     const text = this.refs.articleText.value;
-    this.props.asynPostMiddleware(title, text, cookie.load('userId'));
+    console.log(store.getState(), 'before');
+    console.log(this.props, 'this.props.');
+    this.props.asynPostMiddleware(title, text, cookie.load('username'));
   }
-
-  // updateText(e) {
-  //   console.log(e.target.value);
-  // }
 }
 
 export default PostComponent;

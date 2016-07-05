@@ -1,7 +1,13 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+
 import NavigationComponent from '../../core/components/navigation.component.jsx';
 import SidebarComponent from '../../core/components/sidebar.component.jsx';
 import ContentComponent from '../containers/content.component.jsx';
+import * as articleActions from '../actions/article.action.js';
+import store from '../../../store';
+import { connect } from 'react-redux';
+
 require('../../../styles/article.style.css');
 
 class ArticleComponent extends React.Component{
@@ -11,15 +17,16 @@ class ArticleComponent extends React.Component{
   }
 
   render() {
+    console.log('111111111store', this.props)
     return (
         <div>
           <div className='frame'>
             <NavigationComponent />
-            <SidebarComponent />
+            <SidebarComponent {...this.props}/>
           </div>
 
           <div className='articleContent'>
-            <ContentComponent />
+            <ContentComponent {...this.props}/>
           </div>
 
         </div>
@@ -27,4 +34,16 @@ class ArticleComponent extends React.Component{
   }
 }
 
-export default ArticleComponent;
+const mapStateToProps = (store) => {
+  return {
+    topic: store.topic,
+    articles: store.articles
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(articleActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleComponent)
+

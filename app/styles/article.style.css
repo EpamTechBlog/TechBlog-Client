@@ -54,3 +54,12 @@
   font-size: 15px !important;
   text-align: center !important;
 }
+
+.textarea {
+  width: 900px;
+  height: 300px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
