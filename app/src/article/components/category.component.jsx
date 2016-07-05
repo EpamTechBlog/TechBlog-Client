@@ -33,26 +33,27 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			<div className="mdl-grid">
-			      	<SingleTopicComponent key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} link={topic.link} effect={topic.effect}/>
+	  			<div className="mdl-cell mdl-cell--4-col">
+			      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
 				</div>
 	  		   )
 	  });
 	  return (
 			    <div>
 					<ul className="demo-list-item mdl-list">
-					      <h3>Category</h3>
+					      <br/>
+					      <br/>
 
-					 <li className="mdl-list__item">
-					    <span className="mdl-list__item-primary-content">
+					 <li className="mdl-grid">
+
 					      {topics}
-					    </span>
 
 					  </li>
 					</ul>
 				</div>
 			)
 	}
+
 }
 
 export default CategoryComponent;
