@@ -1,28 +1,67 @@
 import React from "react";
+import $ from "jquery";
+import cookie from 'react-cookie';
+import { baseInfoEdited } from '../actions/profile.action';
+require('../../../styles/profile.style.css');
 
 class MyCommentedBlogComponent extends React.Component{
 
 	constructor() {
 		super();
-		this.state = { isLoadingProfile : true };
+		this.state = { commentedArticles : [], articlesisLoadingProfile : true };
 	}
 
 	componentDidMount(){
 
-		setTimeout(() => {this.setState({ isLoadingProfile : false })}, 2500);
+    	$.ajax({
+            url: 'http://localhost:8000/comments/articles/' + cookie.load('userId'),
+            dataType: 'json',
+            type: "GET",
+            cache: false,
+            success: function(data) {
+            	setTimeout(() => {this.setState({ commentedArticles : data, isLoadingProfile : false })}, 2000);
+            	console.log("commentedArticles " + this.state.commentedArticles);
+            }.bind(this),
+            error: function(xhr, status, err) {
+            	console.error(error, err.toString());
+            }.bind(this)
+        });
 
 	}
 
 	render() {
-
+		var posts = this.state.commentedArticles.map(function(post){
+			var publishDate = new Date(post.publishDate),
+				year = publishDate.getFullYear(),
+				month = publishDate.getMonth(),
+				day = publishDate.getDate();
+			var createdDate = year + "/" + month + "/" + day;			
+			return (
+				<tr key={post._id}>
+					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
+					<td>{createdDate}</td>
+					<td>{post.authorName}</td>							
+				</tr>
+			)
+		})
 		return(
 				<div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container">
                   <div className="mdl-card__title">
                     <h2 className="mdl-card__title-text">My Comments</h2>
                   </div>
-                  <div className="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                  <div className="mdl-card__supporting-text div-contain-table-fix">
+                    <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
+                      <thead>
+                        <tr>
+                          <th className="mdl-data-table__cell--non-numeric">Posts</th>
+                          <th>Created Date</th>
+                          <th>Last Updated Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      	{posts}
+                      </tbody>
+                    </table>
                   </div>
                   <div className="mdl-card__menu">
 	                  <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEditing}>

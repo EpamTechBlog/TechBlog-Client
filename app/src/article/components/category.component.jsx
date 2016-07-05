@@ -40,10 +40,7 @@ class CategoryComponent extends React.Component{
 	  });
 	  return (
 			    <div>
-					<ul className="demo-list-item mdl-list">
-					      <br/>
-					      <br/>
-
+					<ul className="demo-list-item mdl-list category-ul">
 					 <li className="mdl-grid">
 
 					      {topics}
