@@ -12,17 +12,17 @@ class ArticleComponent extends React.Component{
 
   render() {
     return (
-        <div>
-          <div className='frame'>
-            <NavigationComponent />
-            <SidebarComponent />
-          </div>
+      <div>
+      <div className='frame'>
+      <NavigationComponent />
+      <SidebarComponent />
+      </div>
 
-          <div className='articleContent'>
-            <ContentComponent />
-          </div>
+      <div className='articleContent'>
+      <ContentComponent />
+      </div>
 
-        </div>
+      </div>
       )
   }
 }
