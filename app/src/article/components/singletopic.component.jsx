@@ -7,26 +7,31 @@ require('../../../styles/category.style.css');
 
 class SingleTopicComponent extends React.Component{
 
-	constructor(){
+  constructor(){
 
-		super();
+    super();
 
-	}
+  }
 
-	render(){
-	  return (
-	    		<div className="tt">	
-					<figure className={this.props.effect}>
-						<img src={this.props.imgsrc}/>
-						<figcaption>
-							<h2>Crazy <span>{this.props.topic}</span></h2>
-							<p>{this.props.description}.</p>
-							<a href={this.props.link}>View more</a>
-						</figcaption>			
-					</figure>
-				</div>
-			)
-	}
+  render(){
+    return (
+          <div className="tt" onClick={this.jumpPage.bind(this, this.props.topic)}>
+          <figure className={this.props.effect}>
+            <img src={this.props.imgsrc}/>
+            <figcaption>
+              <h2>Crazy <span>{this.props.topic}</span></h2>
+              <p>{this.props.description}.</p>
+              <a href={this.props.link}>View more</a>
+            </figcaption>
+          </figure>
+        </div>
+      )
+  }
+
+  jumpPage(topic) {
+    hashHistory.push('/articles');
+    this.props.changeTopic(topic);
+  }
 }
 
 

@@ -52,7 +52,7 @@ section {
 }
 
 .content {
-	margin: 0 auto;
+	margin: auto;
 	max-width: 1000px;
 }
 
@@ -252,7 +252,7 @@ body #cda-remove {
 	min-width: 320px;
 	max-width: 480px;
 	max-height: 360px;
-	width: 48%;
+	width: 100%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -1398,4 +1398,9 @@ figure.effect-chico:hover p {
 		margin: 10px auto;
 		width: 100%;
 	}
+}
+
+.category-ul{
+	margin-top: 0;
+	padding-top: 50px;
 }
