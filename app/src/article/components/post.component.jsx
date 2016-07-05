@@ -72,6 +72,7 @@ class PostComponent extends React.Component{
     console.log(topic, 'topic.1111111');
     console.log(this.props, 'this.props');
     this.props.asynPostMiddleware(title, text, topic, cookie.load('username'));
+    //this.props.asynGetArticlesByTopicMiddle(topic);
   }
 }
 

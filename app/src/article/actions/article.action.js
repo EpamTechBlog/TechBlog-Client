@@ -26,9 +26,11 @@ export function asynPostMiddleware(title, content, topic, author) {
     return postRequestToServer(title, content, topic, author).then(
       article => dispatch(addArticle(article))
     ).then(() => {
-      dispatch(setArticleTopic(topic));
-      console.log(store.getState(), 'after post');
-
+      getRequestToServer(topic).then((res) => {
+        if(res.data.articles.length != 0)
+          dispatch(getTopicArticles(res.data.articles));
+        dispatch(setArticleTopic(topic));
+      });
     })
     .catch(err => console.log(err));
   };
