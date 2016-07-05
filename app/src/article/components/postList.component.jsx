@@ -36,7 +36,7 @@ class PostList extends React.Component{
           <thead>
             <tr>
               <th className="mdl-data-table__cell--non-numeric postItem">Title</th>
-              <th className="mdl-data-table__cell--non-numeric postItem">Topic</th>
+              <th className="mdl-data-table__cell--non-numeric postItem">Author</th>
               <th className="mdl-data-table__header--sorted-descending mdl-data-table__cell--non-numeric postItem">Publish Date</th>
             </tr>
           </thead>
