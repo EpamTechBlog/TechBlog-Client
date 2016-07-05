@@ -15,9 +15,9 @@ class NavigationComponent extends React.Component{
 
 			<div className="mdl-layout__header">
 			<div className="mdl-layout__header-row">
-
+			<a href='/#/home'>
 			<span className="mdl-layout-title">TechBlog</span>
-
+			</a>
 			<div className="mdl-layout-spacer"></div>
 
 			{(() => {
