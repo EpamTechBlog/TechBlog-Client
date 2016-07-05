@@ -16,14 +16,12 @@ class ContentComponent extends React.Component {
       if(this.props.topic === 'POST_PAGE'){
           return (
               <div>
-                <p>post</p>
-                <PostComponent />
+                <PostComponent {...this.props}/>
               </div>
             )
       } else {
           return (
                   <div>
-                    <p>not post</p>
                     <Articles />
                   </div>
                  )

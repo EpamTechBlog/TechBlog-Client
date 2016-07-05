@@ -27,10 +27,27 @@ class PostComponent extends React.Component{
             <input className="mdl-textfield__input" type="text" id="articleTitle" ref='articleTitle' required/>
             <label className="mdl-textfield__label" for="articleTitle">Title...</label>
           </div>
+          <div className="mdl-grid">
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='JAVA'/>JAVA</label>
+            </div>
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='PHP'/>PHP</label>
+            </div>
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='C#'/>C#</label>
+            </div>
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='JAVASCRIPT'/>JS</label>
+            </div>
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='C++'/>C++</label>
+            </div>
+            <div className="mdl-cell mdl-cell--2-col">
+              <label><input name='topic' type='radio' value='IOS'/>IOS</label>
+            </div>
+          </div>
 
-          <label><input name='topic' type='radio' value='JAVA'/>JAVA</label>
-          <label><input name='topic' type='radio' value='PHP'/>PHP</label>
-          <label><input name='topic' type='radio' value='C#'/>C#</label>
 
           <textarea className='textarea' ref='articleText'></textarea>
           <div className='articlePostButton'>
@@ -50,9 +67,11 @@ class PostComponent extends React.Component{
     e.preventDefault();
     const title = this.refs.articleTitle.value;
     const text = this.refs.articleText.value;
+    const topic = $('input[name="topic"]:checked').val();
     console.log(store.getState(), 'before');
-    console.log(this.props, 'this.props.');
-    this.props.asynPostMiddleware(title, text, cookie.load('username'));
+    console.log(topic, 'topic.1111111');
+    console.log(this.props, 'this.props');
+    this.props.asynPostMiddleware(title, text, topic, cookie.load('username'));
   }
 }
 
