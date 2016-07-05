@@ -8,7 +8,7 @@ const coreReducer = combineReducers({
   loginOrRegister : userReducer,
   articles : articleReducer,
   editBaseInfo: profileReducer,
-  setArticleTopic
+  topic : setArticleTopic
 })
 
 export default coreReducer;

@@ -66,7 +66,7 @@ class EditProfileComponent extends React.Component{
                   <label className="profile-edit-label">
                     Email:
                   </label>
-                  <input type='text' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
+                  <input type='email' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
