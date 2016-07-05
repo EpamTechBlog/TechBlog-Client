@@ -56,6 +56,7 @@
 .postItem{
   font-size: 15px !important;
   text-align: center !important;
+  color: black;
 }
 
 .textarea {

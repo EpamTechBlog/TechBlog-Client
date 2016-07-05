@@ -7,7 +7,6 @@ function addArticle(article) {
 }
 
 function getTopicArticles(articles) {
-  console.log('in get action', articles);
   return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
@@ -26,7 +25,11 @@ export function asynPostMiddleware(title, content, topic, author) {
   return function (dispatch) {
     return postRequestToServer(title, content, topic, author).then(
       article => dispatch(addArticle(article))
-    ).then(() => console.log(store.getState(), 'after post'))
+    ).then(() => {
+      dispatch(setArticleTopic(topic));
+      console.log(store.getState(), 'after post');
+
+    })
     .catch(err => console.log(err));
   };
 }
