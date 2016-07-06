@@ -35,10 +35,10 @@ class BaseInfoComponent extends React.Component{
               <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container profile-baseInfo">
                 <br/>
                 <div className="mdl-card__supporting-text mdl-grid">
-                  <div className="mdl-cell--4-col">
+                  <div className="mdl-cell--5-col mdl-cell--6-col-tablet">
                     <img className="profile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
                   </div>
-                  <div className="mdl-cell--8-col">
+                  <div className="mdl-cell--5-col mdl-cell--6-col-tablet">
                     <p className="profile-Name">{this.state.userInfo.username}</p>
                     <p className="profile-JobTitle">{this.state.userInfo.jobTitle ? this.state.userInfo.jobTitle : 'Employee' }</p>
                     <div>

@@ -11,19 +11,20 @@ function getTopicArticles(articles) {
 }
 
 
-function postRequestToServer(title, content, topic, author) {
+function postRequestToServer(title, content, topic, authorName, authorId) {
   return axios.post('http://localhost:8000/articles',
     {
       title,
       content,
       topic,
-      author
+      authorName,
+      authorId
     })
 }
 
-export function asynPostMiddleware(title, content, topic, author) {
+export function asynPostMiddleware(title, content, topic, author, userId) {
   return function (dispatch) {
-    return postRequestToServer(title, content, topic, author).then(
+    return postRequestToServer(title, content, topic, author, userId).then(
       article => dispatch(addArticle(article))
     ).then(() => {
       getRequestToServer(topic).then((res) => {
