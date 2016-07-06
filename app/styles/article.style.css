@@ -1,6 +1,8 @@
+
+
 .articleContainer {
-  margin: 20px;
-  width: 80%;
+  width: 90%;
+  table-layout:fixed;
 }
 
 .searchContainer{
@@ -13,10 +15,12 @@
 
 .searchLine{
   width: 100%;
+  padding-left:35px;
 }
 .searchIcon{
   float: left;
   z-index: 100;
+  color: gray;
 }
 
 .articleContent {
@@ -33,6 +37,7 @@
 
 .articleTitleDiv {
   width: 80%;
+  color: black;
 
 }
 
@@ -53,4 +58,15 @@
 .postItem{
   font-size: 15px !important;
   text-align: center !important;
+  color: black;
+  width: 30% !important;
+}
+
+.textarea {
+  width: 900px;
+  height: 300px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }

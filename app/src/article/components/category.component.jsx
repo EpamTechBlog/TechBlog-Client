@@ -22,7 +22,6 @@ class CategoryComponent extends React.Component{
             type: "GET",
             cache: false,
             success: function(data) {
-              console.log(data);
               this.setState({ topics :  data});
             }.bind(this),
             error: function(xhr, status, err) {
@@ -45,14 +44,11 @@ class CategoryComponent extends React.Component{
 	  });
 	  return (
 			    <div>
-
-			    	<HeadSliderComponent />
+			    <HeadSliderComponent />
 					<ul className="demo-list-item mdl-list category-ul">
 					 <li className="mdl-grid">
-
-					      {topics}
-
-					  </li>
+				      {topics}
+			   	 </li>
 					</ul>
 				</div>
 			)

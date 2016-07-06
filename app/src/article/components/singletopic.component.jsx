@@ -15,7 +15,7 @@ class SingleTopicComponent extends React.Component{
 
   render(){
     return (
-          <div className="tt" onClick={this.jumpPage.bind(this, this.props.topic)}>
+        <div className="tt" onClick={this.jumpPage.bind(this, this.props.topic)}>
           <figure className={this.props.effect}>
             <img src={this.props.imgsrc}/>
             <figcaption>
@@ -30,7 +30,7 @@ class SingleTopicComponent extends React.Component{
 
   jumpPage(topic) {
     hashHistory.push('/articles');
-    this.props.changeTopic(topic);
+    this.props.asynGetArticlesByTopicMiddle(topic);
   }
 }
 
