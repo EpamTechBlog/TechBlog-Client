@@ -4,9 +4,13 @@ class ShowPost extends React.Component{
   constructor(){
     super();
   }
-  // componentDidMount() {
-  //   console.log('');
-  // }
+  showDate(date){
+    var publishDate = new Date(date),
+        year = publishDate.getFullYear(),
+        month = publishDate.getMonth(),
+        day = publishDate.getDate();
+    var createdDate = year + "/" + month + "/" + day;
+  }
   render(){
     return (
         <tr>

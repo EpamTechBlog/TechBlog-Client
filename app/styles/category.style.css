@@ -16,7 +16,7 @@
 .clearfix:after { clear: both; }
 
 body {
-	color: #fff;
+	// color: #fff;
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
@@ -252,7 +252,7 @@ body #cda-remove {
 	min-width: 320px;
 	max-width: 480px;
 	max-height: 360px;
-	width: 48%;
+	width: 100%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -1400,3 +1400,7 @@ figure.effect-chico:hover p {
 	}
 }
 
+.category-ul{
+	margin-top: 0;
+	padding-top: 50px;
+}

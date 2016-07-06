@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
-// require('../../styles/navi.style.css');
 require('../../../styles/singlArticlePage.style.css');
+// require('../../../styles/index.style.css');
+
 
 class SingleArticlePageComponent extends React.Component{
 
@@ -15,7 +16,7 @@ class SingleArticlePageComponent extends React.Component{
 
 	render(){
 		return (
-			<div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+			<div class="singleArticleContainer demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--black-100 ">
 			<header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
 			<div class="mdl-layout__header-row">
 			<span class="mdl-layout-title">Material Design Lite</span>
