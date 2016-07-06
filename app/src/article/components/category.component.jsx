@@ -19,7 +19,6 @@ class CategoryComponent extends React.Component{
             type: "GET",
             cache: false,
             success: function(data) {
-              console.log(data);
               this.setState({ topics :  data});
             }.bind(this),
             error: function(xhr, status, err) {
@@ -33,26 +32,22 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			<div className="mdl-cell mdl-cell--4-col">
-			      	<SingleTopicComponent key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} link={topic.link} effect={topic.effect}/>
-				</div>
+	  			<div className="mdl-cell mdl-cell--4-col" key={topic._id}>
+			      	<SingleTopicComponent {...this.props} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+				  </div>
 	  		   )
 	  });
 	  return (
 			    <div>
-					<ul className="demo-list-item mdl-list">
-					      <br/>
-					      <br/>
-
-					 <li className="mdl-grid">
-					    
-					      {topics}
-
-					  </li>
-					</ul>
-				</div>
+  					<ul className="demo-list-item mdl-list">
+  					 <li className="mdl-grid">
+               {topics}
+  					 </li>
+  					</ul>
+				  </div>
 			)
 	}
+
 }
 
 export default CategoryComponent;
