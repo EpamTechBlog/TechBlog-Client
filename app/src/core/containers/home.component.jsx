@@ -7,7 +7,7 @@ import SidebarComponent from '../components/sidebar.component.jsx';
 import CategoryComponent from '../../article/components/category.component.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { asynGetArticlesByTopicMiddle } from '../../article/actions/article.action';
+import * as articleActions from '../../article/actions/article.action';
 
 class HomeComponent extends React.Component{
 
@@ -36,7 +36,7 @@ class HomeComponent extends React.Component{
 	}
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(asynGetArticlesByTopicMiddle, dispatch)
+  return bindActionCreators(articleActions, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(HomeComponent);

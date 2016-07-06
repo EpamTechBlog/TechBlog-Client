@@ -6,9 +6,9 @@ import setArticleTopic from '../../article/reducers/setArticleTopic.reducer';
 
 const coreReducer = combineReducers({
   loginOrRegister: userReducer,
+  articles : articleReducer,
   editBaseInfo: profileReducer,
-  articleReducer,
-  setArticleTopic
+  topic : setArticleTopic
 })
 
 export default coreReducer;

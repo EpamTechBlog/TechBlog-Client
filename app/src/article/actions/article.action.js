@@ -36,13 +36,13 @@ function setArticleTopic(topic) {
 }
 
 function getRequestToServer(topic) {
- return axios.get('http://localhost:8000/articles' + topic)
+ return axios.get('http://localhost:8000/articles' + '/topic/' + topic)
 }
 
 export function asynGetArticlesByTopicMiddle (topic) {
  return function (dispatch) {
-   return getRequestToServer(topic).then((articles) => {
-     dispatch(addArticle(articles));
+   return getRequestToServer(topic).then((reponse) => {
+     dispatch(addArticle(response.data.articles));
      dispatch(setArticleTopic(topic));
    }).then(() => console.log(store.getState(), 'after choose topic'))
    .catch(err => console.log(err));

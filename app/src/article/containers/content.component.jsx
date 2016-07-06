@@ -4,12 +4,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PostComponent from '../components/post.component.jsx';
 import Articles from '../components/articles.component.jsx';
-//import AllArticlesComponent from '../components/articles.component.jsx';
-//import ArticleComponent from '../components/article.component.jsx';
-//import EditComponent from '../components/edit.component.jsx';
-
-// import the comments component
 import * as articleActions from '../actions/article.action.js';
+
 class ContentComponent extends React.Component {
     constructor() {
         super();
@@ -21,10 +17,6 @@ class ContentComponent extends React.Component {
           <PostComponent />
         </div>
         )
-    }
-    componentDidMount(){
-      console.log('enter ContentComponent componentDidMount');
-      this.props.getAllArticlesAsyn('topic','DDDD');
     }
 }
 
