@@ -11,13 +11,13 @@ function getTopicArticles(articles) {
 }
 
 
-function postRequestToServer(title, content, topic, author, authorId) {
+function postRequestToServer(title, content, topic, authorName, authorId) {
   return axios.post('http://localhost:8000/articles',
     {
       title,
       content,
       topic,
-      author,
+      authorName,
       authorId
     })
 }
