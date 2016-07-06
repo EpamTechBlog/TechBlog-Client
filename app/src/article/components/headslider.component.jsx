@@ -34,14 +34,14 @@ class HeadSliderComponent extends React.Component{
 
 	render() {
     return (
-      <Carousel dragging={true}> 
-        <img
+      <Carousel dragging={true} autoplay={true}> 
+        <img className="carouselImage"
           src="https://d1ujii9cn3t0u4.cloudfront.net/uploads/production/event_page_part/2067/small/iStock_000023954847_Fullwide_ppt.jpg"/>
         <img
           src="https://d1ujii9cn3t0u4.cloudfront.net/uploads/production/event_page_part/2030/small/iStock_000065756809_Large_2.jpg"/>
         <img
           src="https://d1ujii9cn3t0u4.cloudfront.net/uploads/production/event_page_part/2430/small/%D1%88%D0%B5%D0%BB%D0%B5.jpg"/>
-          <img
+        <img
           src="https://d1ujii9cn3t0u4.cloudfront.net/uploads/production/event_page_part/2067/small/iStock_000023954847_Fullwide_ppt.jpg"/>
         <img
           src="https://d1ujii9cn3t0u4.cloudfront.net/uploads/production/event_page_part/2030/small/iStock_000065756809_Large_2.jpg"/>
