@@ -140,12 +140,12 @@
   font-size: 14px;
 }
 .topbar{
-  position: fixed;
+  /*position: fixed;*/
   z-index: 1;
 }
 
 .sidebar{
-  position: fixed;
+  /*position: fixed;*/
   z-index: 1;
   margin-top: 64px;
 }

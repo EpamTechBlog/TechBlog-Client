@@ -18,17 +18,16 @@ class ArticleComponent extends React.Component{
 
   render() {
     return (
-        <div>
-          <div className='frame'>
-            <NavigationComponent />
-            <SidebarComponent {...this.props}/>
-          </div>
-
-          <div className='articleContent'>
-            <ContentComponent {...this.props}/>
-          </div>
-
+      <div>
+        <div className='frame'>
+          <NavigationComponent />
+          <SidebarComponent {...this.props}/>
         </div>
+
+        <div className='articleContent'>
+          <ContentComponent {...this.props}/>
+        </div>
+      </div>
       )
   }
 }
