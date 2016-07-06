@@ -17,7 +17,6 @@ class ArticleComponent extends React.Component{
   }
 
   render() {
-    console.log('111111111store', this.props)
     return (
         <div>
           <div className='frame'>

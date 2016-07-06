@@ -8,7 +8,6 @@ const articleReducer = (state = [], action) => {
           action.article
         ]
     case 'GET_TOPIC_ARTICLES' :
-      console.log('in get reducer', action.articles);
       if(action.articles.length === 0){
         return [...state].concat(action.articles)
       } else {
