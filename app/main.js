@@ -8,6 +8,7 @@ import HomeComponent from './src/core/containers/home.component.jsx';
 import ArticlesComponent from './src/article/containers/article.component.jsx';
 import ProfileComponent from './src/user/containers/profile.component.jsx';
 import LandingComponent from './src/user/containers/landing.component.jsx';
+import SingleArticlePageComponent from './src/article/components/singleArticlePage.component.jsx';
 import App from './src/core/containers/app.component.jsx';
 import store from './store';
 import { Provider } from 'react-redux'
@@ -17,10 +18,12 @@ ReactDOM.render((
 	<Provider store={store}>
 	<Router history={hashHistory}>
 	<Route component={App}>
-	<Route path='/' onEnter={checkAuth} component={LandingComponent} />
+		<Route path='/' onEnter={checkAuth} component={LandingComponent} />
 	</Route>
 	<Route path='/home' component={HomeComponent} />
-	<Route path='/articles' component={ArticlesComponent} />
+	<Route path="/post" component={SingleArticlePageComponent} />
+	<Route path='/articles' component={ArticlesComponent} >
+	</Route>
 	<Route path='/profile' onEnter={notLogin} component={ProfileComponent} />
 	</Router>
 	</Provider>

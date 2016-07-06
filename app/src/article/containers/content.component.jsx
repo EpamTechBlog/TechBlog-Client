@@ -1,34 +1,29 @@
 'use strict';
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PostComponent from '../components/post.component.jsx';
 import Articles from '../components/articles.component.jsx';
-import * as articleActions from '../actions/article.action.js';
+import PostComponent from '../components/post.component.jsx';
 
 class ContentComponent extends React.Component {
     constructor() {
         super();
     }
     render() {
-      return (
-        <div>
-          <Articles />
-          <PostComponent />
-        </div>
-        )
+
+      console.log(this.props.topic)
+      if(this.props.topic === 'POST_PAGE'){
+          return (
+              <div>
+                <PostComponent {...this.props}/>
+              </div>
+            )
+      } else {
+          return (
+                  <div>
+                    <Articles />
+                  </div>
+                 )
+      }
     }
 }
 
-const mapStateToProps = (store) => {
-  return {
-    articleContent: store.articleContent,
-    articles: store.articles
-
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(articleActions, dispatch)
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ContentComponent)
+export default ContentComponent

@@ -11,6 +11,9 @@ class SearchPost extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
+  componentDitMount(){
+
+  }
   handleSearchChange(e){
     this.setState({
       searchContent : e.target.value

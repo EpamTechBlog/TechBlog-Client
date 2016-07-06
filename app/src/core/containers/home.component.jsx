@@ -17,7 +17,7 @@ class HomeComponent extends React.Component{
 	}
 
 	render() {
-
+		console.log('11', this.props);
 		return (
 			<div>
 
@@ -26,7 +26,8 @@ class HomeComponent extends React.Component{
 			</div>
 
 			<div>
-			<CategoryComponent {...this.props}/>
+				<CategoryComponent/>
+
 			</div>
 
 			</div>

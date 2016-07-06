@@ -8,16 +8,33 @@ class NavigationComponent extends React.Component{
 	constructor(){
 
 		super();
-		this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
+		this.state = { username : cookie.load('username'), userId : cookie.load('userId'), userImage : '' };
 	}
+
+	componentDidMount(){
+
+			$.ajax({
+		        url: 'http://localhost:8000/users/' + cookie.load('userId'),
+		        dataType: 'json',
+		        type: "GET",
+		        cache: false,
+		        success: function(data) {
+		        	this.setState({ userImage : data.profileImage });
+		        }.bind(this),
+		        error: function(xhr, status, err) {
+		        	console.error(error, err.toString());
+		        }.bind(this)
+		    });
+	}
+
 	render(){
 		return (
 
 			<div className="mdl-layout__header">
 			<div className="mdl-layout__header-row">
-
+			<a href='/#/home'>
 			<span className="mdl-layout-title">TechBlog</span>
-
+			</a>
 			<div className="mdl-layout-spacer"></div>
 
 			{(() => {
@@ -31,7 +48,7 @@ class NavigationComponent extends React.Component{
 					return (
 						<div className="mdl-list__item">
 						<span className="mdl-list__item-primary-content">
-						<i className="material-icons mdl-list__item-avatar">person</i>
+						<img className="navi-profile-Img" src={this.state.userImage ? this.state.userImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"} />
 						<span>{this.state.username}</span>
 						</span>
 						<div className="mdl-layout-spacer"></div>

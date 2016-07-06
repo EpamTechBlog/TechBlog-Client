@@ -6,7 +6,7 @@
 }
 .content{
   width:40vw;
-  margin:0 auto;
+  margin:auto;
   color:white;
   margin-top:15%;
   border-radius: 8px;
@@ -138,14 +138,15 @@
   font-family: 'Source Sans Pro';
   background-color: white;
   font-size: 14px;
+  color: black !important;
 }
 .topbar{
-  position: fixed;
+  /*position: fixed;*/
   z-index: 1;
 }
 
 .sidebar{
-  position: fixed;
+  /*position: fixed;*/
   z-index: 1;
   margin-top: 64px;
 }
