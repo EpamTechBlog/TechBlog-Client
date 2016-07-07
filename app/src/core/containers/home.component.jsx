@@ -8,6 +8,7 @@ import CategoryComponent from '../../article/components/category.component.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as articleActions from '../../article/actions/article.action';
+// import * as topicActions from '../actions/topic.action';
 
 class HomeComponent extends React.Component{
 
@@ -17,7 +18,7 @@ class HomeComponent extends React.Component{
 	}
 
 	render() {
-
+		console.log('11', this.props);
 		return (
 			<div>
 
@@ -26,8 +27,7 @@ class HomeComponent extends React.Component{
 			</div>
 
 			<div>
-				<CategoryComponent  {...this.props}/>
-
+				<CategoryComponent/>
 			</div>
 
 			</div>

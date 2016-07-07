@@ -2,6 +2,7 @@ import React from 'react';
 import ShowPost from './showPost.component.jsx';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+require('../../../styles/comment.style.css');
 
 class PostList extends React.Component{
 

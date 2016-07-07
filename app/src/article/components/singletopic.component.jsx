@@ -29,9 +29,8 @@ class SingleTopicComponent extends React.Component{
   }
 
   jumpPage(topic) {
-
-    this.props.asynGetArticlesByTopicMiddle(topic);
     hashHistory.push('/articles');
+    this.props.asynGetArticlesByTopicMiddle(topic);
   }
 }
 

@@ -10,6 +10,20 @@ function getTopicArticles(articles) {
   return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
+export function asynPostMiddleware(title, content, topic, author, userId) {
+  return function (dispatch) {
+    return postRequestToServer(title, content, topic, author, userId).then(
+      article => dispatch(addArticle(article))
+    ).then(() => {
+      getRequestToServer(topic).then((res) => {
+        if(res.data.articles.length != 0)
+          dispatch(getTopicArticles(res.data.articles));
+        dispatch(setArticleTopic(topic));
+      });
+    })
+    .catch(err => console.log(err));
+  };
+}
 
 function postRequestToServer(title, content, topic, authorName, authorId) {
   return axios.post('http://localhost:8000/articles',
@@ -42,7 +56,6 @@ function setArticleTopic(topic) {
 }
 
 function getRequestToServer(topic) {
-
   return axios.get('http://localhost:8000/articles' + '/topic/' + topic)
 }
 

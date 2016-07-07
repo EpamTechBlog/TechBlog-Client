@@ -5,8 +5,7 @@ import articleReducer from '../../article/reducers/article.reducer';
 import setArticleTopic from '../../article/reducers/setArticleTopic.reducer';
 
 const coreReducer = combineReducers({
-
-  loginOrRegister: userReducer,
+  loginOrRegister : userReducer,
   articles : articleReducer,
   editBaseInfo: profileReducer,
   topic : setArticleTopic
