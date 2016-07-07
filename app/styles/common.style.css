@@ -27,7 +27,7 @@
 }
 
 //button
-.button {
+.common-button {
   margin-top: 5px;
   display: inline-block;
   color: white;
@@ -43,12 +43,12 @@
   border-bottom-width: 3px;
 }
 
-.button:hover {
+.common-button:hover {
   background-color: #1891A3;
   border-color: rgba(0,0,0,0.5);
 }
 
-.button:active {
+.common-button:active {
   background-color: #CCC;
   border-color: rgba(0,0,0,0.9);
 }
