@@ -26,7 +26,7 @@ class HomeComponent extends React.Component{
 			</div>
 
 			<div>
-				<CategoryComponent/>
+				<CategoryComponent  {...this.props}/>
 
 			</div>
 
