@@ -128,13 +128,13 @@
   top: 0;
   opacity: 0;
   filter: alpha(opacity=0);
-  cursor: pointer  
+  cursor: pointer
 }
 .profile-edit-upload:hover{
   color: #444;
   background: #eee;
   border-color: #ccc;
-  text-decoration: none  
+  text-decoration: none
 }
 .mdl-card__title-text{
     font-size: 16px;
