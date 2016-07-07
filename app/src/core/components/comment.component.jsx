@@ -29,8 +29,6 @@ var CommentList = React.createClass({
 	getInitialState: function() {
 		return {data: []};
 	},
-
-
 	componentDidMount: function() {
 		//for test id_1
 		this.loadCommentsFromServer('id_1');
