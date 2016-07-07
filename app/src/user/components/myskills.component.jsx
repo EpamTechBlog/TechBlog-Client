@@ -38,7 +38,7 @@ class MySkillsComponent extends React.Component{
 		return(
 				<div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container">
                   <div className="mdl-card__title">
-                    <h2 className="mdl-card__title-text">My Interests</h2>
+                    <h2 className="mdl-card__title-text">My Skills</h2>
                   </div>
                   <div className="mdl-card__supporting-text">
                     {skills}

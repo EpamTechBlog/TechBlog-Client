@@ -12,19 +12,19 @@ class NavigationComponent extends React.Component{
 	}
 
 	componentDidMount(){
-
-			$.ajax({
-		        url: 'http://localhost:8000/users/' + cookie.load('userId'),
-		        dataType: 'json',
-		        type: "GET",
-		        cache: false,
-		        success: function(data) {
-		        	this.setState({ userImage : data.profileImage });
-		        }.bind(this),
-		        error: function(xhr, status, err) {
-		        	console.error(error, err.toString());
-		        }.bind(this)
-		    });
+		componentHandler.upgradeDom();
+		$.ajax({
+	        url: 'http://localhost:8000/users/' + cookie.load('userId'),
+	        dataType: 'json',
+	        type: "GET",
+	        cache: false,
+	        success: function(data) {
+	        	this.setState({ userImage : data.profileImage });
+	        }.bind(this),
+	        error: function(xhr, status, err) {
+	        	console.error(error, err.toString());
+	        }.bind(this)
+	    });
 	}
 
 	render(){
