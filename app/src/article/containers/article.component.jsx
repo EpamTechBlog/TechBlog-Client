@@ -24,7 +24,7 @@ class ArticleComponent extends React.Component{
           <SidebarComponent {...this.props}/>
         </div>
 
-        <div className='articleContent'>
+        <div className='articleContentTop'>
           <ContentComponent {...this.props}/>
         </div>
       </div>

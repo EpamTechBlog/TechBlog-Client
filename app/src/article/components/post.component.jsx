@@ -24,7 +24,8 @@ class PostComponent extends React.Component{
     let radios = this.state.topics.map((topic) => {
       return (
           <div className="mdl-cell mdl-cell-4-col" key={topic._id}>
-            <label><input name='topic' type='radio' value={topic.topicName}/>{topic.topicName}</label>
+            <label><input name='topic' type='radio' value={topic.topicName}
+            checked={topic.topicName === 'JAVASCRIPT' ? 'checked' : ''}/>{topic.topicName}</label>
           </div>
            )
     });
