@@ -65,4 +65,8 @@
   background-color: #e87a31;
 }
 
+.selected{
+  background-color:rgba(57, 71, 131, 0.67);
+}
+
 

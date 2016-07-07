@@ -9,8 +9,7 @@ class ContentComponent extends React.Component {
     }
     render() {
 
-      console.log(this.props.topic)
-      if(this.props.topic === 'POST_PAGE'){
+      if(this.props.topic === 'NEW POST'){
           return (
               <div>
                 <PostComponent {...this.props}/>

@@ -17,7 +17,7 @@ class HomeComponent extends React.Component{
 	}
 
 	render() {
-		console.log('11', this.props);
+
 		return (
 			<div>
 
