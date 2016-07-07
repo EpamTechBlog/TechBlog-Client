@@ -80,18 +80,24 @@
 .display-none{
   display:none;
 }
-.clean-top-padding{
-  padding-top: 0;
-}
 .profile-table{
   width: 100%;
 }
 .profile-edit-label{
   width: 200px;
   display: inline-block;
-  padding-right: 100px;
+  padding-right: 20px;
   text-align: center;
   color: #c7c7c7;
+}
+.profile-edit-label + input{
+  height: 30px;
+  width: 250px;
+  padding: 0 4px;
+}
+.profile-edit-label + select{
+  height: 70px;
+  width: 250px;
 }
 .profile-edit-div{
   padding: 20px 20px 0px 25px;
@@ -100,9 +106,9 @@
   margin: 0px 20px 20px 0px;
 }
 .profile-edit-upload{
-  padding: 4px 10px;
-  height: 20px;
-  line-height: 20px;
+  padding: 0 10px;
+  height: 25px;
+  line-height: 25px;
   position: relative;
   cursor: pointer;
   color: #888;
@@ -122,16 +128,13 @@
   top: 0;
   opacity: 0;
   filter: alpha(opacity=0);
-  cursor: pointer  
+  cursor: pointer
 }
 .profile-edit-upload:hover{
   color: #444;
   background: #eee;
   border-color: #ccc;
-  text-decoration: none  
-}
-.mdl-card__title{
-  border-bottom: 1px solid lightgrey;
+  text-decoration: none
 }
 .mdl-card__title-text{
     font-size: 16px;
@@ -143,4 +146,10 @@
     border-radius: 4px;
     margin-right: 15%;
     padding:5px;
+}
+
+/* for my post section */
+.div-contain-table-fix{
+  width: 100%;
+  padding: 0;
 }

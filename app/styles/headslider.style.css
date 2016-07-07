@@ -1,0 +1,10 @@
+.container{
+	margin: 0 auto;
+	padding: 40px;
+	width: 90%;
+	color: #333;
+	background: #419be0;
+}
+.carouselImage{
+	height: 450px;
+}

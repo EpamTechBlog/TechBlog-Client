@@ -3,8 +3,11 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import SingleTopicComponent from './singletopic.component.jsx';
+import HeadSliderComponent from './headslider.component.jsx';
 // require('../../styles/navi.style.css');
 require('../../../styles/category.style.css');
+require('../../../styles/headslider.style.css');
+
 
 class CategoryComponent extends React.Component{
 
@@ -32,22 +35,20 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			<div className="mdl-cell mdl-cell--4-col" key={topic._id}>
-			      	<SingleTopicComponent {...this.props} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
-				  </div>
+	  			<div className="mdl-cell mdl-cell--4-col">
+
+			      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+
+				</div>
 	  		   )
 	  });
 	  return (
 			    <div>
-					<ul className="demo-list-item mdl-list">
-					      <br/>
-					      <br/>
-
+			    <HeadSliderComponent />
+					<ul className="demo-list-item mdl-list category-ul">
 					 <li className="mdl-grid">
-
-					      {topics}
-
-					  </li>
+				      {topics}
+			   	 </li>
 					</ul>
 				</div>
 			)
