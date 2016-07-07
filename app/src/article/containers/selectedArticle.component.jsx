@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationComponent from '../../core/components/navigation.component.jsx';
+import SingleArticlePageComponent from '../components/singleArticlePage.component.jsx';
 import SidebarComponent from '../../core/components/sidebar.component.jsx';
 import * as articleActions from '../actions/article.action.js';
 import { bindActionCreators } from 'redux';
@@ -11,12 +12,16 @@ class SelectedArticleComponent extends React.Component{
 
   constructor() {
     super();
+    this.state = { article : {}};
   }
   componentDidMount(){
-
+    axios.get('http://localhost:8000/articles/' + this.props.params.id ).then((data) => {
+      this.setState({ article :  data.data});
+    }).catch((err) => console.log(err));
   }
 
   render() {
+
     return (
       <div>
         <div className='frame'>
@@ -25,7 +30,7 @@ class SelectedArticleComponent extends React.Component{
         </div>
 
         <div className='articleContent'>
-          <p>123123</p>
+          <SingleArticlePageComponent article = {this.state.article}/>
         </div>
       </div>
       )
