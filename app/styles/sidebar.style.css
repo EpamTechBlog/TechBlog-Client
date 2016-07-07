@@ -61,12 +61,8 @@
   color: white !important;
   margin-right: 32px;
 }
-.addnew{
-  background-color: #e87a31;
-}
-
 .selected{
-  background-color:rgba(57, 71, 131, 0.67);
+  background-color:#e87a31;
 }
 
 
