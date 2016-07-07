@@ -56,6 +56,7 @@ function setArticleTopic(topic) {
 }
 
 function getRequestToServer(topic) {
+
   return axios.get('http://localhost:8000/articles' + '/topic/' + topic)
 }
 
