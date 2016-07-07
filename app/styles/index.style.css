@@ -63,19 +63,20 @@
   color:red;
   font-family: Oswald-Light-Roman, Tahoma, sans-serif !important;
 }
-/* font css for content*/
-/* list page menu*/
-.title{
-  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
-  background-color: white;
-  color: #B22746;
-  font-size: 30px;
+
+.topbar{
+  /*position: fixed;*/
+  z-index: 1;
 }
-.subtitle{
-  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
-  background-color: white;
-  color: #B22746;
-  font-size: 25px;
+
+.sidebar{
+  /*position: fixed;*/
+  z-index: 1;
+  margin-top: 64px;
+}
+
+.comment{
+  z-index: 0;
 }
 
 /* profile*/
@@ -97,61 +98,3 @@
   color: #666666;
   font-size: 14px;
 }
-/* posts list*/
-.postlist .title .date{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #464547;
-  font-size: 14px;
-}
-.postlist .author{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #464547;
-  font-size: 14px;
-  font-style: oblique;
-}
-.postlist .answer {
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #464547;
-  font-size: 9px;
-}
-.postlist .answer .more{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #45a163;
-  font-size: 9px;
-}
-/* posts details*/
-.postdetails .title{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  font-size: 19px;
-}
-.postdetails .tag{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  font-size: 9px;
-}
-.postdetails .text .author .date{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  font-size: 14px;
-  color: black !important;
-}
-.topbar{
-  /*position: fixed;*/
-  z-index: 1;
-}
-
-.sidebar{
-  /*position: fixed;*/
-  z-index: 1;
-  margin-top: 64px;
-}
-
-.comment{
-  z-index: 0;
-}
-
