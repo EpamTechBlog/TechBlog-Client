@@ -16,12 +16,25 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #2f3238;
-	color: #fff;
+	// color: #fff;
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
 }
+
+.hahaha{
+	width:800px;
+}
+
+/*.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}*/
 
 a {
 	outline: none;
@@ -39,7 +52,7 @@ section {
 }
 
 .content {
-	margin: 0 auto;
+	margin: auto;
 	max-width: 1000px;
 }
 
@@ -221,7 +234,7 @@ body #cda-remove {
 		url('../res/fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');*/
 }
 
-.grid {
+.tt {
 	position: relative;
 	margin: 0 auto;
 	padding: 1em 0 4em;
@@ -231,7 +244,7 @@ body #cda-remove {
 }
 
 /* Common style */
-.grid figure {
+.tt figure {
 	position: relative;
 	float: left;
 	overflow: hidden;
@@ -239,21 +252,21 @@ body #cda-remove {
 	min-width: 320px;
 	max-width: 480px;
 	max-height: 360px;
-	width: 48%;
+	width: 100%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
 }
 
-.grid figure img {
+.tt figure img {
 	position: relative;
-	display: block;
+	display: inline-block;
 	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
 }
 
-.grid figure figcaption {
+.tt figure figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -262,13 +275,13 @@ body #cda-remove {
 	backface-visibility: hidden;
 }
 
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.tt figure figcaption::before,
+.tt figure figcaption::after {
 	pointer-events: none;
 }
 
-.grid figure figcaption,
-.grid figure figcaption > a {
+.tt figure figcaption,
+.tt figure figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -278,7 +291,7 @@ body #cda-remove {
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure figcaption > a {
+.tt figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -286,21 +299,21 @@ body #cda-remove {
 	opacity: 0;
 }
 
-.grid figure h2 {
+.tt figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.grid figure h2 span {
+.tt figure h2 span {
 	font-weight: 800;
 }
 
-.grid figure h2,
-.grid figure p {
+.tt figure h2,
+.tt figure p {
 	margin: 0;
 }
 
-.grid figure p {
+.tt figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
@@ -395,7 +408,7 @@ figure.effect-sadie h2 {
 	top: 50%;
 	left: 0;
 	width: 100%;
-	color: #484c61;
+	color: #fff;
 	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
 	transition: transform 0.35s, color 0.35s;
 	-webkit-transform: translate3d(0,-50%,0);
@@ -1379,10 +1392,15 @@ figure.effect-chico:hover p {
 		padding: 0 10px;
 		text-align: center;
 	}
-	.grid figure {
+	.tt figure {
 		display: inline-block;
 		float: none;
 		margin: 10px auto;
 		width: 100%;
 	}
+}
+
+.category-ul{
+	margin-top: 0;
+	padding-top: 50px;
 }

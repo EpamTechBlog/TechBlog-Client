@@ -31,6 +31,10 @@ class EditProfileComponent extends React.Component{
           });
   }
 
+  handleChange(e){
+    this.state.userInfo = "";
+  }
+
   render() {
 
     return (
@@ -50,31 +54,31 @@ class EditProfileComponent extends React.Component{
                   <label className="profile-edit-label">
                     Job Title:
                   </label>
-                  <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle}/>
+                  <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle} onChange={this.handleChange}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Address:
                   </label>
-                  <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress}/>
+                  <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress} onChange={this.handleChange}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Email:
                   </label>
-                  <input type='text' ref='email' value={this.state.userInfo.email}/>
+                  <input type='email' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Phone:
                   </label>
-                  <input type='text' ref='phone' value={this.state.userInfo.phone}/>
+                  <input type='text' ref='phone' value={this.state.userInfo.phone} onChange={this.handleChange}/>
                 </div>
                 <div className="profile-edit-div">
                   <label className="profile-edit-label">
                     Skills:
                   </label>
-                  <select multiple="multiple" id='skills' value={this.state.userInfo.skills}>
+                  <select multiple="multiple" id='skills' value={this.state.userInfo.skills} onChange={this.handleChange}>
                     <option value ="Java">Java</option>
                     <option value ="C++">C++</option>
                     <option value="Javascript">Javascript</option>

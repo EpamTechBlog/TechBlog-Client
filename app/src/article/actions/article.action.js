@@ -1,80 +1,60 @@
 'use strict';
-/*
- * action types
- */
-import $ from "jquery";
 
-export const ADD_ARTICLE = 'ADD_ARTICLE'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+import store from '../../../store.js';
 
-
-/*
- * action creators
- */
-
-export function addArticle(article) {
-  return { type: ADD_ARTICLE, article }
+function addArticle(article) {
+  return { type: 'ADD_ARTICLE', article }
 }
 
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
+function getTopicArticles(articles) {
+  return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
 
-// function postRequestToServer(title, text, authorId, dispatch) {
-//   console.log('in post request');
-//   axios.post('http://localhost:8000/articles',
-//     {
-//       title : title,
-//       text : text,
-//       userId : authorId
-//     }).then((article) => {
-//       console.log(article, 'post success')
-//       dispatch(postAction(article));
-//     }, (error) => {
-//       dispatch(errorAction());
-//     }
-//     ).catch((e) => {
-//         console.log(e, 'error!');
-//     });
-// }
+function postRequestToServer(title, content, topic, authorName, authorId) {
+  return axios.post('http://localhost:8000/articles',
+    {
+      title,
+      content,
+      topic,
+      authorName,
+      authorId
+    })
+}
 
-// export function asynPostMiddleware(title, text, authorId) {
-//   return function (dispatch) {
-//     return postRequestToServer(title, text, authorId, dispatch)
-//     .then();
-//   }
-// }
-//Article List
-function getAllArticles(type,key){
-  return new Promise((resolve,reject) =>{
-    $.ajax({
-      url: '//localhost:8000/articles/'+type+'/'+key,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        console.log('getAllArticles get data from server',data.articles);
-        resolve(data.articles);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log('getAllArticles err', err.toString());
-        reject(err);
-      }.bind(this)
-    });
-  })
-};
+export function asynPostMiddleware(title, content, topic, author, userId) {
+  return function (dispatch) {
+    return postRequestToServer(title, content, topic, author, userId).then(
+      article => dispatch(addArticle(article))
+    ).then(() => {
+      getRequestToServer(topic).then((res) => {
+        if(res.data.articles.length != 0)
+          dispatch(getTopicArticles(res.data.articles));
+        dispatch(setArticleTopic(topic));
+      });
+    })
+    .catch(err => console.log(err));
+  };
+}
 
-function changeState(articles){
-  return {
-    type: 'GET_ALL',
-    articles: articles
+function setArticleTopic(topic) {
+  return { type: 'SET_ARTICLE_TOPIC', topic }
+}
+
+function getRequestToServer(topic) {
+
+  return axios.get('http://localhost:8000/articles' + '/topic/' + topic)
+}
+
+export function asynGetArticlesByTopicMiddle (topic) {
+  return function (dispatch) {
+    return getRequestToServer(topic).then((res) => {
+      if(res.data.articles.length != 0)
+        dispatch(getTopicArticles(res.data.articles));
+      dispatch(setArticleTopic(topic));
+    }).then(() => console.log('after choose topic', store.getState()))
+    .catch(err => console.log(err));
   }
 }
-export function getAllArticlesAsyn(type, key){
-  return function(dispatch){
-    return getAllArticles(type,key).then(
-      articles => changeState(articles),
-      err => console.log('err',err)
-    );
-  }
-}
+
+

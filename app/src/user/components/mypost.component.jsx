@@ -1,50 +1,64 @@
 import React from 'react';
+import $ from "jquery";
+import cookie from 'react-cookie';
+import { baseInfoEdited } from '../actions/profile.action';
+require('../../../styles/profile.style.css');
 
 class MyPostComponent extends React.Component{
 
 	constructor() {
 		super();
-		this.state = { isLoadingProfile : true };
+		this.state = { MyPosts: [], isLoadingProfile : true };
 	}
 
 	componentDidMount(){
-
-		setTimeout(() => {this.setState({ isLoadingProfile : false })}, 1000);
+    	$.ajax({
+            url: 'http://localhost:8000/articles/author/' + cookie.load('userId'),
+            dataType: 'json',
+            type: "GET",
+            cache: false,
+            success: function(data) {
+            	setTimeout(() => {this.setState({ MyPosts : data.articles, isLoadingProfile : false })}, 1000);
+            	console.log("myposts " + this.state.MyPosts);
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.error(error, err.toString());
+            }.bind(this)
+        });
 
 	}
 
 	render() {
+		var posts = this.state.MyPosts.map(function(post){
+			var publishDate = new Date(post.publishDate),
+				year = publishDate.getFullYear(),
+				month = publishDate.getMonth(),
+				day = publishDate.getDate();
+			var createdDate = year + "/" + month + "/" + day;
+			return (
+				<tr key={post._id}>
+					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
+					<td>{createdDate}</td>
+					<td>{post.authorName}</td>							
+				</tr>
+			)
+		})
 		return (
 				<div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container">
 	                  <div className="mdl-card__title">
 	                    <h2 className="mdl-card__title-text">My Post</h2>
 	                  </div>
-	                  <div className="mdl-card__supporting-text clean-top-padding">
-	                    <br/>
+	                  <div className="mdl-card__supporting-text div-contain-table-fix">
 	                    <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
 	                      <thead>
 	                        <tr>
-	                          <th className="mdl-data-table__cell--non-numeric">Posts</th>
-	                          <th>Created Date</th>
-	                          <th>Last Updated Date</th>
+	                          <th className="mdl-data-table__cell--non-numeric">Title</th>
+	                          <th className="md-cell">Created Date</th>
+	                          <th>Author</th>
 	                        </tr>
 	                      </thead>
 	                      <tbody>
-	                        <tr>
-	                          <td className="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-	                          <td>25</td>
-	                          <td>$2.90</td>
-	                        </tr>
-	                        <tr>
-	                          <td className="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-	                          <td>50</td>
-	                          <td>$1.25</td>
-	                        </tr>
-	                        <tr>
-	                          <td className="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-	                          <td>10</td>
-	                          <td>$2.35</td>
-	                        </tr>
+	                      	{posts}
 	                      </tbody>
 	                    </table>
 	                  </div>

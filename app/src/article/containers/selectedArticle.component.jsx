@@ -1,22 +1,27 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-
 import NavigationComponent from '../../core/components/navigation.component.jsx';
+import SingleArticlePageComponent from '../components/singleArticlePage.component.jsx';
 import SidebarComponent from '../../core/components/sidebar.component.jsx';
-import ContentComponent from '../containers/content.component.jsx';
 import * as articleActions from '../actions/article.action.js';
-import store from '../../../store';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 require('../../../styles/article.style.css');
 
-class ArticleComponent extends React.Component{
+class SelectedArticleComponent extends React.Component{
 
   constructor() {
     super();
+    this.state = { article : {}};
+  }
+  componentDidMount(){
+    axios.get('http://localhost:8000/articles/' + this.props.params.id ).then((data) => {
+      this.setState({ article :  data.data});
+    }).catch((err) => console.log(err));
   }
 
   render() {
+
     return (
       <div>
         <div className='frame'>
@@ -25,12 +30,13 @@ class ArticleComponent extends React.Component{
         </div>
 
         <div className='articleContent'>
-          <ContentComponent {...this.props}/>
+          <SingleArticlePageComponent article = {this.state.article}/>
         </div>
       </div>
       )
   }
 }
+
 
 const mapStateToProps = (store) => {
   return {
@@ -43,5 +49,6 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(articleActions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(SelectedArticleComponent)
+
 
