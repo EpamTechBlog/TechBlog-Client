@@ -29,6 +29,8 @@ var CommentList = React.createClass({
 	getInitialState: function() {
 		return {data: []};
 	},
+
+
 	componentDidMount: function() {
 		//for test id_1
 		this.loadCommentsFromServer('id_1');
@@ -49,13 +51,13 @@ var CommentList = React.createClass({
 			}.bind(this)
 		});
 	},
-
+	
 	render: function() {
 		console.log('render',this.state.data);
 		var commentNodes = this.state.data.map(function(comment) {
 			var el = document.createElement( 'html' );
 			el.innerHTML = comment.content;
-			;
+			; 
 			console.log(comment.creator);
 			return (
 				<li class="mdl-list__item">
@@ -105,8 +107,8 @@ var CommentForm = React.createClass({
 	handleSubmit: function(e) {
 
 		e.preventDefault();
-		var tinymce_editor_id = 'textarea-comment';
-		axios.post('http://localhost:8000/comments',
+		var tinymce_editor_id = 'textarea-comment'; 
+		axios.post('http://localhost:8000/comments', 
 		{
 			articleId: "id_1",
 			creator: "adam",
