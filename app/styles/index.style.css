@@ -79,22 +79,3 @@
   z-index: 0;
 }
 
-/* profile*/
-.profile .name{
-  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
-  background-color: white;
-  color: #39c2d7;
-  font-size: 25px;
-}
-.profile .jobtitle{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #a3c644;
-  font-size: 20px;
-}
-.profile .address .photo .email{
-  font-family: 'Source Sans Pro';
-  background-color: white;
-  color: #666666;
-  font-size: 14px;
-}

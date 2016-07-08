@@ -32,26 +32,26 @@ class BaseInfoComponent extends React.Component{
   render() {
 
     return (
-              <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container profile-baseInfo">
+              <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-container baseInfo">
                 <br/>
                 <div className="mdl-card__supporting-text mdl-grid">
                   <div className="mdl-cell--5-col mdl-cell--6-col-tablet">
-                    <img className="profile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
+                    <img className="baseInfo-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
                   </div>
                   <div className="mdl-cell--5-col mdl-cell--6-col-tablet">
-                    <p className="profile-Name">{this.state.userInfo.username}</p>
-                    <p className="profile-JobTitle">{this.state.userInfo.jobTitle ? this.state.userInfo.jobTitle : 'Employee' }</p>
+                    <p className="baseInfo-Name">{this.state.userInfo.username}</p>
+                    <p className="baseInfo-JobTitle">{this.state.userInfo.jobTitle ? this.state.userInfo.jobTitle : 'Employee' }</p>
                     <div>
-                      <i className="material-icons icons-style">room</i>
-                      <span className="icons-span">{this.state.userInfo.homeAddress}</span>
+                      <i className="material-icons baseInfo-icons-style">room</i>
+                      <span className="baseInfo-icons-span">{this.state.userInfo.homeAddress}</span>
                     </div>
                     <div>
-                      <i className="material-icons icons-style">email</i>
-                      <span className="icons-span">{this.state.userInfo.email}</span>
+                      <i className="material-icons baseInfo-icons-style">email</i>
+                      <span className="baseInfo-icons-span">{this.state.userInfo.email}</span>
                     </div>
                     <div>
-                      <i className="material-icons icons-style">phone</i>
-                      <span className="icons-span">{this.state.userInfo.phone}</span>
+                      <i className="material-icons baseInfo-icons-style">phone</i>
+                      <span className="baseInfo-icons-span">{this.state.userInfo.phone}</span>
                     </div>
                   </div>
                 </div>

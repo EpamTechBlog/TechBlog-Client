@@ -1,11 +1,11 @@
 @import 'base.style.css'; /*import fonts*/
-.title-panel{
+.profile-title-panel{
   background-color: white;
   height:60px;
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif !important;
   font-size:2rem;
 }
-.title-panel div{
+.profile-title-div{
   padding-top: 20px;
   padding-left: 40px;
 }
@@ -15,43 +15,46 @@
   padding-left:55px;
   margin:0 auto;
 }
+.profile-layer{
+  padding: 5px 5px 0px 5px;
+}
 .profile-container{
   width: 100%;
   margin-bottom: 10px;
 }
-.profile-baseInfo{
-  height: 240px;
+.profile-table{
+  width: 100%;
 }
 
-.profile-layer{
-  padding: 5px 5px 0px 5px;
+/* baseinfo section */
+.baseInfo{
+  height: 240px;
 }
-.profile-Img{
+.baseInfo-Img{
   width:150px;
   height:150px;
   border-radius: 85px;
   border:6px solid lightgray;
 }
-
-.profile-Name{
+.baseInfo-Name{
   font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
   background-color: white;
   color: #39c2d7;
   font-size: 25px;
   text-transform: uppercase;
 }
-.profile-JobTitle{
+.baseInfo-JobTitle{
   font-family: "Source Sans Pro";
   background-color: white;
   color: #a3c644;
   font-size: 20px;
 }
-.icons-style{
+.baseInfo-icons-style{
   font-size:20px;
   color:#c7c7c7;
   margin-top: 3px;
 }
-.icons-span{
+.baseInfo-icons-span{
   font-family: 'Source Sans Pro';
   color:#c7c7c7;
   font-size: 14px;
@@ -60,52 +63,48 @@
   line-height: 25px;
 }
 
-.profile-edit-box{
+/* my posts section */
+.myposts-div-contain-table{
+  width: 100%;
+  padding: 0;
+}
+
+/* edit profile section */
+.editProfile-Img{
+  width:150px;
+  height:150px;
+  border-radius: 85px;
+  border:6px solid lightgray;
+}
+.editProfile-box{
   width:100%;
-}
-
-.profile-edit-field{
-
-  text-align: center;
-}
-.profile-edit-field i{
-   margin-right:40px;
-}
-.profile-edit-field input{
-   font-size:35px;
-}
-.profile-edit-field .icons-style{
-   font-size:45px;
 }
 .display-none{
   display:none;
 }
-.profile-table{
-  width: 100%;
-}
-.profile-edit-label{
+.editProfile-label{
   width: 200px;
   display: inline-block;
   padding-right: 20px;
   text-align: center;
   color: #c7c7c7;
 }
-.profile-edit-label + input{
+.editProfile-label + input{
   height: 30px;
   width: 250px;
   padding: 0 4px;
 }
-.profile-edit-label + select{
+.editProfile-label + select{
   height: 70px;
   width: 250px;
 }
-.profile-edit-div{
+.editProfile-div{
   padding: 20px 20px 0px 25px;
 }
-.profile-edit-button{
+.editProfile-button{
   margin: 0px 20px 20px 0px;
 }
-.profile-edit-upload{
+.editProfile-upload{
   padding: 0 10px;
   height: 25px;
   line-height: 25px;
@@ -121,7 +120,7 @@
   *zoom: 1;
   text-decoration: none
 }
-.profile-edit-upload input{
+.editProfile-upload input{
   position: absolute;
   font-size: 100px;
   right: 0;
@@ -130,26 +129,22 @@
   filter: alpha(opacity=0);
   cursor: pointer
 }
-.profile-edit-upload:hover{
+.editProfile-upload:hover{
   color: #444;
   background: #eee;
   border-color: #ccc;
   text-decoration: none
 }
+
+/* this is enhance for the material provided css */
 .mdl-card__title-text{
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 15px;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 15px;
 }
 .mdl-badge{
-    border: 1px solid lightgrey;
-    border-radius: 4px;
-    margin-right: 15%;
-    padding:5px;
-}
-
-/* for my post section */
-.div-contain-table-fix{
-  width: 100%;
-  padding: 0;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  margin-right: 15%;
+  padding:5px;
 }
