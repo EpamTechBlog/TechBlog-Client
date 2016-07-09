@@ -1,12 +1,13 @@
 @import 'common.style.css';
 
 .commentBox{
-	position: absolute;
-	left: 300px;
-	top: 100px;
+	/*width: 50vw;*/
 }
 
 .demo-list-icon {
-	width: 300px;
+	/*width: 50vw;*/
+}
+.comment-post-button{
+	margin-left: 94%;
 }
 

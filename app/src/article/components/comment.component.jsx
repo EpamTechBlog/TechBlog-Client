@@ -35,7 +35,7 @@ var CommentList = React.createClass({
 		//for test id_1
 		this.loadCommentsFromServer('id_1');
 
-		// setInterval(this.loadCommentsFromServer, 2000);
+		setInterval(this.loadCommentsFromServer, 2000);
 	},
 	loadCommentsFromServer: function(articleId) {
 
@@ -53,14 +53,12 @@ var CommentList = React.createClass({
 	},
 	
 	render: function() {
-		console.log('render',this.state.data);
 		var commentNodes = this.state.data.map(function(comment) {
 			var el = document.createElement( 'html' );
 			el.innerHTML = comment.content;
 			; 
-			console.log(comment.creator);
 			return (
-				<li class="mdl-list__item">
+				<li key={comment.time} class="mdl-list__item">
 				<span class="mdl-list__item-primary-content">
 				<i class="material-icons mdl-list__item-icon">person</i>
 				{comment.creator} - <span>{comment.time}</span>
@@ -87,17 +85,6 @@ var CommentForm = React.createClass({
 		return {author: '', text: ''};
 	},
 	componentDidMount() {
-		// tinymce.init({
-		// 	selector: '.textarea-comment11',
-		// 	height: 200,
-		// 	menubar: false,
-		// 	toolbar: 'undo redo',
-
-		// }).then((data) => {
-		// }).catch((err) => {
-		// 	console.log('tinymce error' , err);
-
-		// })
 	},
 
 	handleEditorChange(e) {
@@ -107,7 +94,7 @@ var CommentForm = React.createClass({
 	handleSubmit: function(e) {
 
 		e.preventDefault();
-		var tinymce_editor_id = 'textarea-comment'; 
+		var tinymce_editor_id = '#TinyMCE-comment'; 
 		axios.post('http://localhost:8000/comments', 
 		{
 			articleId: "id_1",
@@ -116,18 +103,19 @@ var CommentForm = React.createClass({
 		})
 		.then(function (response) {
 			// console.log(response);
+			tinymce.activeEditor.setContent('');
 		})
 		.catch(function (error) {
 			console.log(error);
 		});
 
-		tinymce.get(tinymce_editor_id).setContent('');
+		
 	},
 	render: function() {
 
 		return (
 			<form className="commentForm" onSubmit={this.handleSubmit}>
-			<div className="textarea-comment11">
+			<div className="textarea-comment">
 			<TinyMCE
 			config={{
 				menubar: false,
@@ -137,7 +125,7 @@ var CommentForm = React.createClass({
 			onChange={this.handleEditorChange}
 			/>
 			</div>
-			<input type="submit" value="Post" />
+			<input className="comment-post-button" type="submit" value="Post" />
 			</form>
 			);
 	}
@@ -148,9 +136,9 @@ class CommentComponent extends React.Component{
 	render() {
 		return (
 			<div className="commentBox">
-			<h1>Comments</h1>
-			<CommentList/>
+			<b>Comments:</b>
 			<CommentForm/>
+			<CommentList/>
 			</div>
 			);
 	}

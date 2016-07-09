@@ -33,7 +33,7 @@ var CommentList = React.createClass({
 		//for test id_1
 		this.loadCommentsFromServer('id_1');
 
-		// setInterval(this.loadCommentsFromServer, 2000);
+		setInterval(this.loadCommentsFromServer, 2000);
 	},
 	loadCommentsFromServer: function(articleId) {
 
@@ -45,7 +45,7 @@ var CommentList = React.createClass({
 				this.setState({data: data});
 			}.bind(this),
 			error: function(xhr, status, err) {
-				// console.error(this.props.url, status, err.toString());
+				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
 	},
@@ -119,13 +119,13 @@ var CommentForm = React.createClass({
 			console.log(error);
 		});
 
-		tinymce.get(tinymce_editor_id).setContent('');
+		tinyMCE.activeEditor.setContent('');
 	},
 	render: function() {
 
 		return (
 			<form className="commentForm" onSubmit={this.handleSubmit}>
-			<div className="textarea-comment11">
+			<div className="textarea-comment">
 			<TinyMCE
 			config={{
 				menubar: false,
