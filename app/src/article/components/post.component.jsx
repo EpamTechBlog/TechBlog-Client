@@ -30,10 +30,10 @@ class PostComponent extends React.Component{
            )
     });
     return (
-      <div className="articleTitleDiv">
+      <div className="article-Title-Div">
 
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className='articleTitle mdl-textfield mdl-js-textfield'>
+          <div className='article-Title mdl-textfield mdl-js-textfield'>
             <label>Title</label>
             <input className="mdl-textfield__input" type="text" id="articleTitle" ref='articleTitle' required/>
           </div>
@@ -41,8 +41,8 @@ class PostComponent extends React.Component{
             {radios}
           </div>
           <textarea className='textarea' ref='articleText'></textarea>
-          <div className='articlePostButton'>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+          <div className='article-Post-Button'>
+            <button className="common-button"
              type='submit'>
               Post
             </button>

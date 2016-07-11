@@ -10,6 +10,24 @@ function getTopicArticles(articles) {
   return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
+function deleteArticle(articleId) {
+  return { type : 'DELETE_ARTICLE', articleId}
+}
+
+function deleteRequestToServer(articleId) {
+  return axios.delete('http://localhost:8000/articles/' + articleId);
+}
+
+function asynDeleteMiddleware(articleId) {
+  return function(dispatch) {
+    return deleteRequestToServer(articleId).then(() => {
+      console.log('delete successfully');
+    }).catch(err => console.log(err));
+  }
+}
+
+
+
 
 function postRequestToServer(title, content, topic, authorName, authorId) {
   return axios.post('http://localhost:8000/articles',
