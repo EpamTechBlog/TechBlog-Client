@@ -24,17 +24,19 @@ class SidebarComponent extends React.Component{
 	}
 
 	render(){
+
 		let topics = this.state.topics.map((topic) =>{
 
 			if(store.getState().topic == topic.topicName)
 				return (
-								<span className="mdl-navigation__link selected" onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+								<span className="mdl-navigation__link selected" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
 	 							)
 	 		else
 	 			return (
-	 							<span className="mdl-navigation__link" onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+	 							<span className="mdl-navigation__link" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
 	 							)
 		});
+
 		return (
 
 			<div className="demo-drawer mdl-layout__drawer ">
@@ -43,7 +45,7 @@ class SidebarComponent extends React.Component{
 
 					{topics}
 
-				</nav>
+			</nav>
 			</div>
 			)
 	}

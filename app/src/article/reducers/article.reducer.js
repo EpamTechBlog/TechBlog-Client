@@ -17,7 +17,9 @@ const articleReducer = (state = [], action) => {
           return article.topic !== action.articles[0].topic;
         }).concat(action.articles)
       }
-
+    case 'DELETE_ARTICLE' :
+      let index = state.indexOf(action.article);
+      return state.splice(index, 1)
 
     default:
       return state
