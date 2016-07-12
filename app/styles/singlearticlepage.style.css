@@ -1,19 +1,45 @@
 .mdl-progress__indeterminate{
 	margin-top:50%;
 }
-.singleArticle{
-	width:91%;
+
+.article-page{
+	border: 2px solid #1a9cb0;
+	border-radius: 5px;
+	/*height:100vh;*/
+	width: 79.5vw;
+}
+
+.article-comment{
+	padding-left: 10px;
+	/*padding-right:300px;*/
+	width: 100%;
+}
+
+.article-main{
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .frame {
-  position: absolute;
+	position: absolute;
 }
 .articleContent {
-  position: absolute;
-  width:80%;
- 	margin-left: 250px;
+	position: absolute;
+	width:80%;
+	margin-left: 250px;
 	margin-top: 66px;
 }
-.authorTag{
-  margin-left: 55%;
-  color:lightgrey;
+.authorTag, .dateTag{
+	color:lightgrey;
+	font-size: 10pt;
+}
+
+.article-content{
+	background-color: ;
+}
+
+.article-title{
+	font-size: 20pt;
+}
+.postDetails-title{
+	text-align: center;
 }

@@ -1,21 +1,4 @@
 tinymce.init({
-	selector: '#textarea-comment',
-	height: 200,
-	plugins: [
-	"searchreplace wordcount",
-	],
-	toolbar1: " bullist numlist | outdent indent blockquote | undo redo | forecolor | charmap emoticons | spellchecker ",
-
-	menubar: false,
-	toolbar_items_size: 'small',
-
-	content_css: [
-	'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-	'//www.tinymce.com/css/codepen.min.css'
-	]
-});
-
-tinymce.init({
 	selector: '#textarea-post',
 	theme: 'modern',
 	width: 800,

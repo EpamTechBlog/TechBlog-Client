@@ -5,15 +5,18 @@ import store from '../../../store.js';
 function addArticle(article) {
   return { type: 'ADD_ARTICLE', article }
 }
-
+function deleteArticle(article) {
+  console.log(article)
+  return { type : 'DELETE_ARTICLE', article}
+}
 function getTopicArticles(articles) {
   return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
-export function asynPostMiddleware(title, content, topic, author, userId) {
+export function asynDeleteMiddleware(articleId, topic) {
   return function (dispatch) {
-    return postRequestToServer(title, content, topic, author, userId).then(
-      article => dispatch(addArticle(article))
+    return deletePostFromServer(articleId).then(
+      article => dispatch(deleteArticle(article))
     ).then(() => {
       getRequestToServer(topic).then((res) => {
         if(res.data.articles.length != 0)
@@ -23,6 +26,9 @@ export function asynPostMiddleware(title, content, topic, author, userId) {
     })
     .catch(err => console.log(err));
   };
+}
+function deletePostFromServer(articleId) {
+  return axios.delete('http://localhost:8000/articles/' + articleId)
 }
 
 function postRequestToServer(title, content, topic, authorName, authorId) {
@@ -70,5 +76,4 @@ export function asynGetArticlesByTopicMiddle (topic) {
     .catch(err => console.log(err));
   }
 }
-
 

@@ -1,13 +1,26 @@
 @import 'common.style.css';
 
 .commentBox{
-	position: absolute;
-	left: 300px;
-	top: 100px;
+	/*width: 1000px;*/
+	margin-right: 20px;
 }
 
 .demo-list-icon {
-	width: 300px;
+	/*width: 50vw;*/
+}
+.comment-post-button{
+	margin-left: 94%;
+}
+.commentList-comment{
+	background-color: white;
+	color: black !important;
+}
+.comment-creator{
+	color: #3498db;
+	font-size: 20px;
+}
+.comment-title{
+	display: inline-block;
 }
 
 .demo-list-icon {
