@@ -26,25 +26,43 @@ var Comment = React.createClass({
 
 var CommentList = React.createClass({
 
+	// constructor(){
+
+	// 	super();
+	// 	this.state = { username : cookie.load('username'), userId : cookie.load('userId'), userImage : '' };
+	// },
+
 	getInitialState: function() {
 		return {data: []};
 	},
 
-
 	componentDidMount: function() {
-		//for test id_1
-		this.loadCommentsFromServer('id_1');
+		//every 2s get comments
+		setInterval(this.loadCommentsFromServer, 2000, this.props.id);
 
-		setInterval(this.loadCommentsFromServer, 2000);
+		//get userImage
+		// $.ajax({
+		//         url: 'http://localhost:8000/articles/' + cookie.load('userId'),
+		//         dataType: 'json',
+		//         type: "GET",
+		//         cache: false,
+		//         success: function(data) {
+		//         	this.setState({ userImage : data.profileImage });
+		//         }.bind(this),
+		//         error: function(xhr, status, err) {
+		//         	console.error(error, err.toString());
+		//         }.bind(this)
+		//     });
 	},
 	loadCommentsFromServer: function(articleId) {
 
 		$.ajax({
-			url: 'http://localhost:8000/comments/id_1',
+			url: 'http://localhost:8000/comments/' + articleId,
 			dataType: 'json',
 			cache: false,
 			success: function(data) {
-				this.setState({data: data});
+				if(data != null)
+					this.setState({data: data});
 			}.bind(this),
 			error: function(xhr, status, err) {
 				// console.error(this.props.url, status, err.toString());
@@ -53,24 +71,31 @@ var CommentList = React.createClass({
 	},
 	
 	render: function() {
+		
 		var commentNodes = this.state.data.map(function(comment) {
-			var el = document.createElement( 'html' );
-			el.innerHTML = comment.content;
-			; 
+			
 			return (
-				<li key={comment.time} class="mdl-list__item">
-				<span class="mdl-list__item-primary-content">
-				<i class="material-icons mdl-list__item-icon">person</i>
-				{comment.creator} - <span>{comment.time}</span>
-				</span>
-				<p>{el.getElementsByTagName( 'p' )[0].textContent}</p>
+				<div>
+					
+					<li key={comment.time} className="content-font commentList-comment">
+						<div className="comment-title">
+							<i className="material-icons">account_circle</i>
+							// <img className="navi-profile-Img" src={this.state.userImage ? this.state.userImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"} />
 
-				</li>
+							<span className="comment-creator"> {comment.creator}</span> - <span>{comment.time}</span>
+						</div>
+						<div>
+							<span>{comment.content}
+							</span>
+						</div>
+
+					</li>
+				</div>
 				);
 		});
 		return (
 			<div className="commentList">
-			<ul class="demo-list-icon mdl-list">
+			<ul className="demo-list-icon mdl-list">
 			{commentNodes}
 			</ul>
 
@@ -85,10 +110,11 @@ var CommentForm = React.createClass({
 		return {author: '', text: ''};
 	},
 	componentDidMount() {
+
 	},
 
 	handleEditorChange(e) {
-		console.log(e.target.getContent());
+		//console.log(e.target.getContent());
 	},
 
 	handleSubmit: function(e) {
@@ -97,8 +123,8 @@ var CommentForm = React.createClass({
 		var tinymce_editor_id = '#TinyMCE-comment'; 
 		axios.post('http://localhost:8000/comments', 
 		{
-			articleId: "id_1",
-			creator: "adam",
+			articleId: this.props.id,
+			creator: cookie.load('username'),
 			content: tinymce.activeEditor.getContent()
 		})
 		.then(function (response) {
@@ -125,7 +151,7 @@ var CommentForm = React.createClass({
 			onChange={this.handleEditorChange}
 			/>
 			</div>
-			<input className="comment-post-button" type="submit" value="Post" />
+			<input className="common-button" type="submit" value="Post" />
 			</form>
 			);
 	}
@@ -134,11 +160,12 @@ var CommentForm = React.createClass({
 class CommentComponent extends React.Component{
 
 	render() {
+
 		return (
 			<div className="commentBox">
 			<b>Comments:</b>
-			<CommentForm/>
-			<CommentList/>
+			<CommentForm id={this.props.id}/>
+			<CommentList id={this.props.id}/>
 			</div>
 			);
 	}

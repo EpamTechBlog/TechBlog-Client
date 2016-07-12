@@ -23,7 +23,7 @@ class SidebarComponent extends React.Component{
 			<span className="mdl-navigation__link" onClick={this.goToTopic.bind(this, 'PHP')}><i className="material-icons">queue_play_next</i>PHP</span>
 			<span className="mdl-navigation__link" onClick={this.goToTopic.bind(this, 'IOS')}><i className="material-icons">laptop_mac</i>IOS</span>
 			<span className="mdl-navigation__link" onClick={this.goToTopic.bind(this, 'C#')}><i className="material-icons">closed_caption</i>C#</span>
-			<div class="mdl-layout-spacer"></div>
+			<div className="mdl-layout-spacer"></div>
 
 			</nav>
 			</div>

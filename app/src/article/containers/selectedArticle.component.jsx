@@ -16,7 +16,9 @@ class SelectedArticleComponent extends React.Component{
   }
   componentDidMount(){
     axios.get('http://localhost:8000/articles/' + this.props.params.id ).then((data) => {
+      
       this.setState({ article :  data.data});
+
     }).catch((err) => console.log(err));
   }
 

@@ -15,13 +15,13 @@ class SingleArticlePageComponent extends React.Component{
 	}
 
 	render(){
-		if(this.props.article == {}){
+		if(!this.props.article._id){
+			
 			return (
 
 				<div id="p2" className="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
 				)
 		}else{
-
 
 			return (
 				<div className="article-page">
@@ -38,7 +38,7 @@ class SingleArticlePageComponent extends React.Component{
 				</div>
 				</div>
 				<div className="article-comment">
-				<CommentComponent/>
+				<CommentComponent id={this.props.article._id}/>
 				</div>
 				</div>
 
