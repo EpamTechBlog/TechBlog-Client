@@ -24,8 +24,8 @@ class ProfileComponent extends React.Component{
       return (
             <div>
               <NavigationComponent />
-              <div className='title-panel'>
-                <div>
+              <div className='profile-title-panel'>
+                <div className='profile-title-div'>
                   <span>{this.props.editBaseInfo ?  'EDIT PROFILE' : 'MY PROFILE'}</span>
                 </div>
               </div>
@@ -42,7 +42,7 @@ class ProfileComponent extends React.Component{
                                     <MyPostComponent/>
                                   </div>
                                   <div className='mdl-cell--6-col profile-layer'>
-                                    <MySkillsComponent/>
+                                    <MySkillsComponent {...this.props}/>
                                     <MyCommentedBlogComponent/>
                                   </div>
                                 </div>

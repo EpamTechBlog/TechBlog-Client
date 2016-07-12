@@ -35,12 +35,12 @@ class MyCommentedBlogComponent extends React.Component{
 				year = publishDate.getFullYear(),
 				month = publishDate.getMonth(),
 				day = publishDate.getDate();
-			var createdDate = year + "/" + month + "/" + day;			
+			var createdDate = year + "/" + month + "/" + day;
 			return (
 				<tr key={post._id}>
 					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
 					<td>{createdDate}</td>
-					<td>{post.authorName}</td>							
+					<td>{post.authorName}</td>
 				</tr>
 			)
 		})
@@ -49,7 +49,7 @@ class MyCommentedBlogComponent extends React.Component{
                   <div className="mdl-card__title">
                     <h2 className="mdl-card__title-text">My Comments</h2>
                   </div>
-                  <div className="mdl-card__supporting-text div-contain-table-fix">
+                  <div className="mdl-card__supporting-text myposts-div-contain-table">
                     <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
                       <thead>
                         <tr>

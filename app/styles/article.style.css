@@ -65,3 +65,16 @@
   background-position: bottom right;
   background-repeat: no-repeat;
 }
+.article-control{
+    float: right;
+    margin-right: 30px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    width:28px;
+    cursor: pointer;
+}
+#progress{
+    margin-top: 300px;
+    margin-left: 20%;
+    width:60%;
+}

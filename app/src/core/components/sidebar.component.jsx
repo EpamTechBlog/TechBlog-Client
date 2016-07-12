@@ -2,43 +2,64 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
+import store from "../../../store.js";
 require('../../../styles/sidebar.style.css');
 class SidebarComponent extends React.Component{
 
 	constructor(){
 
 		super();
-		this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
+		this.state = { topics : [] };
 	}
+
+	componentDidMount(){
+
+		axios.get('http://localhost:8000/topics').then((data) => {
+			let post = {topicName : 'NEW POST', icon : 'add'};
+			data.data.unshift(post);
+      this.setState({ topics :  data.data});
+
+    }).catch((err) => console.log(err));
+
+	}
+
 	render(){
-		console.log('in sidebar', this.props);
+
+		let topics = this.state.topics.map((topic) =>{
+
+			if(store.getState().topic == topic.topicName)
+				return (
+								<span className="mdl-navigation__link selected" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+	 							)
+	 		else
+	 			return (
+	 							<span className="mdl-navigation__link" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+	 							)
+		});
+
 		return (
 
 			<div className="demo-drawer mdl-layout__drawer ">
 
 				<nav className="demo-navigation mdl-navigation ">
-					<span className="mdl-navigation__link addnew" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'POST_PAGE')}><i className="material-icons">add</i>Post</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'JAVA')}><i className="material-icons">local_cafe</i>JAVA</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'JAVASCRIPT')}><i className="material-icons">loyalty</i>JAVASCRIPT</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'C++')}><i className="material-icons">donut_small</i>C++</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'PHP')}><i className="material-icons">queue_play_next</i>PHP</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'IOS')}><i className="material-icons">laptop_mac</i>IOS</span>
-					<span className="mdl-navigation__link" onClick={this.props.asynGetArticlesByTopicMiddle.bind(null, 'C#')}><i className="material-icons">closed_caption</i>C#</span>
-				<div class="mdl-layout-spacer"></div>
 
-				</nav>
+					{topics}
+
+			</nav>
 			</div>
 			)
 	}
 
 
-
 	logout() {
-
 		cookie.remove('username', { path: '/' });
 		cookie.remove('userId', { path: '/' });
 		this.setState({username : undefined, userId : undefined});
+	}
 
+	goToTopic(topic){
+		this.props.asynGetArticlesByTopicMiddle(topic);
+		hashHistory.push('/articles');
 	}
 }
 export default SidebarComponent

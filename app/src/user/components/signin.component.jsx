@@ -11,6 +11,10 @@ class SigninComponent extends React.Component{
     this.state = { username : '', password: '' };
   }
 
+  componentDidMount(){
+      componentHandler.upgradeDom();
+  }
+
   render() {
 
     return (
