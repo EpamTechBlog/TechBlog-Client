@@ -1,8 +1,8 @@
 import React from 'react';
-import ShowPost from './showPost.component.jsx';
+import PostItem from './postItem.component.jsx';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-require('../../../styles/comment.style.css');
+require('../../../styles/articleList.style.css');
 
 class PostList extends React.Component{
 
@@ -14,34 +14,42 @@ class PostList extends React.Component{
   createPostItem(post){
     console.log('in create post',post);
     return (
-        <ShowPost post={post} key={post._id}/>
+        <PostItem post={post} key={post._id}/>
     );
   }
   render() {
     let posts;
-    console.log('this.props',this.props);
-
-    if(this.props.posts.length !== 0){
-      posts = this.props.posts
-      .filter((post)=>{
-        return post.topic === this.props.topic;
-      })
+    // console.log('@@@@this.props.search',this.props.search.searchFlag);
+    if(this.props.search.searchFlag == 'search'){
+      posts = this.props.search.searchResult
       .map((post)=>{
         return this.createPostItem(post);
-      });
+      });;
+      console.log('enter search',posts);
+    } else {
+       if(this.props.posts.length !== 0){
+        posts = this.props.posts
+        .filter((post)=>{
+          return post.topic === this.props.topic;
+        })
+        .map((post)=>{
+          return this.createPostItem(post);
+        });
+      }
     }
 
     return (
       <div>
-        <table className="mdl-data-table mdl-js-data-table mdl-shadow--3dp articleContainer">
+        <table className="mdl-data-table mdl-js-data-table mdl-shadow--3dp artiList-container artiList-table">
           <thead>
-            <tr>
-              <th className="mdl-data-table__cell--non-numeric postItem">Title</th>
-              <th className="mdl-data-table__cell--non-numeric postItem">Author</th>
-              <th className="mdl-data-table__header--sorted-descending mdl-data-table__cell--non-numeric postItem">Publish Date</th>
+            <tr className="title-font artiList-title">
+              <th className="mdl-data-table__cell--non-numeric artiList-postItem">Title</th>
+              <th className="mdl-data-table__cell--non-numeric artiList-postItem">Author</th>
+              <th className="mdl-data-table__cell--non-numeric artiList-postItem">Publish Date</th>
+              <th className="mdl-data-table__header--sorted-descending mdl-data-table__cell--non-numeric artiList-postItem">Lastest Comment</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="content-font">
             {posts}
           </tbody>
         </table>
@@ -52,8 +60,9 @@ class PostList extends React.Component{
 
 const mapStateToProps = (store) => {
   return {
-    posts: store.articles,
-    topic: store.topic
+    posts : store.articles,
+    topic : store.topic,
+    search : store.search
   }
 }
 export default connect(mapStateToProps, null)(PostList)

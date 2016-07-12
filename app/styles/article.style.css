@@ -1,28 +1,4 @@
 @import 'common.style.css';
-
-.articleContainer {
-  width: 90%;
-  table-layout:fixed;
-}
-
-.searchContainer{
-  width : 100%;
-}
-
-.searchLabel{
-  padding-left: 40px;
-}
-
-.searchLine{
-  width: 100%;
-  padding-left:35px;
-}
-.searchIcon{
-  float: left;
-  z-index: 100;
-  color: gray;
-}
-
 .articleContent {
   position: absolute;
 
@@ -48,13 +24,6 @@
 .articlePostButton {
   margin: 30px;
 
-}
-
-.postItem{
-  font-size: 15px !important;
-  text-align: center !important;
-  color: black;
-  width: 30% !important;
 }
 
 .textarea {

@@ -1,11 +1,8 @@
 'use strict';
-
 import React from 'react';
 import PostList from './postList.component.jsx';
 import SearchPost from './searchPost.component.jsx';
 import $ from "jquery";
-
-require('../../../styles/article.style.css');
 
 class Articles extends React.Component{
   constructor() {
