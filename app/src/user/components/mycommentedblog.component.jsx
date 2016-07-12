@@ -2,6 +2,7 @@ import React from "react";
 import $ from "jquery";
 import cookie from 'react-cookie';
 import { baseInfoEdited } from '../actions/profile.action';
+import { hashHistory } from 'react-router';
 require('../../../styles/profile.style.css');
 
 class MyCommentedBlogComponent extends React.Component{
@@ -14,13 +15,12 @@ class MyCommentedBlogComponent extends React.Component{
 	componentDidMount(){
 
     	$.ajax({
-            url: 'http://localhost:8000/comments/articles/' + cookie.load('userId'),
+            url: 'http://localhost:8000/comments/articles/' + cookie.load('username'),
             dataType: 'json',
             type: "GET",
             cache: false,
             success: function(data) {
             	setTimeout(() => {this.setState({ commentedArticles : data, isLoadingProfile : false })}, 2000);
-            	console.log("commentedArticles " + this.state.commentedArticles);
             }.bind(this),
             error: function(xhr, status, err) {
             	console.error(error, err.toString());
@@ -30,17 +30,12 @@ class MyCommentedBlogComponent extends React.Component{
 	}
 
 	render() {
-		var posts = this.state.commentedArticles.map(function(post){
-			var publishDate = new Date(post.publishDate),
-				year = publishDate.getFullYear(),
-				month = publishDate.getMonth(),
-				day = publishDate.getDate();
-			var createdDate = year + "/" + month + "/" + day;
+		var posts = this.state.commentedArticles.map((post) => {
 			return (
-				<tr key={post._id}>
+				<tr key={post.id} onClick={this.toArticle.bind(this, post.id)}>
 					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
-					<td>{createdDate}</td>
 					<td>{post.authorName}</td>
+					<td>{post.topic}</td>
 				</tr>
 			)
 		})
@@ -53,9 +48,9 @@ class MyCommentedBlogComponent extends React.Component{
                     <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
                       <thead>
                         <tr>
-                          <th className="mdl-data-table__cell--non-numeric">Posts</th>
-                          <th>Created Date</th>
-                          <th>Last Updated Date</th>
+                          <th className="mdl-data-table__cell--non-numeric">Title</th>
+                          <th>Author</th>
+                          <th>Topic</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -79,6 +74,9 @@ class MyCommentedBlogComponent extends React.Component{
 		          </div>
                 </div>
 			  )
+	}
+	toArticle(id){
+		hashHistory.push('/articles/' + id);
 	}
 }
 
