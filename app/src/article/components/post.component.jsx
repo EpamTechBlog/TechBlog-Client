@@ -58,10 +58,7 @@ class PostComponent extends React.Component{
     const title = this.refs.articleTitle.value;
     const text = this.refs.articleText.value;
     const topic = $('input[name="topic"]:checked').val();
-    console.log(store.getState(), 'before');
-    console.log(topic, 'topic.1111111');
-    console.log(this.props, 'this.props');
-    this.props.asynPostMiddleware(title, text, topic, cookie.load('username'), cookie.load('userId'));
+    this.props.asynPostMiddleware(title, text, topic, cookie.load('username'), cookie.load('userId'), cookie.load('email'), cookie.load('subscribed'));
     //this.props.asynGetArticlesByTopicMiddle(topic);
   }
 }

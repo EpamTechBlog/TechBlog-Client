@@ -61,7 +61,10 @@
 }
 
 .profile-edit-box{
-  width:100%;
+  width:50%;
+  display:inline-block;
+  height:60%;
+  padding-top:25px;
 }
 
 .profile-edit-field{
@@ -135,6 +138,12 @@
   background: #eee;
   border-color: #ccc;
   text-decoration: none
+}
+.subscription{
+    display: inline-block;
+}
+.buttons {
+  padding-top:250px;
 }
 .mdl-card__title-text{
     font-size: 16px;

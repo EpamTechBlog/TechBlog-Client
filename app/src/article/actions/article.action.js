@@ -10,7 +10,7 @@ function getTopicArticles(articles) {
   return { type : 'GET_TOPIC_ARTICLES', articles}
 }
 
-export function asynPostMiddleware(title, content, topic, author, userId) {
+export function asynPostMiddleware(title, content, topic, author, userId, email, subscribed) {
   return function (dispatch) {
     return postRequestToServer(title, content, topic, author, userId).then(
       article => dispatch(addArticle(article))
@@ -70,5 +70,4 @@ export function asynGetArticlesByTopicMiddle (topic) {
     .catch(err => console.log(err));
   }
 }
-
 
