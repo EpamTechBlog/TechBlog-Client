@@ -1,7 +1,7 @@
 import React from "react";
 import $ from "jquery";
 import cookie from 'react-cookie';
-
+import { baseInfoEditing } from '../actions/profile.action';
 class MySkillsComponent extends React.Component{
 
 	constructor() {
@@ -25,14 +25,14 @@ class MySkillsComponent extends React.Component{
               console.error(error, err.toString());
             }.bind(this)
           });
-		
+
 
 	}
 
 	render() {
 		var skills = this.state.mySkills.map(function(skill){
 			return (
-						<span className="mdl-badge mdl-badge--overlap" data-badge="♥">{skill}</span>
+						<span className="mdl-badge mdl-badge--no-background" data-badge="👍">{skill}</span>
 					)
 		});
 		return(
@@ -44,19 +44,24 @@ class MySkillsComponent extends React.Component{
                     {skills}
                   </div>
                   <div className="mdl-card__menu">
-	                  <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEditing}>
-	                     {(() => {
-	                              if(this.state.isLoadingProfile){
-	                                return (
+                    <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEditing}>
+                       {(() => {
+                                if(this.state.isLoadingProfile){
+                                  return (
 
-	                                          <div className="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                                            <div className="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
 
-	                                        );
-	                              }
-	                     })()}
+                                          );
+                                }else{
+                                  return (
+                                              <a className="material-icons">edit</a>
 
-	                  </button>
-		          </div>
+                                          );
+                                }
+                       })()}
+
+                    </button>
+		              </div>
                 </div>
 			  )
 	}

@@ -41,7 +41,7 @@ class PostComponent extends React.Component{
           </div>
           <textarea className='textarea' ref='articleText'></textarea>
           <div className='articlePostButton'>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+            <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
              type='submit'>
               Post
             </button>

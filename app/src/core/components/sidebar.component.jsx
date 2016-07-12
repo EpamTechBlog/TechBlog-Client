@@ -18,6 +18,7 @@ class SidebarComponent extends React.Component{
 			let post = {topicName : 'NEW POST', icon : 'add'};
 			data.data.unshift(post);
       this.setState({ topics :  data.data});
+
     }).catch((err) => console.log(err));
 
 	}

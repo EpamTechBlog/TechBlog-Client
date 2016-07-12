@@ -45,47 +45,46 @@ class EditProfileComponent extends React.Component{
           <div className='profile-content mdl-grid'>
             <div className='mdl-cell mdl-cell--10-col mdl-cell--1-offset'>
 
-              <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-edit-box">
+              <div className="demo-card-wide mdl-card mdl-shadow--2dp editProfile-box">
 
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
-                    <img className="profile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
+                    <img className="editProfile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
                   </label>
-                  <a className="profile-edit-upload">
+                  <a className="editProfile-upload">
                     <input type='file' ref='imagefile' onChange={this.changeImage.bind(this)}/>Click to choose file
                   </a>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Job Title:
                   </label>
                   <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Address:
                   </label>
                   <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Email:
                   </label>
                   <input type='email' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Phone:
                   </label>
                   <input type='text' ref='phone' value={this.state.userInfo.phone} onChange={this.handleChange}/>
                 </div>
 
-
               </div>
 
-              <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-edit-box">
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+              <div className="demo-card-wide mdl-card mdl-shadow--2dp editProfile-box">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Skills:
                   </label>
                   <Select2
@@ -101,8 +100,8 @@ class EditProfileComponent extends React.Component{
                     }
                   />
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Subscription:
                   </label>
                   <RadioGroup className='subscription' name="subcription" ref='subscribed' value={this.state.userInfo.subscribed} onChange={this.handleChange}>
@@ -110,12 +109,13 @@ class EditProfileComponent extends React.Component{
                     <input type="radio" value="no" />No
                   </RadioGroup>
                 </div>
-                <div className="profile-edit-div buttons">
-                  <label className="profile-edit-label">&nbsp;</label>
-                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent profile-edit-button submit" onClick={this.updateProfile.bind(this)}>
+
+                <div className="editProfile-div buttons">
+                  <label className="editProfile-label">&nbsp;</label>
+                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent editProfile-button submit" onClick={this.updateProfile.bind(this)}>
                     Update
                   </button>
-                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect profile-edit-button" onClick={this.props.cancelInfoEditing}>
+                  <button className="mdl-button mdl-js-button mdl-js-ripple-effect editProfile-button" onClick={this.props.cancelInfoEditing}>
                     Cancel
                   </button>
 
