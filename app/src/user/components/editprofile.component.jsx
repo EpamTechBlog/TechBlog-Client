@@ -1,6 +1,9 @@
 import React from 'react';
 import $ from "jquery";
 import cookie from 'react-cookie';
+import Select2 from 'react-select2-wrapper';
+import RadioGroup from 'react-radio';
+import 'react-select2-wrapper/css/select2.css';
 import { cancelInfoEditing, baseInfoEdited } from '../actions/profile.action';
 require('../../../styles/profile.style.css');
 
@@ -8,7 +11,7 @@ class EditProfileComponent extends React.Component{
 
   constructor() {
     super();
-    this.state = { userInfo: {username : '', jobTitle : '', skills : [], articles :　[], profileImage : '', homeAddress : '', email : '', phone : ''},
+    this.state = { userInfo: {username : '', jobTitle : '', skills : [], articles :　[], profileImage : '', homeAddress : '', email : '', phone : '', subscribed:　'yes'},
 
                  };
 
@@ -32,7 +35,8 @@ class EditProfileComponent extends React.Component{
   }
 
   handleChange(e){
-    this.state.userInfo = "";
+
+    this.setState({userInfo : {}});
   }
 
   render() {
@@ -40,64 +44,85 @@ class EditProfileComponent extends React.Component{
     return (
           <div className='profile-content mdl-grid'>
             <div className='mdl-cell mdl-cell--10-col mdl-cell--1-offset'>
-              <div className="demo-card-wide mdl-card mdl-shadow--2dp profile-edit-box">
 
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
-                    <img className="profile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
+              <div className="demo-card-wide mdl-card mdl-shadow--2dp editProfile-box">
+
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
+                    <img className="editProfile-Img" src={this.state.userInfo.profileImage ? this.state.userInfo.profileImage : "http://www.bathspa.ac.uk/media/WebProfilePictures/default_profile.jpg"}/>
                   </label>
-                  <a className="profile-edit-upload">
+                  <a className="editProfile-upload">
                     <input type='file' ref='imagefile' onChange={this.changeImage.bind(this)}/>Click to choose file
                   </a>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Job Title:
                   </label>
                   <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Address:
                   </label>
                   <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Email:
                   </label>
                   <input type='email' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Phone:
                   </label>
                   <input type='text' ref='phone' value={this.state.userInfo.phone} onChange={this.handleChange}/>
                 </div>
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">
+
+              </div>
+
+              <div className="demo-card-wide mdl-card mdl-shadow--2dp editProfile-box">
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
                     Skills:
                   </label>
-                  <select multiple="multiple" id='skills' value={this.state.userInfo.skills} onChange={this.handleChange}>
-                    <option value ="Java">Java</option>
-                    <option value ="C++">C++</option>
-                    <option value="Javascript">Javascript</option>
-                    <option value=".Net">.Net</option>
-                  </select>
-                </div>                
-                <div className="profile-edit-div">
-                  <label className="profile-edit-label">&nbsp;</label>
-                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored profile-edit-button submit" onClick={this.updateProfile.bind(this)}>
+                  <Select2
+                    multiple
+                    value={this.state.userInfo.skills}
+                    id='skills'
+                    onChange={this.handleChange}
+                    data={['Java', 'C++', 'Javascript', '.Net', 'PHP', 'C#', 'HTML5']}
+                    options={
+                      {
+                        placeholder: 'search by tags',
+                      }
+                    }
+                  />
+                </div>
+                <div className="editProfile-div">
+                  <label className="editProfile-label">
+                    Subscription:
+                  </label>
+                  <RadioGroup className='subscription' name="subcription" ref='subscribed' value={this.state.userInfo.subscribed} onChange={this.handleChange}>
+                    <input type="radio" value="yes" />Yes
+                    <input type="radio" value="no" />No
+                  </RadioGroup>
+                </div>
+
+                <div className="editProfile-div buttons">
+                  <label className="editProfile-label">&nbsp;</label>
+                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent editProfile-button submit" onClick={this.updateProfile.bind(this)}>
                     Update
                   </button>
-                  <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect profile-edit-button" onClick={this.props.cancelInfoEditing}>
+                  <button className="mdl-button mdl-js-button mdl-js-ripple-effect editProfile-button" onClick={this.props.cancelInfoEditing}>
                     Cancel
                   </button>
+
                   <button className="display-none" onClick={this.props.baseInfoEdited}>
                     Cancel
                   </button>
                 </div>
-
               </div>
             </div>
           </div>
@@ -122,12 +147,12 @@ class EditProfileComponent extends React.Component{
   }
 
   updateProfile(){
-        
+
      $.ajax({
         url: 'http://localhost:8000/users/' + cookie.load("userId"),
         dataType: 'json',
         type: "PUT",
-        data: {jobTitle : this.refs.jobTitle.value, skills : $('#skills').val(), profileImage : this.state.userInfo.profileImage, homeAddress : this.refs.homeAddress.value, email : this.refs.email.value, phone : this.refs.phone.value},
+        data: {jobTitle : this.refs.jobTitle.value, skills : $('#skills').val(), profileImage : this.state.userInfo.profileImage, homeAddress : this.refs.homeAddress.value, email : this.refs.email.value, phone : this.refs.phone.value, subscribed : this.refs.subscribed.value},
         cache: false,
         success: function(data) {
           console.log('profile updated successfully');
@@ -139,7 +164,7 @@ class EditProfileComponent extends React.Component{
 
         }.bind(this)
       });
-    
+
   }
 }
 export default EditProfileComponent;

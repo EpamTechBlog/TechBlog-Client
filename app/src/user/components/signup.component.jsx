@@ -12,6 +12,10 @@ class SingupComponent extends React.Component{
     this.state = { username : '', password: '', confirmPassword : ''};
   }
 
+  componentDidMount(){
+      componentHandler.upgradeDom();
+  }
+  
   render() {
 
     return (

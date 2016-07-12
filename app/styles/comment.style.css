@@ -1,33 +1,26 @@
+@import 'common.style.css';
+
 .commentBox{
-	position: absolute;
-	left: 300px;
-	top: 100px;
+	/*width: 1000px;*/
+	margin-right: 20px;
 }
 
-.commentPostButton {
-	margin-top: 5px;
+.demo-list-icon {
+	/*width: 50vw;*/
+}
+.comment-post-button{
+	margin-left: 94%;
+}
+.commentList-comment{
+	background-color: white;
+	color: black !important;
+}
+.comment-creator{
+	color: #3498db;
+	font-size: 20px;
+}
+.comment-title{
 	display: inline-block;
-	color: #666;
-	background-color: #eee;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 12px;
-	padding: 10px 30px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
-}
-
-.commentPostButton:hover {
-	background-color: #e3e3e3;
-	border-color: rgba(0,0,0,0.5);
-}
-
-.commentPostButton:active {
-	background-color: #CCC;
-	border-color: rgba(0,0,0,0.9);
 }
 
 .demo-list-icon {

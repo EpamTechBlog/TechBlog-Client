@@ -1,0 +1,53 @@
+@import 'base.style.css'; /*import fonts*/
+/*title css*/
+//font
+.title-font{
+  font-family: Oswald-Light-Roman, Tahoma, sans-serif;
+}
+
+.content-font{
+  font-family: 'Source Sans Pro';
+  background-color: white;
+  color: black;
+}
+
+
+.title{
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
+  background-color: white;
+  color: #B22746;
+  font-size: 30px;
+}
+
+.subtitle{
+  font-family: Oswald-Regular-Roman, Tahoma, sans-serif;
+  background-color: white;
+  color: #B22746;
+  font-size: 25px;
+}
+
+.common-button {
+  margin-top: 5px;
+  display: inline-block;
+  color: white;
+  background-color: #1a9cb0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 3px;
+}
+
+.common-button:hover {
+  background-color: #1891A3;
+  border-color: rgba(0,0,0,0.5);
+}
+
+.common-button:active {
+  background-color: #CCC;
+  border-color: rgba(0,0,0,0.9);
+}

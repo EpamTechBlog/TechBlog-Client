@@ -2,6 +2,7 @@ import React from 'react';
 import $ from "jquery";
 import cookie from 'react-cookie';
 import { baseInfoEdited } from '../actions/profile.action';
+import { hashHistory } from 'react-router';
 require('../../../styles/profile.style.css');
 
 class MyPostComponent extends React.Component{
@@ -29,14 +30,14 @@ class MyPostComponent extends React.Component{
 	}
 
 	render() {
-		var posts = this.state.MyPosts.map(function(post){
+		var posts = this.state.MyPosts.map((post) => {
 			var publishDate = new Date(post.publishDate),
 				year = publishDate.getFullYear(),
 				month = publishDate.getMonth(),
 				day = publishDate.getDate();
 			var createdDate = year + "/" + month + "/" + day;
 			return (
-				<tr key={post._id}>
+				<tr key={post._id} onClick={this.toArticle.bind(this, post._id)}>
 					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
 					<td>{createdDate}</td>
 					<td>{post.authorName}</td>							
@@ -48,7 +49,7 @@ class MyPostComponent extends React.Component{
 	                  <div className="mdl-card__title">
 	                    <h2 className="mdl-card__title-text">My Post</h2>
 	                  </div>
-	                  <div className="mdl-card__supporting-text div-contain-table-fix">
+	                  <div className="mdl-card__supporting-text myposts-div-contain-table">
 	                    <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp profile-table">
 	                      <thead>
 	                        <tr>
@@ -78,6 +79,9 @@ class MyPostComponent extends React.Component{
 		              </div>
 	            </div>
 			   )
+	}
+	toArticle(id){
+		hashHistory.push('/articles/' + id);
 	}
 }
 
