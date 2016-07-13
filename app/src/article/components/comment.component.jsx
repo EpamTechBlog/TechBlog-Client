@@ -62,9 +62,10 @@ var CommentList = React.createClass({
 					<li key={comment.time} className="content-font commentList-comment">
 						<div className="comment-title">
 							<i className="material-icons">face</i>
-							<span className="comment-creator"> {comment.creator}</span> - <span>{comment.time}</span>
+							<span className="comment-creator"> {comment.creator}</span> - <span>{comment.time} </span>
 						</div>
 						<div>
+
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
 							</span>
 						</div>

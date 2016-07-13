@@ -32,7 +32,7 @@ class SearchPost extends React.Component{
     return(
      <form onSubmit={this.handleSubmit} className="articleContainer">
        <div className="mdl-textfield mdl-js-textfield searchContainer">
-         <label className="mdl-button mdl-js-button mdl-button--icon searchIcon" for="search">
+         <label className="mdl-button mdl-js-button mdl-button--icon searchIcon" htmlFor="search">
           <i className="material-icons ">search</i>
          </label>
          <div>
@@ -43,7 +43,7 @@ class SearchPost extends React.Component{
            value={this.state.searchContent}
            onChange = {this.handleSearchChange}
            />
-           <label className="mdl-textfield__label searchLabel" for="sample-expandable">Search By Title</label>
+           <label className="mdl-textfield__label searchLabel" htmlFor="sample-expandable">Search By Title</label>
          </div>
        </div>
      </form>

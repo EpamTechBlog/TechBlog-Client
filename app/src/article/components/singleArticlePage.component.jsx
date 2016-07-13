@@ -28,16 +28,22 @@ class SingleArticlePageComponent extends React.Component{
 				<div className="article-main">
 				<div className="postDetails-title">
 				<h2 className="title article-title" >{this.props.article.title}
-				 {(() => {
-              if(cookie.load('userId') == this.props.article.authorId){
-                return (
-                			<div>
-                        <span className="material-icons article-icon article-control" onClick={this.deletePost.bind(this)}>delete forever</span>
-												<span className="material-icons article-icon article-control" onClick={this.editPost.bind(this)}>create</span>
-											</div>
-                        );
-              }
-		     })()}
+				{(() => {
+              	if(cookie.load('userId') == this.props.article.authorId){
+	                return (
+	                			<div>
+	                        		<span className="material-icons article-icon article-control" onClick={this.deletePost.bind(this)}>delete forever</span>
+									<span className="material-icons article-icon article-control" onClick={this.editPost.bind(this)}>create</span>
+				 				</div>
+	                        );
+              	}else{
+              		return (
+	                			<div>
+									<span className="material-icons article-icon article-control" onClick={this.subscribePost.bind(this)}>subscriptions</span>
+				 				</div>
+	                        );
+              	}
+		     	})()}
 				</h2>
 
 				<span className='mdl-navigation__link dateTag'><i className="material-icons article-icon">schedule</i>&nbsp;{this.props.article.publishDate}<span>&nbsp; | &nbsp;</span></span>
@@ -45,7 +51,7 @@ class SingleArticlePageComponent extends React.Component{
 				<span className='mdl-navigation__link authorTag'><i className="material-icons article-icon">&#xE87C;</i>&nbsp;{this.props.article.authorName}</span>
 				</div>
 				<div className="article-content">
-				<p>{this.props.article.content}</p>
+				<p dangerouslySetInnerHTML={{__html: this.props.article.content}}></p>
 				</div>
 				</div>
 				<div className="article-comment">
@@ -63,6 +69,9 @@ class SingleArticlePageComponent extends React.Component{
 	}
 	editPost() {
 		console.log(this.props.article._id)
+	}
+	subscribePost() {
+
 	}
 }
 export default SingleArticlePageComponent;

@@ -2,7 +2,7 @@ import React from 'react';
 require('../../../styles/article.style.css');
 import $ from "jquery";
 import cookie from 'react-cookie';
-
+import TinyMCE from 'react-tinymce';
 
 import store from '../../../store.js'
 
@@ -39,7 +39,19 @@ class PostComponent extends React.Component{
           <div className="mdl-grid">
             {radios}
           </div>
-          <textarea className='textarea' ref='articleText'></textarea>
+          <div className="textarea-post">
+          <TinyMCE
+          config={{
+            menubar: false,
+            plugins: ['advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                      'save table contextmenu directionality emoticons template paste textcolor'],
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | forecolor backcolor emoticons'
+          }}
+          onChange={this.handleEditorChange}
+          />
+          </div>
+
           <div className='articlePostButton'>
             <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
              type='submit'>
@@ -56,10 +68,10 @@ class PostComponent extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const title = this.refs.articleTitle.value;
-    const text = this.refs.articleText.value;
+    const text = tinymce.activeEditor.getContent();
     const topic = $('input[name="topic"]:checked').val();
     this.props.asynPostMiddleware(title, text, topic, cookie.load('username'), cookie.load('userId'), cookie.load('email'), cookie.load('subscribed'));
-    //this.props.asynGetArticlesByTopicMiddle(topic);
+
   }
 }
 
