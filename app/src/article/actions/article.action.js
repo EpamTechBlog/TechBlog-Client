@@ -16,7 +16,10 @@ function getTopicArticles(articles) {
 export function asynDeleteMiddleware(articleId, topic) {
   return function (dispatch) {
     return deletePostFromServer(articleId).then(
-      article => dispatch(deleteArticle(article))
+      (article) => {
+        deleteCommentFromServer(articleId);
+        dispatch(deleteArticle(article))
+      }
     ).then(() => {
       getRequestToServer(topic).then((res) => {
         if(res.data.articles.length != 0)
@@ -29,6 +32,10 @@ export function asynDeleteMiddleware(articleId, topic) {
 }
 function deletePostFromServer(articleId) {
   return axios.delete('http://localhost:8000/articles/' + articleId)
+}
+
+function deleteCommentFromServer(articleId) {
+  return axios.delete('http://localhost:8000/comments/' + articleId)
 }
 
 function postRequestToServer(title, content, topic, authorName, authorId) {

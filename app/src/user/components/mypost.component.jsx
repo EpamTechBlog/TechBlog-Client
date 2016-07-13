@@ -20,7 +20,6 @@ class MyPostComponent extends React.Component{
             cache: false,
             success: function(data) {
             	setTimeout(() => {this.setState({ MyPosts : data.articles, isLoadingProfile : false })}, 1000);
-            	console.log("myposts " + this.state.MyPosts);
             }.bind(this),
             error: function(xhr, status, err) {
               console.error(error, err.toString());
@@ -40,7 +39,7 @@ class MyPostComponent extends React.Component{
 				<tr key={post._id} onClick={this.toArticle.bind(this, post._id)}>
 					<td className="mdl-data-table__cell--non-numeric">{post.title}</td>
 					<td>{createdDate}</td>
-					<td>{post.authorName}</td>							
+					<td>{post.topic}</td>							
 				</tr>
 			)
 		})
@@ -55,7 +54,7 @@ class MyPostComponent extends React.Component{
 	                        <tr>
 	                          <th className="mdl-data-table__cell--non-numeric">Title</th>
 	                          <th className="md-cell">Created Date</th>
-	                          <th>Author</th>
+	                          <th>Topic</th>
 	                        </tr>
 	                      </thead>
 	                      <tbody>
