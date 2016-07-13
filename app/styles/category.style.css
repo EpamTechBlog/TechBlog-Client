@@ -252,7 +252,7 @@ body #cda-remove {
 	min-width: 220px;
 	max-width: 480px;
 	max-height: 360px;
-	width: 100%;
+	width: 95%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -1420,11 +1420,10 @@ figure.effect-chico:hover p {
 	position: relative;
 	float: left;
 	overflow: hidden;
-	margin: 10px 1%;
+	margin: 10px 12%;
 	min-width: 320px;
 	max-width: 480px;
 	max-height: 360px;
-	width: 48%;
 	height: auto;
 	background: #3085a3;
 	text-align: center;

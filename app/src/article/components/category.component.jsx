@@ -35,7 +35,7 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			<div className="mdl-cell mdl-cell--4-col">
+	  			<div className="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
 
 			      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
 
