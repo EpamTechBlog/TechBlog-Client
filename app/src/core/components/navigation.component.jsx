@@ -29,7 +29,7 @@ class NavigationComponent extends React.Component{
 
 	render(){
 		return (
-
+			<div className="topbar">
 			<div className="mdl-layout__header">
 			<div className="mdl-layout__header-row">
 			<a href='/#/home'>
@@ -67,6 +67,7 @@ class NavigationComponent extends React.Component{
 				}
 			})()}
 
+			</div>
 			</div>
 			</div>
 			)
