@@ -55,14 +55,18 @@ var CommentList = React.createClass({
 	render: function() {
 
 		var commentNodes = this.state.data.map(function(comment) {
-
+			var commentTime = new Date(comment.time);
+			var showCommentTime = commentTime.toLocaleString();
 			return (
-				<div>
+				
 
 					<li key={comment.time} className="content-font commentList-comment">
 						<div className="comment-title">
 							<i className="material-icons">face</i>
-							<span className="comment-creator"> {comment.creator}</span> - <span>{comment.time}</span>
+							<span className="comment-creator"> {comment.creator}</span> - <span>{showCommentTime}</span>
+							<span className="comment-replyer">
+								<a href="#">reply</a>
+							</span>
 						</div>
 						<div>
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
@@ -70,12 +74,12 @@ var CommentList = React.createClass({
 						</div>
 
 					</li>
-				</div>
+				
 				);
 		});
 		return (
 			<div className="commentList">
-			<ul className="demo-list-icon mdl-list">
+			<ul className="mdl-list">
 			{commentNodes}
 			</ul>
 
@@ -136,6 +140,7 @@ class CommentComponent extends React.Component{
 
 		return (
 			<div className="commentBox">
+			<hr />
 			<b>Comments:</b>
 			<CommentForm id={this.props.id}/>
 			<CommentList id={this.props.id}/>
