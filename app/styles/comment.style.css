@@ -22,8 +22,13 @@
 	width: 100%;
 	background: linear-gradient(to bottom, #f1e6e6, white);
 }
+
 .comment-replyer{
 	float:right;
 	padding-right:10px;
+}
+
+.demo-list-icon {
+	width: 500px;
 }
 

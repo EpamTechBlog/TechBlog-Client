@@ -69,6 +69,7 @@ var CommentList = React.createClass({
 							</span>
 						</div>
 						<div>
+
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
 							</span>
 						</div>
