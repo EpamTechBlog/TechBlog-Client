@@ -20,7 +20,7 @@ class MyCommentedBlogComponent extends React.Component{
             type: "GET",
             cache: false,
             success: function(data) {
-            	setTimeout(() => {this.setState({ commentedArticles : data, isLoadingProfile : false })}, 2000);
+            	setTimeout(() => {this.setState({ commentedArticles : data, articlesisLoadingProfile : false })}, 1000);
             }.bind(this),
             error: function(xhr, status, err) {
             	console.error(error, err.toString());
@@ -61,7 +61,7 @@ class MyCommentedBlogComponent extends React.Component{
                   <div className="mdl-card__menu">
 	                  <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick={this.props.baseInfoEditing}>
 	                     {(() => {
-	                              if(this.state.isLoadingProfile){
+	                              if(this.state.articlesisLoadingProfile){
 	                                return (
 
 	                                          <div className="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
