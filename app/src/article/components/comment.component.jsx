@@ -53,10 +53,40 @@ var CommentList = React.createClass({
 	},
 
 	render: function() {
+		var commentTocommentForm = (function(){
 
+			var handleReplyToComment = function() {
+				console.log(123);
+			};
+			
+			return (
+					<form className="replyToComment" onSubmit={handleReplyToComment}>
+						<textarea />
+						<input className="common-button" type="submit" value="Reply" />
+					</form>
+				)
+		})();
 		var commentNodes = this.state.data.map(function(comment) {
+			var showReplyBox = function(){
+				$('.replyToComment').css("display", "block");
+			};
 			var commentTime = new Date(comment.time);
 			var showCommentTime = commentTime.toLocaleString();
+
+			var commentToCommentNodes = comment.comments2comments.map(function(comment2comment){
+				var comment2commentTime = new Date(comment2comment.time);
+				var showCommentToCommentTime = comment2commentTime.toLocaleString();
+				return (
+
+						<div>
+							<i className="material-icons">face</i>
+							<span className="comment-creator">{comment2comment.replyer}</span> - <span>{showCommentToCommentTime}</span>
+							<span dangerouslySetInnerHTML={{__html: comment2comment.content}}>
+							</span>
+						</div>
+
+					)
+			});
 			return (
 				
 
@@ -65,7 +95,7 @@ var CommentList = React.createClass({
 							<i className="material-icons">face</i>
 							<span className="comment-creator"> {comment.creator}</span> - <span>{showCommentTime}</span>
 							<span className="comment-replyer">
-								<a href="#">reply</a>
+								<button onClick={showReplyBox}>Reply</button>
 							</span>
 						</div>
 						<div>
@@ -74,6 +104,9 @@ var CommentList = React.createClass({
 							</span>
 						</div>
 
+						{commentToCommentNodes}
+						{commentTocommentForm}
+						
 					</li>
 				
 				);
@@ -83,7 +116,6 @@ var CommentList = React.createClass({
 			<ul className="mdl-list">
 			{commentNodes}
 			</ul>
-
 			</div>
 			);
 	}
@@ -129,7 +161,7 @@ var CommentForm = React.createClass({
 			onChange={this.handleEditorChange}
 			/>
 			</div>
-			<input className="common-button" type="submit" value="Post" />
+			<input className="common-button" type="submit" value="Reply" />
 			</form>
 			);
 	}
@@ -143,8 +175,8 @@ class CommentComponent extends React.Component{
 			<div className="commentBox">
 			<hr />
 			<b>Comments:</b>
-			<CommentForm id={this.props.id}/>
 			<CommentList id={this.props.id}/>
+			<CommentForm id={this.props.id}/>
 			</div>
 			);
 	}
