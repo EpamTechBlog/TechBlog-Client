@@ -66,16 +66,14 @@
 
 .topbar{
   position: fixed;
-  z-index: 1;
-}
-
-.sidebar{
-  /*position: fixed;*/
-  z-index: 1;
-  margin-top: 64px;
+  z-index: 999;
 }
 
 .comment{
   z-index: 0;
 }
+
+
+
+
 

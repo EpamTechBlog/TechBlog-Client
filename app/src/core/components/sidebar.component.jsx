@@ -29,24 +29,32 @@ class SidebarComponent extends React.Component{
 
 			if(store.getState().topic == topic.topicName)
 				return (
-								<span className="mdl-navigation__link selected" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+								<span className="mdl-navigation__link selected" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}>
+									<i className="material-icons">{topic.icon}</i>
+									{topic.topicName}
+								</span>
 	 							)
 	 		else
 	 			return (
-	 							<span className="mdl-navigation__link" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}><i className="material-icons">{topic.icon}</i>{topic.topicName}</span>
+	 							<span className="mdl-navigation__link" key={Math.random()} onClick={this.goToTopic.bind(this,topic.topicName)}>
+		 							<i className="material-icons">{topic.icon}</i>
+		 							{topic.topicName}
+	 							</span>
 	 							)
 		});
 
 		return (
+			<div>
+				
+				<div className="demo-drawer mdl-layout__drawer ">
 
-			<div className="demo-drawer mdl-layout__drawer ">
+					<nav className="demo-navigation mdl-navigation ">
 
-				<nav className="demo-navigation mdl-navigation ">
-
-					{topics}
-
-			</nav>
+						{topics}
+					</nav>
+				</div>
 			</div>
+
 			)
 	}
 

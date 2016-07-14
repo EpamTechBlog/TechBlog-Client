@@ -14,6 +14,8 @@
   background-color: #ebeef0;
   padding-left:55px;
   margin:0 auto;
+  position: fixed;
+  width: 100%;
 }
 .profile-layer{
   padding: 5px 5px 0px 5px;
