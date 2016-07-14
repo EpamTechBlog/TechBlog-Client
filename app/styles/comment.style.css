@@ -31,4 +31,17 @@
 .demo-list-icon {
 	width: 500px;
 }
+.replyToComment{
+	display: none
+}
+.replyToComment input{
+	float: right;
+    margin-top: -48px;
+    z-index: 100;
+    position: relative;
+}
+.replyToComment textarea{
+    width: 100%;
+    height: 88px;
+}
 
