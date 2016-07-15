@@ -1,6 +1,6 @@
 @import 'base.style.css'; /*import fonts*/
 /*title css*/
-//font
+/*//font*/
 .title-font{
   font-family: Oswald-Light-Roman, Tahoma, sans-serif;
 }
@@ -26,8 +26,19 @@
   font-size: 25px;
 }
 
+@media screen and (max-width: 710px){
+.common-button {
+  letter-spacing: 1.6px !important;
+  font-size: 10px !important;
+  padding: 8px 10px !important;
+  border-bottom-width: 2px !important;
+  margin-right: 29px !important;
+}
+}
+
 .common-button {
   margin-top: 5px;
+  margin-right: 8px;
   display: inline-block;
   color: white;
   background-color: #1a9cb0;
@@ -40,6 +51,7 @@
   -webkit-border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.3);
   border-bottom-width: 3px;
+  float:right;
 }
 
 .common-button:hover {

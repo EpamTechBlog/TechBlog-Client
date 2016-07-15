@@ -27,3 +27,38 @@
 	width: 300px;
 }
 
+.mdl-list{
+	width: 98% !important;
+}
+
+/*@media screen and (max-width: 1090px) {
+.commentBox{
+	width: 85%;
+}
+}
+
+@media screen and (max-width: 830px) {
+.commentBox{
+	width: 78%;
+}
+}
+
+@media screen and (max-width: 680px) {
+.commentBox{
+	width: 68%;
+}
+}
+
+@media screen and (max-width: 580px) {
+.commentBox{
+	width: 60%;
+}
+}
+
+@media screen and (max-width: 525px) {
+.commentBox{
+	width: 83%;
+}
+}
+
+*/

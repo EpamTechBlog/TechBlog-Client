@@ -125,6 +125,7 @@ var CommentForm = React.createClass({
 			/>
 			</div>
 			<input className="common-button" type="submit" value="Post" />
+			<br/>
 			</form>
 			);
 	}

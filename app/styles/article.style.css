@@ -1,5 +1,50 @@
 @import 'common.style.css';
 
+@media screen and (max-width: 925px) {
+
+.articleContainer {
+  width: 75% !important;
+}
+
+}
+
+
+@media screen and (max-width: 525px) {
+
+.articleContainer {
+  width: 75% !important;
+}
+
+.articleContent {
+  position: absolute;
+  margin-left: 120px !important;
+}
+
+th:nth-child(3){
+  display: none !important;
+}
+td:nth-child(3){
+  display: none !important;
+}
+
+}
+
+@media screen and (max-width: 785px) {
+
+.articleContainer {
+  width: 75% !important;
+}
+
+th:nth-child(3){
+  display: none !important;
+}
+td:nth-child(3){
+  display: none !important;
+}
+
+}
+
+
 .articleContainer {
   width: 90%;
   table-layout:fixed;
@@ -33,12 +78,17 @@
 .articleTitleDiv {
   width: 80%;
   color: black;
+  margin-left: 8px;
 
 }
 
 .articleTitle {
   width: 100%;
 /*  margin-left: 30%;*/
+}
+
+.articleTitle.uppercase {
+    text-transform: uppercase;
 }
 
 .frame {
@@ -55,10 +105,26 @@
   text-align: center !important;
   color: black;
   width: 30% !important;
+  overflow: hidden !important;
 }
 
+@media screen and (max-width: 730px) {
+  .textarea{
+    width: 85% !important;
+  }
+
+}
+
+@media screen and (max-width: 620px) {
+  .textarea{
+    width: 80% !important;
+  }
+
+}
+
+
 .textarea {
-  width: 900px;
+  width: 100%;
   height: 300px;
   border: 3px solid #cccccc;
   padding: 5px;

@@ -6,8 +6,40 @@
 	border: 2px solid #1a9cb0;
 	border-radius: 5px;
 	/*height:100vh;*/
-	width: 79.5vw;
+	width: 95%;
 }
+
+
+@media screen and (max-width: 1090px) {
+.article-page{
+	width: 85%;
+}
+}
+
+@media screen and (max-width: 830px) {
+.article-page{
+	width: 78%;
+}
+}
+
+@media screen and (max-width: 680px) {
+.article-page{
+	width: 68%;
+}
+}
+
+@media screen and (max-width: 580px) {
+.article-page{
+	width: 60%;
+}
+}
+
+@media screen and (max-width: 525px) {
+.article-page{
+	width: 83%;
+}
+}
+
 
 .article-comment{
 	padding-left: 10px;
@@ -43,3 +75,7 @@
 .postDetails-title{
 	text-align: center;
 }
+.postDetails-title h2{
+    text-transform: uppercase !important;
+}
+

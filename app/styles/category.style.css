@@ -15,26 +15,23 @@
 .clearfix:before, .clearfix:after { display: table; content: ''; }
 .clearfix:after { clear: both; }
 
-/*body {
-	// color: #fff;
-	font-weight: 400;
-	font-size: 1em;
-	font-family: 'Raleway', Arial, sans-serif;
-}*/
+@media screen and (max-width: 1140px){
+.largedisplay{
+	display: none;
+}
+.smalldisplay{
+	display: inline-block !important;
+}
+}
+
+.smalldisplay{
+	display: none;
+}
+
 
 .hahaha{
 	width:800px;
 }
-
-/*.vertical-container {
-  height: 300px;
-  display: -webkit-flex;
-  display:         flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-}*/
 
 a {
 	outline: none;

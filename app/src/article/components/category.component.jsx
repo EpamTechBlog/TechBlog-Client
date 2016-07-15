@@ -35,21 +35,45 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			<div className="mdl-cell mdl-cell--4--col">
+	  			
+		  			<div className="mdl-cell mdl-cell--4--col">
 
-			      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+				      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
 
-				</div>
+					</div>
+
+
 	  		   )
 	  });
+
+	  let topics1 = this.state.topics.map((topic) => {
+	  	return (
+	  			
+		  			<div className="mdl-cell mdl-cell--12--col">
+
+				      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+
+					</div>
+
+
+	  		   )
+	  });
+
+
 	  return (
 			    <div>
 			    <HeadSliderComponent />
-					<ul className="demo-list-item mdl-list category-ul">
+				<ul className="demo-list-item mdl-list category-ul largedisplay">
 					 <li className="mdl-grid">
 				      {topics}
-			   	 </li>
-					</ul>
+			   	 	</li>
+				</ul>
+
+				<ul className="demo-list-item mdl-list category-ul smalldisplay">
+					 <li className="mdl-grid">
+				      {topics1}
+			   	 	</li>
+				</ul>
 				</div>
 			)
 	}
