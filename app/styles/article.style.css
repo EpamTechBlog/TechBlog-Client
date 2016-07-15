@@ -121,7 +121,9 @@ td:nth-child(3){
   }
 
 }
-
+.textarea-post #mceu_17{
+  height:300px;
+}
 
 .textarea {
   width: 100%;

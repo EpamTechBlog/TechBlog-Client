@@ -2,7 +2,7 @@ tinymce.init({
 	selector: '#textarea-post',
 	theme: 'modern',
 	width: 800,
-	height: 300,
+	height: 600,
 	plugins: [
 	'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
 	'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
