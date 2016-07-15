@@ -53,22 +53,48 @@ var CommentList = React.createClass({
 	},
 
 	render: function() {
-		var commentTocommentForm = (function(){
+		var articleId = this.props.id;
 
-			var handleReplyToComment = function() {
-				console.log(123);
+		var commentTocommentForm = function(commentId){
+
+			var handleReplyToComment = function(e) {
+
+				e.preventDefault();
+
+				var childComment = $('#' + commentId + ' textarea').val();
+				var replyer = cookie.load('username');
+
+				axios.post('http://localhost:8000/comments/' + articleId + '/reply/' + commentId,
+				{
+
+					replyer: replyer,
+					content: childComment
+				})
+				.then(function (response) {
+					//console.log(response);
+					$('#' + commentId + ' textarea').val('');
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
 			};
-			
+
 			return (
-					<form className="replyToComment" onSubmit={handleReplyToComment}>
+					<form className="replyToComment hidden" id={commentId} onSubmit={handleReplyToComment}>
 						<textarea />
 						<input className="common-button" type="submit" value="Reply" />
 					</form>
 				)
-		})();
+		}
 		var commentNodes = this.state.data.map(function(comment) {
-			var showReplyBox = function(){
-				$('.replyToComment').css("display", "block");
+
+			var showReplyBox = function(commentId){
+				if(!cookie.load('username')){
+					hashHistory.push('/');
+					return;
+				}
+				$('#' + commentId).toggleClass("hidden");
 			};
 			var commentTime = new Date(comment.time);
 			var showCommentTime = commentTime.toLocaleString();
@@ -78,24 +104,25 @@ var CommentList = React.createClass({
 				var showCommentToCommentTime = comment2commentTime.toLocaleString();
 				return (
 
-						<div>
+						<div className='childComment'>
+							<p>
 							<i className="material-icons">face</i>
 							<span className="comment-creator">{comment2comment.replyer}</span> - <span>{showCommentToCommentTime}</span>
-							<span dangerouslySetInnerHTML={{__html: comment2comment.content}}>
-							</span>
+							</p>
+							<p dangerouslySetInnerHTML={{__html: comment2comment.content}}></p>
 						</div>
 
 					)
 			});
 			return (
-				
+
 
 					<li key={comment.time} className="content-font commentList-comment">
 						<div className="comment-title">
 							<i className="material-icons">face</i>
 							<span className="comment-creator"> {comment.creator}</span> - <span>{showCommentTime}</span>
 							<span className="comment-replyer">
-								<button onClick={showReplyBox}>Reply</button>
+								<button className='showCommentReplyBox'onClick={showReplyBox.bind(this, comment._id)}>Reply</button>
 							</span>
 						</div>
 						<div>
@@ -105,10 +132,10 @@ var CommentList = React.createClass({
 						</div>
 
 						{commentToCommentNodes}
-						{commentTocommentForm}
-						
+						{commentTocommentForm(comment._id)}
+
 					</li>
-				
+
 				);
 		});
 		return (
@@ -130,6 +157,10 @@ var CommentForm = React.createClass({
 	handleSubmit: function(e) {
 
 		e.preventDefault();
+		if(!cookie.load('username')){
+			hashHistory.push('/');
+			return;
+		}
 		var tinymce_editor_id = '#TinyMCE-comment';
 		axios.post('http://localhost:8000/comments',
 		{
