@@ -14,7 +14,7 @@ class NavigationComponent extends React.Component{
 	componentDidMount(){
 
 		setInterval(() => {
-			//componentHandler.upgradeDom();
+			componentHandler.upgradeDom();
 			$.ajax({
 		        url: 'http://localhost:8000/users/' + cookie.load('userId'),
 		        dataType: 'json',
@@ -28,7 +28,7 @@ class NavigationComponent extends React.Component{
 		        }.bind(this)
 		    });
 		}, 3000);
-		
+
 	}
 
 	render(){

@@ -1,6 +1,7 @@
 import React from 'react';
 require('../../../styles/article.style.css');
 import $ from "jquery";
+import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import TinyMCE from 'react-tinymce';
 
@@ -64,6 +65,10 @@ class PostComponent extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
+    if(!cookie.load('username')){
+      hashHistory.push('/');
+      return;
+    }
     const title = this.refs.articleTitle.value;
     const text = tinymce.activeEditor.getContent();
     const topic = $('input[name="topic"]:checked').val();
