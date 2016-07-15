@@ -5,15 +5,13 @@
 	margin-right: 20px;
 }
 
-.demo-list-icon {
-	/*width: 50vw;*/
-}
 .comment-post-button{
 	margin-left: 94%;
 }
 .commentList-comment{
 	background-color: white;
 	color: black !important;
+	border-top: 1px solid #d3d3d3;
 }
 .comment-creator{
 	color: #3498db;
@@ -21,10 +19,30 @@
 }
 .comment-title{
 	display: inline-block;
+	width: 100%;
+	background: linear-gradient(to bottom, #f1e6e6, white);
+}
+
+.comment-replyer{
+	float:right;
+	padding-right:10px;
 }
 
 .demo-list-icon {
-	width: 300px;
+	width: 500px;
+}
+.replyToComment{
+	display: none
+}
+.replyToComment input{
+	float: right;
+    margin-top: -48px;
+    z-index: 100;
+    position: relative;
+}
+.replyToComment textarea{
+    width: 100%;
+    height: 88px;
 }
 
 .mdl-list{

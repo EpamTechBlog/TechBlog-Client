@@ -53,32 +53,69 @@ var CommentList = React.createClass({
 	},
 
 	render: function() {
+		var commentTocommentForm = (function(){
 
-		var commentNodes = this.state.data.map(function(comment) {
-
+			var handleReplyToComment = function() {
+				console.log(123);
+			};
+			
 			return (
-				<div>
+					<form className="replyToComment" onSubmit={handleReplyToComment}>
+						<textarea />
+						<input className="common-button" type="submit" value="Reply" />
+					</form>
+				)
+		})();
+		var commentNodes = this.state.data.map(function(comment) {
+			var showReplyBox = function(){
+				$('.replyToComment').css("display", "block");
+			};
+			var commentTime = new Date(comment.time);
+			var showCommentTime = commentTime.toLocaleString();
+
+			var commentToCommentNodes = comment.comments2comments.map(function(comment2comment){
+				var comment2commentTime = new Date(comment2comment.time);
+				var showCommentToCommentTime = comment2commentTime.toLocaleString();
+				return (
+
+						<div>
+							<i className="material-icons">face</i>
+							<span className="comment-creator">{comment2comment.replyer}</span> - <span>{showCommentToCommentTime}</span>
+							<span dangerouslySetInnerHTML={{__html: comment2comment.content}}>
+							</span>
+						</div>
+
+					)
+			});
+			return (
+				
 
 					<li key={comment.time} className="content-font commentList-comment">
 						<div className="comment-title">
 							<i className="material-icons">face</i>
-							<span className="comment-creator"> {comment.creator}</span> - <span>{comment.time}</span>
+							<span className="comment-creator"> {comment.creator}</span> - <span>{showCommentTime}</span>
+							<span className="comment-replyer">
+								<button onClick={showReplyBox}>Reply</button>
+							</span>
 						</div>
 						<div>
+
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
 							</span>
 						</div>
 
+						{commentToCommentNodes}
+						{commentTocommentForm}
+						
 					</li>
-				</div>
+				
 				);
 		});
 		return (
 			<div className="commentList">
-			<ul className="demo-list-icon mdl-list">
+			<ul className="mdl-list">
 			{commentNodes}
 			</ul>
-
 			</div>
 			);
 	}
@@ -124,7 +161,7 @@ var CommentForm = React.createClass({
 			onChange={this.handleEditorChange}
 			/>
 			</div>
-			<input className="common-button" type="submit" value="Post" />
+			<input className="common-button" type="submit" value="Reply" />
 			<br/>
 			</form>
 			);
@@ -137,9 +174,10 @@ class CommentComponent extends React.Component{
 
 		return (
 			<div className="commentBox">
+			<hr />
 			<b>Comments:</b>
-			<CommentForm id={this.props.id}/>
 			<CommentList id={this.props.id}/>
+			<CommentForm id={this.props.id}/>
 			</div>
 			);
 	}
