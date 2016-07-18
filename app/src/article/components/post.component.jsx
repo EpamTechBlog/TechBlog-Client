@@ -33,7 +33,7 @@ class PostComponent extends React.Component{
       <div className="articleTitleDiv">
 
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className='articleTitle mdl-textfield mdl-js-textfield'>
+          <div className='articleTitle '>
             <label>Title</label>
             <input className="mdl-textfield__input" type="text" id="articleTitle" ref='articleTitle' required/>
           </div>
