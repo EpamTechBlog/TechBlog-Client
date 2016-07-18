@@ -1,0 +1,19 @@
+.mdl-progress__indeterminate{
+	margin-top:50%;
+}
+.singleArticle{
+	width:91%;
+}
+.frame {
+  position: absolute;
+}
+.articleContent {
+  position: absolute;
+  width:80%;
+ 	margin-left: 250px;
+	margin-top: 66px;
+}
+.authorTag{
+  margin-left: 55%;
+  color:lightgrey;
+}

@@ -7,7 +7,8 @@ import searchFlagReducer from '../../article/reducers/searchFlag.reducer';
 
 
 const coreReducer = combineReducers({
-  loginOrRegister : userReducer,
+
+  loginOrRegister: userReducer,
   articles : articleReducer,
   editBaseInfo: profileReducer,
   topic : setArticleTopic,

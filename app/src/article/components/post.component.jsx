@@ -24,15 +24,16 @@ class PostComponent extends React.Component{
     let radios = this.state.topics.map((topic) => {
       return (
           <div className="mdl-cell mdl-cell-4-col" key={topic._id}>
-            <label><input name='topic' type='radio' value={topic.topicName}/>{topic.topicName}</label>
+            <label><input name='topic' type='radio' value={topic.topicName}
+            checked={topic.topicName === 'JAVASCRIPT' ? 'checked' : ''}/>{topic.topicName}</label>
           </div>
            )
     });
     return (
-      <div className="articleTitleDiv">
+      <div className="article-Title-Div">
 
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className='articleTitle mdl-textfield mdl-js-textfield'>
+          <div className='article-Title mdl-textfield mdl-js-textfield'>
             <label>Title</label>
             <input className="mdl-textfield__input" type="text" id="articleTitle" ref='articleTitle' required/>
           </div>
@@ -40,8 +41,8 @@ class PostComponent extends React.Component{
             {radios}
           </div>
           <textarea className='textarea' ref='articleText'></textarea>
-          <div className='articlePostButton'>
-            <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+          <div className='article-Post-Button'>
+            <button className="common-button"
              type='submit'>
               Post
             </button>

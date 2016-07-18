@@ -4,7 +4,7 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import SingleTopicComponent from './singletopic.component.jsx';
 import HeadSliderComponent from './headslider.component.jsx';
-// require('../../styles/navi.style.css');
+
 require('../../../styles/category.style.css');
 require('../../../styles/headslider.style.css');
 

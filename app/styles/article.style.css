@@ -1,33 +1,30 @@
 @import 'common.style.css';
-.articleContent {
+
+.article-Content {
   position: absolute;
 
   margin-left: 350px;
   margin-top: 100px;
 }
 
-.articleTitleDiv {
-  width: 80%;
+.article-Title-Div {
+  width: 100%;
   color: black;
 
 }
 
-.articleTitle {
+.article-Title {
   width: 100%;
 /*  margin-left: 30%;*/
 }
 
-.frame {
-  position: fixed;
-}
-
-.articlePostButton {
+.article-Post-Button {
   margin: 30px;
 
 }
 
 .textarea {
-  width: 900px;
+  width: 700px;
   height: 300px;
   border: 3px solid #cccccc;
   padding: 5px;
