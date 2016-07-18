@@ -19,7 +19,6 @@ class PostList extends React.Component{
   }
   render() {
     let posts;
-    // console.log('@@@@this.props.search',this.props.search.searchFlag);
     if(this.props.search.searchFlag == 'search'){
       posts = this.props.search.searchResult
       .map((post)=>{
