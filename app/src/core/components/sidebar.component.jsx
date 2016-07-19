@@ -45,7 +45,7 @@ class SidebarComponent extends React.Component{
 
 		return (
 			<div>
-				
+
 				<div className="demo-drawer mdl-layout__drawer ">
 
 					<nav className="demo-navigation mdl-navigation ">
