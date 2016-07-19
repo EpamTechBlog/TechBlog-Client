@@ -35,10 +35,10 @@ class CategoryComponent extends React.Component{
 
 	  let topics = this.state.topics.map((topic) => {
 	  	return (
-	  			
-		  			<div className="mdl-cell mdl-cell--4--col">
 
-				      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+		  			<div className="mdl-cell mdl-cell--4--col" key={topic._id}>
+
+				      	<SingleTopicComponent {...this.props} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
 
 					</div>
 
@@ -48,10 +48,10 @@ class CategoryComponent extends React.Component{
 
 	  let topics1 = this.state.topics.map((topic) => {
 	  	return (
-	  			
-		  			<div className="mdl-cell mdl-cell--12--col">
 
-				      	<SingleTopicComponent {...this.props} key={topic._id} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
+		  			<div className="mdl-cell mdl-cell--12--col" key={topic._id}>
+
+				      	<SingleTopicComponent {...this.props} imgsrc={topic.img} topic={topic.topicName} description={topic.description} effect={topic.effect}/>
 
 					</div>
 

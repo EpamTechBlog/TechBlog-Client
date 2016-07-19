@@ -21,7 +21,7 @@ class BaseInfoComponent extends React.Component{
             cache: false,
             success: function(data) {
 
-              setTimeout(() => this.setState({ userInfo : data, isLoadingProfile : false }), 2000);
+              setTimeout(() => this.setState({ userInfo : data, isLoadingProfile : false }), 1000);
 
             }.bind(this),
             error: function(xhr, status, err) {
