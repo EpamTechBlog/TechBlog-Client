@@ -9,12 +9,16 @@
   padding-top: 20px;
   padding-left: 40px;
 }
+
+.data-reactroot{
+  width: 100%;
+  height: 100%;
+}
 .profile-content{
-  height: 800px;
   background-color: #ebeef0;
   padding-left:55px;
   margin:0 auto;
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
 }
 .profile-layer{

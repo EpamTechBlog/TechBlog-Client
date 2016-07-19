@@ -108,10 +108,14 @@ td:nth-child(3){
   overflow: hidden !important;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 770px) {
   .textarea{
     width: 85% !important;
   }
+
+  .textarea-post #mceu_17{
+  height:100px !important;
+}
 
 }
 
@@ -121,8 +125,8 @@ td:nth-child(3){
   }
 
 }
-.textarea-post #mceu_17{
-  height:300px;
+.textarea-post .mce-edit-area{
+  height:300px !important;
 }
 
 .textarea {
