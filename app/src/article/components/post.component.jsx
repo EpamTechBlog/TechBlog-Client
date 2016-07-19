@@ -41,7 +41,7 @@ class PostComponent extends React.Component{
           <div className="mdl-grid">
             {radios}
           </div>
-          <div className="textarea-post">
+          <div className="textarea-post forpost">
           <TinyMCE
           config={{
             menubar: false,
