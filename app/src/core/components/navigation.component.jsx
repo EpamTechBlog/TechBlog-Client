@@ -12,23 +12,28 @@ class NavigationComponent extends React.Component{
 	}
 
 	componentDidMount(){
+		componentHandler.upgradeDom();
+		if(cookie.load("userId")){
+			//console.log(cookie.load("userId"));
+			setInterval(() => {
 
-		setInterval(() => {
-			componentHandler.upgradeDom();
-			$.ajax({
-		        url: 'http://localhost:8000/users/' + cookie.load('userId'),
-		        dataType: 'json',
-		        type: "GET",
-		        cache: false,
-		        success: function(data) {
-		        	this.setState({ userImage : data.profileImage });
-		        }.bind(this),
-		        error: function(xhr, status, err) {
-		        	console.error(error, err.toString());
-		        }.bind(this)
-		    });
-		}, 3000);
+				$.ajax({
+			        url: 'http://localhost:8000/users/' + cookie.load('userId'),
+			        dataType: 'json',
+			        type: "GET",
+			        cache: false,
+			        success: function(data) {
+			        	if(!data.message)
+			        		this.setState({ userImage : data.profileImage });
 
+			        }.bind(this),
+			        error: function(xhr, status, err) {
+			        	console.error(error, err.toString());
+			        }.bind(this)
+			    });
+
+			}, 2000);
+		}
 	}
 
 	render(){
