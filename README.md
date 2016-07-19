@@ -11,8 +11,15 @@
 
 Following the steps to run the project:
 
-* Clone the repo: ```git@github.com:EpamTechBlog/TechBlog-Client.git```.
-* Install all dependencies: `npm install`.
+* Clone the repo: 
+```sh
+git@github.com:EpamTechBlog/TechBlog-Client.git
+```
+* Install all dependencies:
+```sh
+npm install
+```
+
 * Start MongoDB, cd to the bin folder of your MongoDB and start it(type `mongod` on Git Bash)
 * Start the application, cd to the project folder and start it(type `npm start` on Git Bash)
 * Open your browser and go to the URL `localhost:8080`
