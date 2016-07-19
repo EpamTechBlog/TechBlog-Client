@@ -1,0 +1,84 @@
+@import 'common.style.css';
+
+@media screen and (max-width: 925px) {
+
+.artiList-container {
+  width: 75% !important;
+}
+
+}
+
+@media screen and (max-width: 525px) {
+
+.artiList-container {
+  width: 75% !important;
+}
+th:nth-child(3){
+  display: none !important;
+}
+td:nth-child(3){
+  display: none !important;
+}
+
+}
+
+@media screen and (max-width: 785px) {
+
+.artiList-container {
+  width: 75% !important;
+}
+
+th:nth-child(3){
+  display: none !important;
+}
+td:nth-child(3){
+  display: none !important;
+}
+
+}
+
+
+.artiList-container {
+  width: 90%;
+  table-layout:fixed;
+}
+
+.artiList-table{
+  border: 1px solid #1a9cb0;
+}
+.artiList-postItem{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px !important;
+  text-align: center !important;
+  color: black;
+  width: 30% !important;
+  overflow: hidden !important;
+}
+
+.artiList-searchDiv{
+  width : 100% !important;
+}
+
+.artiList-searchIcon{
+  float: left;
+  z-index: 100;
+  color: gray;
+}
+
+.artiList-title *{
+  font-size: 17px !important;
+}
+
+.artiList-searchLine{
+  width: 100%;
+  padding-left:35px;
+}
+
+.artiList-searchLabel{
+  padding-left: 40px;
+}
+
+.artiList-postLine *{
+  font-size: 15px !important;
+}

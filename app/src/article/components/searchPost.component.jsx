@@ -1,6 +1,9 @@
 'use strict';
 import React from 'react';
-require('../../../styles/article.style.css');
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as searchActions from '../actions/search.action.js';
+require('../../../styles/articleList.style.css');
 
 class SearchPost extends React.Component{
   constructor(){
@@ -10,9 +13,18 @@ class SearchPost extends React.Component{
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.searchContentAndAuthor = this.searchContentAndAuthor.bind(this);
   }
   componentDitMount(){
 
+  }
+  searchContentAndAuthor(value){
+    let matchItem = this.props.posts.filter((item)=>{
+      return item.topic === this.props.topic
+      && (item.title.indexOf(value)>=0
+      || item.authorName.indexOf(value)>=0);
+    });
+    return matchItem;
   }
   handleSearchChange(e){
     this.setState({
@@ -22,7 +34,9 @@ class SearchPost extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const content = this.state.searchContent.trim();
-    //TODO： get data from server or from store
+    const searchResult = this.searchContentAndAuthor(content);
+    //set redux state
+    this.props.setSearchModel(searchResult);
 
     this.setState({
       searchContent : '',
@@ -30,20 +44,20 @@ class SearchPost extends React.Component{
   }
   render(){
     return(
-     <form onSubmit={this.handleSubmit} className="articleContainer">
-       <div className="mdl-textfield mdl-js-textfield searchContainer">
-         <label className="mdl-button mdl-js-button mdl-button--icon searchIcon" htmlFor="search">
+     <form onSubmit={this.handleSubmit} className="artiList-container">
+       <div className="mdl-textfield mdl-js-textfield artiList-searchDiv">
+         <label className="mdl-button mdl-js-button mdl-button--icon artiList-searchIcon" htmlFor="search">
           <i className="material-icons ">search</i>
          </label>
          <div>
            <input
-           className="mdl-textfield__input searchLine"
+           className="mdl-textfield__input artiList-searchLine"
            type="text"
            id="search"
            value={this.state.searchContent}
            onChange = {this.handleSearchChange}
            />
-           <label className="mdl-textfield__label searchLabel" htmlFor="sample-expandable">Search By Title</label>
+           <label className="mdl-textfield__label artiList-searchLabel" htmlFor="sample-expandable">Search By Title</label>
          </div>
        </div>
      </form>
@@ -51,5 +65,16 @@ class SearchPost extends React.Component{
   }
 
 }
+// export default SearchPost;
+const mapStateToProps = (store) => {
+  return {
+    posts: store.articles,
+    topic: store.topic
+  }
+}
 
-export default SearchPost;
+const mapDispatchToProps = (dispatch) =>{
+  return bindActionCreators(searchActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPost)
