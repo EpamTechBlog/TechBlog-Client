@@ -16,6 +16,7 @@ class PostComponent extends React.Component{
 
   }
   componentDidMount(){
+    componentHandler.upgradeDom();
     axios.get('http://localhost:8000/topics').then((data) => {
       this.setState({ topics :  data.data});
     }).catch((err) => console.log(err));
@@ -33,8 +34,8 @@ class PostComponent extends React.Component{
       <div className="articleTitleDiv">
 
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className='articleTitle '>
-            <label>Title</label>
+          <div className='articleTitle mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+            <label className="mdl-textfield__label" htmlfor="articleTitle">Blog Title</label>
             <input className="mdl-textfield__input" type="text" id="articleTitle" ref='articleTitle' required/>
           </div>
           <div className="mdl-grid">
