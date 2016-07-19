@@ -30,7 +30,7 @@ Following the steps to run the project:
 **Comment**
 * commrnts 
 * edit box
-* 
+
 ##Relative Technicals
 **Frameworks and Libraries**
 - React
