@@ -106,7 +106,7 @@ var CommentList = React.createClass({
 
 						<div className='childComment'>
 							<p>
-							<i className="material-icons">face</i>
+							<i className="material-icons">reply</i>
 							<span className="comment-creator">{comment2comment.replyer}</span> - <span>{showCommentToCommentTime}</span>
 							</p>
 							<p dangerouslySetInnerHTML={{__html: comment2comment.content}}></p>
@@ -125,7 +125,7 @@ var CommentList = React.createClass({
 								<button className='showCommentReplyBox'onClick={showReplyBox.bind(this, comment._id)}>Reply</button>
 							</span>
 						</div>
-						<div>
+						<div className="comment-text">
 
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
 							</span>

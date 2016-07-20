@@ -44,6 +44,7 @@ td:nth-child(3){
 }
 
 .artiList-table{
+  cursor:pointer;
   border: 1px solid #1a9cb0;
 }
 .artiList-postItem{
@@ -81,4 +82,8 @@ td:nth-child(3){
 
 .artiList-postLine *{
   font-size: 15px !important;
+}
+
+.forpost iframe{
+  height:  300px !important;
 }

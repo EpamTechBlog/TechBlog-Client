@@ -63,3 +63,6 @@
   background-color: #CCC;
   border-color: rgba(0,0,0,0.9);
 }
+.material-icons{
+  vertical-align: top;
+}

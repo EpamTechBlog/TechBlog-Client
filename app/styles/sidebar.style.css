@@ -4,7 +4,8 @@
    top: 60px !important;
   }
   .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-     
+
+    cursor:pointer; 
     flex-shrink: 0;
     padding: 16px 40px;
     margin: 0;
@@ -20,6 +21,7 @@
 
   }
   .mdl-layout__drawer .mdl-navigation .mdl-navigation__link i {
+    cursor:pointer;
     margin-left: -10px;
   }
 }
@@ -52,6 +54,7 @@
 }
 
 .demo-navigation .mdl-navigation__link {
+  cursor:pointer;
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -80,9 +83,11 @@
 }
 
 .demo-navigation .mdl-navigation__link:hover{
+  cursor:pointer;
   background-color: #1891A3 !important;
 }
 .demo-navigation .mdl-navigation__link .material-icons {
+  cursor:pointer;
   font-size: 24px;
   color: white !important;
   margin-right: 32px;

@@ -29,17 +29,33 @@ npm start
 
 ## Module Introduction
 
+### Phase one
+
 **User**
-* Login/Signup
-* Profile
+
+contributed by Xinlai ang Elliot
+
+* Index Page
+* Authentication
+* User Profile
+
 
 **Article**
-* Article topic
-* Article list and details
+
+contributed by Cyrus, Chris and Fiona
+
+* Post Article 
+* tech Category
+* Article list 
 
 **Comment**
-* commrnts 
+
+contributed by Adam, Irving and Claire
+
+* comments 
 * edit box
+* Navi and Side bar
+
 
 ##Relative Technicals
 **Frameworks and Libraries**
