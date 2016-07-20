@@ -125,7 +125,7 @@ var CommentList = React.createClass({
 								<button className='showCommentReplyBox'onClick={showReplyBox.bind(this, comment._id)}>Reply</button>
 							</span>
 						</div>
-						<div>
+						<div className="comment-text">
 
 							<span dangerouslySetInnerHTML={{__html: comment.content}}>
 							</span>
