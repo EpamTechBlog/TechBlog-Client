@@ -23,7 +23,6 @@ class PostItem extends React.Component{
           <td className="mdl-data-table__cell--non-numeric artiList-postItem">{this.props.post.title}</td>
           <td className="mdl-data-table__cell--non-numeric artiList-postItem">{this.props.post.authorName}</td>
           <td className="mdl-data-table__cell--non-numeric artiList-postItem">{this.showDate(this.props.post.publishDate)}</td>
-          <td className="mdl-data-table__cell--non-numeric artiList-postItem">{this.showDate(this.props.post.publishDate)}</td>
         </tr>
     )
   }
