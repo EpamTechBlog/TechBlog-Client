@@ -11,9 +11,19 @@ class SingleArticlePageComponent extends React.Component{
 	constructor(){
 
 		super();
-
+		this.showDate = this.showDate.bind(this);
 	}
-
+	showDate(date){
+    var publishDate = new Date(date),
+        year = publishDate.getFullYear(),
+        month = publishDate.getMonth(),
+        day = publishDate.getDate(),
+        hour = publishDate.getHours(),
+        minute = publishDate.getMinutes();
+    var createdDate = month + "/" + day + "/" + year
+                      + " " + hour +":"+ minute;
+    return createdDate;
+  }
 	render(){
 		if(!this.props.article._id){
 
@@ -46,7 +56,7 @@ class SingleArticlePageComponent extends React.Component{
 		     	})()}
 				</h2>
 
-				<span className='mdl-navigation__link dateTag'><i className="material-icons article-icon">schedule</i>&nbsp;{this.props.article.publishDate}<span>&nbsp; | &nbsp;</span></span>
+				<span className='mdl-navigation__link dateTag'><i className="material-icons article-icon">schedule</i>&nbsp;{this.showDate(this.props.article.publishDate)}<span>&nbsp; | &nbsp;</span></span>
 
 				<span className='mdl-navigation__link authorTag'><i className="material-icons article-icon">&#xE87C;</i>&nbsp;{this.props.article.authorName}</span>
 				</div>

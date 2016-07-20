@@ -3,6 +3,9 @@ import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
 import $ from "jquery";
 import store from "../../../store.js";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as searchActions from '../../article/actions/search.action.js';
 require('../../../styles/sidebar.style.css');
 class SidebarComponent extends React.Component{
 
@@ -45,7 +48,7 @@ class SidebarComponent extends React.Component{
 
 		return (
 			<div>
-				
+
 				<div className="demo-drawer mdl-layout__drawer ">
 
 					<nav className="demo-navigation mdl-navigation ">
@@ -67,7 +70,15 @@ class SidebarComponent extends React.Component{
 
 	goToTopic(topic){
 		this.props.asynGetArticlesByTopicMiddle(topic);
+		this.props.setShowModel();
 		hashHistory.push('/articles');
 	}
 }
-export default SidebarComponent
+
+
+const mapDispatchToProps = (dispatch) =>{
+  return bindActionCreators(searchActions, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SidebarComponent)
+

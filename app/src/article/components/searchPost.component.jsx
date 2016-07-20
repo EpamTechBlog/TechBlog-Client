@@ -35,7 +35,6 @@ class SearchPost extends React.Component{
     e.preventDefault();
     const content = this.state.searchContent.trim();
     const searchResult = this.searchContentAndAuthor(content);
-    //set redux state
     this.props.setSearchModel(searchResult);
 
     this.setState({
