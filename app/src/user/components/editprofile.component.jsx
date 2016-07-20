@@ -12,7 +12,7 @@ class EditProfileComponent extends React.Component{
   constructor() {
     super();
     this.state = { userInfo: {username : '', jobTitle : '', skills : [], articles :　[], profileImage : '', homeAddress : '', email : '', phone : '', subscribed:　'yes'},
-
+                   emailVerify: true, phoneVerify: true
                  };
 
   }
@@ -35,8 +35,43 @@ class EditProfileComponent extends React.Component{
   }
 
   handleChange(e){
-
+    
     this.setState({userInfo : {}});
+  }
+
+  commonValidate(e){
+    let newState = this.state;
+    let targetKey = e.target.name;
+    let newValue = e.target.value;
+    newState.userInfo[targetKey] = newValue;
+    this.setState(newState);
+  }
+
+  emailValidate(e){
+    let email = e.target.value;
+    let newState = this.state;
+    newState.userInfo.email = email;
+    let reg = /(^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$)|(^$)/;
+    if(!reg.test(email)){
+      newState.emailVerify = false;
+    }else{
+      newState.emailVerify = true;
+    }
+
+    this.setState(newState);
+  }
+
+  phoneValidate(e){
+    let phone = e.target.value;
+    let newState = this.state;
+    newState.userInfo.phone = phone;
+    let reg = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    if(!reg.test(phone)){
+      newState.phoneVerify = false;
+    }else{
+      newState.phoneVerify = true;
+    }
+    this.setState(newState);      
   }
 
   render() {
@@ -59,27 +94,44 @@ class EditProfileComponent extends React.Component{
                   <label className="editProfile-label">
                     Job Title:
                   </label>
-                  <input type='text' ref='jobTitle' value={this.state.userInfo.jobTitle} onChange={this.handleChange}/>
+                  <input type='text' ref='jobTitle' name='jobTitle' onBlur={this.commonValidate.bind(this)} value={this.state.userInfo.jobTitle} onChange={this.handleChange}/>
                 </div>
                 <div className="editProfile-div">
                   <label className="editProfile-label">
                     Address:
                   </label>
-                  <input type='text' ref='homeAddress' value={this.state.userInfo.homeAddress} onChange={this.handleChange}/>
+                  <input type='text' ref='homeAddress' name='homeAddress' onBlur={this.commonValidate.bind(this)} value={this.state.userInfo.homeAddress} onChange={this.handleChange}/>
                 </div>
                 <div className="editProfile-div">
                   <label className="editProfile-label">
                     Email:
                   </label>
-                  <input type='email' ref='email' value={this.state.userInfo.email} onChange={this.handleChange}/>
+                  <input type='email' ref='email' onBlur={this.emailValidate.bind(this)} value={this.state.userInfo.email} onChange={this.handleChange}/>
                 </div>
+                {(() => {
+                  if(!this.state.emailVerify){
+                    return (
+                      <div>
+                        <span className="errMsg editProfile-verify">wrong email format</span>
+                      </div>
+                    )
+                  }
+                })()}
                 <div className="editProfile-div">
                   <label className="editProfile-label">
                     Phone:
                   </label>
-                  <input type='text' ref='phone' value={this.state.userInfo.phone} onChange={this.handleChange}/>
+                  <input type='text' ref='phone' onBlur={this.phoneValidate.bind(this)} value={this.state.userInfo.phone} onChange={this.handleChange}/>
                 </div>
-
+                {(() => {
+                  if(!this.state.phoneVerify){
+                    return (
+                      <div>
+                        <span className="errMsg editProfile-verify">wrong phone format</span>
+                      </div>
+                    )
+                  }
+                })()}                
               </div>
 
               <div className="demo-card-wide mdl-card mdl-shadow--2dp editProfile-box">
@@ -104,7 +156,7 @@ class EditProfileComponent extends React.Component{
                   <label className="editProfile-label">
                     Subscription:
                   </label>
-                  <RadioGroup className='subscription' name="subcription" ref='subscribed' value={this.state.userInfo.subscribed} onChange={this.handleChange}>
+                  <RadioGroup className='subscription' name="subscribed" ref='subscribed' onBlur={this.commonValidate.bind(this)} value={this.state.userInfo.subscribed} onChange={this.handleChange}>
                     <input type="radio" value="yes" />Yes
                     <input type="radio" value="no" />No
                   </RadioGroup>
@@ -147,8 +199,8 @@ class EditProfileComponent extends React.Component{
   }
 
   updateProfile(){
-
-     $.ajax({
+    if(this.state.emailVerify && this.state.phoneVerify){
+      $.ajax({
         url: 'http://localhost:8000/users/' + cookie.load("userId"),
         dataType: 'json',
         type: "PUT",
@@ -164,6 +216,9 @@ class EditProfileComponent extends React.Component{
 
         }.bind(this)
       });
+    }else{
+      alert(`Please input the correct info before update`);
+    }
 
   }
 }

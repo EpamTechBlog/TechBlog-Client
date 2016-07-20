@@ -147,6 +147,11 @@
   text-decoration: none
 }
 
+.editProfile-verify{
+  font-size: 14px;
+  padding-left: 230px;
+}
+
 .subscription{
     display: inline-block;
 }
