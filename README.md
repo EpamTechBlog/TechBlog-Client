@@ -32,6 +32,7 @@ npm start
 ### Phase one
 
 **User**
+
 contributed by Xinlai ang Elliot
 
 * Index Page
@@ -40,6 +41,7 @@ contributed by Xinlai ang Elliot
 
 
 **Article**
+
 contributed by Cyrus, Chris and Fiona
 
 * Post Article 
@@ -47,6 +49,7 @@ contributed by Cyrus, Chris and Fiona
 * Article list 
 
 **Comment**
+
 contributed by Adam, Irving and Claire
 
 * comments 
